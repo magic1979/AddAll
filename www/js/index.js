@@ -39,9 +39,9 @@ var app = {
     receivedEvent: function(id) {
 		//document.addEventListener("pause", onPause, false);
 		
-		admob.initAdmob("ca-app-pub-5263503085775846/1999366017","ca-app-pub-5263503085775846~9522632812"); //admob id format ca-app-pub-xxxxxxxxxxxxxxxxxxx/xxxxxxxxxx
+		//admob.initAdmob("ca-app-pub-5263503085775846/1999366017","ca-app-pub-5263503085775846~9522632812"); //admob id format ca-app-pub-xxxxxxxxxxxxxxxxxxx/xxxxxxxxxx
 		
-		admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);//show banner at the top of app
+		//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);//show banner at the top of app
 		
 		
 		document.addEventListener("touchmove",function(e) {
@@ -355,7 +355,7 @@ var app = {
 					   var somma=0;
 					   var punto=0;
 					   
-					   admob.hideBanner()
+					   //admob.hideBanner()
 					   
 					   localStorage.setItem("esatte",0)
 					   $("#esatte2").html("0")
@@ -500,7 +500,7 @@ var app = {
 					   var punto=0;
 
 					   
-			admob.hideBanner()
+			//admob.hideBanner()
 					   
 			localStorage.setItem("esatte",0)
 			$("#esatte2").html("0")
@@ -603,7 +603,7 @@ var app = {
 					   var punto=0;
 					   
 					   
-					   admob.hideBanner()
+					   //admob.hideBanner()
 					   
 					   localStorage.setItem("esatte",0)
 					   $("#esatte2").html("0")
