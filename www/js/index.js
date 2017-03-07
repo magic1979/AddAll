@@ -40,13 +40,13 @@ var app = {
 		//document.addEventListener("pause", onPause, false);
 		
 		
-		admob.initAdmob("ca-app-pub-5263503085775846/1999366017","ca-app-pub-5263503085775846~9522632812"); //admob IOS
-		admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
+		//admob.initAdmob("ca-app-pub-5263503085775846/1999366017","ca-app-pub-5263503085775846~9522632812"); //admob IOS
+		//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
 		
 		
 		//// ANDROID //////
 		
-		/*var admobid = {};
+		var admobid = {};
 		
 		 if( /(android)/i.test(navigator.userAgent) ) {
 			admobid = {
@@ -74,7 +74,7 @@ var app = {
 
 		 if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 		
-		 if(AdMob) AdMob.showInterstitial();*/
+		 if(AdMob) AdMob.showInterstitial();
 		
 		///// FINE /////
 		
@@ -392,9 +392,9 @@ var app = {
 					   var somma=0;
 					   var punto=0;
 					   
-					   admob.hideBanner()
+					   //admob.hideBanner()
 					   
-					   //AdMob.removeBanner();
+					   AdMob.removeBanner();
 					   
 					   localStorage.setItem("esatte",0)
 					   $("#esatte2").html("0")
@@ -539,9 +539,9 @@ var app = {
 					   var punto=0;
 
 					   
-			admob.hideBanner()
+			//admob.hideBanner()
 					   
-			//AdMob.removeBanner();
+			AdMob.removeBanner();
 					   
 			localStorage.setItem("esatte",0)
 			$("#esatte2").html("0")
