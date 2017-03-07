@@ -3,15 +3,9 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
     document.addEventListener("resume", onResume, false);
 	
-	var altezzatbl = getRealContentHeight()-60;
 	var height = getRealContentHeight()-60;
 	$("#tblhome").attr("height",height);
 	$("#tblhome3").attr("height",height);
-	
-	$("#tblhome").html('<table id="tblhome" width="90%" height="'+ altezzatbl +'" border="0" valign="center" align="center" class="tabella"><tr height="48%"><td width="100%" align="center"><a id="mappa6" href="#" rel="external"><img src="img/Volante.png" width="120px"></a><br><b>Voglio essere autista</b><br><table><tr><td><table class="tabella1"><tr><td><font color="#FFF">Profilo</font></td></tr></table></td><td> <img src="img/stelle.png" width="80"></td></tr></table></td></tr><tr height="2%"><td width="100%" align="center"> </td></tr><tr height="48%"> <td width="100%" align="center"><a id="mappa7" href="#" rel="external"><img src="img/Valigia.png" width="120px"></a><br><b>Voglio essere passeggero</b><br><table><tr><td><table class="tabella1"><tr><td><font color="#FFF">Profilo</font></td></tr></table></td><td> <img src="img/stelle.png" width="80"></td></tr></table></td> </tr><tr height="10%"> <td width="100%" align="center"></td></tr></table>')
-	
-	$("#nickhome").html(localStorage.getItem("nick"));
-	$("#nickhome3").html(localStorage.getItem("nick"));
 	
 	var email = localStorage.getItem("email");
 	
@@ -77,21 +71,10 @@ function onDeviceReady() {
 	var lat3;
 	var lng3;
 	
-	var muoviti;
 	
 	$(document).on("touchstart", "#pass1", function(e){ richiesta1() });
 	$(document).on("touchstart", "#pass2", function(e){ richiesta2() });
 	$(document).on("touchstart", "#pass3", function(e){ richiesta3() });
-	
-	$(document).on("touchstart", "#accettatime", function(e){ accetta11() });
-	$(document).on("touchstart", "#rifiuta1", function(e){ rifiuta1() });
-	
-	$(document).on("touchstart", "#accettatime2", function(e){ accetta22() });
-	$(document).on("touchstart", "#rifiuta2", function(e){ rifiuta2() });
-	
-	$(document).on("touchstart", "#accettatime3", function(e){ accetta33() });
-	$(document).on("touchstart", "#rifiuta3", function(e){ rifiuta3() });
-
 	
 	$(document).on("tap", "#ric1", function(e){
 		magia3()
@@ -116,7 +99,6 @@ function onDeviceReady() {
 				   resetta1(1);
 
    });
-	
 	
 	
 	$(document).on("touchstart", "#inizia", function(e){
@@ -164,12 +146,12 @@ function onDeviceReady() {
 		if ($.browser.iphone || $.browser.ipad) $(this).trigger('click');
 	});
 	
-	$(document).on("touchstart", "#back3", function(e){
+	$(document).on("tap", "#back3", function(e){
 		inviopasseggero(3);
 		if ($.browser.iphone || $.browser.ipad) $(this).trigger('click');
 	});
 	
-	$(document).on("touchstart", "#back4", function(e){
+	$(document).on("tap", "#back4", function(e){
 				   inviopasseggero(3);
 				   if ($.browser.iphone || $.browser.ipad) $(this).trigger('click');
 				   });
@@ -180,12 +162,12 @@ function onDeviceReady() {
 	});
 	
 	
-	$(document).on("touchstart", "#gratis", function(e){
+	$(document).on("tap", "#gratis", function(e){
 		inviopasseggero(1);
 		if ($.browser.iphone || $.browser.ipad) $(this).trigger('click');
 	});
 	
-	$(document).on("touchstart", "#offerta", function(e){
+	$(document).on("tap", "#offerta", function(e){
 		inviopasseggero(2);
 		if ($.browser.iphone || $.browser.ipad) $(this).trigger('click');
 	});
@@ -256,17 +238,18 @@ function onDeviceReady() {
     }
 		
 		
-			var lat = localStorage.getItem("lat");
-			var lng = localStorage.getItem("lng");
+								  var lat = localStorage.getItem("lat");
+								  var lng = localStorage.getItem("lng");
 		
-			//var lat = "41.770447";  //  "41.783780"  "41.783780" localStorage.getItem("lat")
-			//var lng = "12.373529";  //  "12.364947"  "12.364947" localStorage.getItem("lng")
 		
-			localStorage.setItem("lat", lat)
-			localStorage.setItem("lng", lng)
+								  //var lat = "41.770447";  //  "41.783780"  "41.783780" localStorage.getItem("lat")
+								  //var lng = "12.373529";  //  "12.364947"  "12.364947" localStorage.getItem("lng")
+		
+								  localStorage.setItem("lat", lat)
+								  localStorage.setItem("lng", lng)
 		
 
-			codeLatLng(lat,lng);
+								  codeLatLng(lat,lng);
     
 }
     
@@ -320,7 +303,7 @@ function CenterControl(controlDiv, map) {
 	controlText.style.lineHeight = '30px';
 	controlText.style.paddingLeft = '5px';
 	controlText.style.paddingRight = '5px';
-	controlText.innerHTML = '<br><table width="100%"><tr><td align="right"><a id="ricarica" href="#" rel="external"><img src="img/ico_mirino.png" width="45px"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a id="XXX" href="index.html" rel="external"><img src="img/xx.png" width="25px"></a></td></tr></table>';
+	controlText.innerHTML = '<br><table width="100%"><tr><td align="right"><a id="ricarica" href="#" rel="external"><img src="img/pin.png" width="25px"></a>&nbsp;&nbsp;<a id="XXX" href="index.html" rel="external"><img src="img/xx.png" width="25px"></a></td></tr></table>';
 	controlUI.appendChild(controlText);
 	
 	//<input id="viale" name="viale" type="text" value="'+ localStorage.getItem("Via") +'">
@@ -369,11 +352,10 @@ function onError5(error) {
 
 
 function centragps(){
-	muoviti = 1;
 
 	var watchID = navigator.geolocation.getCurrentPosition(onSuccess5, onError5, {timeout: 10000, enableHighAccuracy: false, maximumAge: 0 });
 	
-	onSuccess5()
+	//onSuccess5()
 
 }
 
@@ -585,7 +567,6 @@ function deg2rad(deg) {
 
 
 function resetta1(focus) {
-	muoviti = 1;
 	
 	localStorage.setItem("fatto","0")
 	
@@ -659,14 +640,7 @@ function resetta1(focus) {
 												maxWidth: 200,
 												maxHeight: 150,
 												});
-		
-
-		
-	$(document).on("touchmove", map, function(e){
-		muoviti=2;
-	});
-
-		
+	
 	var beaches = [];
 	var markers = [];//some array
 	var posizione = 1;
@@ -679,11 +653,7 @@ function resetta1(focus) {
 		
 		var myLatLng = new google.maps.LatLng(lat, lng, 1);
 		
-		var gradi = localStorage.getItem("gradi");
-		
-		//alert(gradi);
-		
-		var icon = new google.maps.MarkerImage("img/autista.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
+		var icon = new google.maps.MarkerImage("img/autista.png", null, null, null, new google.maps.Size(50,50));
 		//alert(myLatLng + beach[0])
 		
 		
@@ -713,7 +683,7 @@ function resetta1(focus) {
 		
 		marker1 = new google.maps.Marker ({
 										  map : map,
-										  icon: iconn,
+										  icon: icon,
 										  optimized: false,
 										  position : myLatLng,
 										  //content:'<div class="popup">'+ beach[0] +'<br>Km'+ beach[5] +'<br><a href="#home3">Cliccami</a></div>',
@@ -857,7 +827,7 @@ function resetta1(focus) {
 													icon: icon,
 													optimized: false,
 													position : myLatLng1,
-													content:'<div class="popup">'+item.nick +'<br>Km'+ item.distanza +'</div>',
+													content:'<div class="popup">'+item.nick +'<br>Km'+ item.distanza +'<br><a href="#home3">Cliccami</a></div>',
 													title: '1',
 													//label: ''+ beach[1] +','+ beach[2] +'',
 													zIndex: -1
@@ -915,7 +885,7 @@ function resetta1(focus) {
 														  icon: icon,
 														  optimized: false,
 														  position : myLatLng2,
-														  content:'<div class="popup">'+item.nick +'<br>Km'+ item.distanza +'</div>',
+														  content:'<div class="popup">'+item.nick +'<br>Km'+ item.distanza +'<br><a href="#home3">Cliccami</a></div>',
 														  title: '2',
 														  //label: ''+ beach[1] +','+ beach[2] +'',
 														  zIndex: -10
@@ -971,7 +941,7 @@ function resetta1(focus) {
 													icon: icon,
 													optimized: false,
 													position : myLatLng3,
-													content:'<div class="popup">'+item.nick +'<br>Km'+ item.distanza +'</div>',
+													content:'<div class="popup">'+item.nick +'<br>Km'+ item.distanza +'<br><a href="#home3">Cliccami</a></div>',
 													title: '4',
 													//label: ''+ beach[1] +','+ beach[2] +'',
 													zIndex: -100
@@ -1007,11 +977,10 @@ function resetta1(focus) {
 	   centerControlDiv.index = 1;
 	   map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
 	
-		navigator.geolocation.watchPosition(onSuccess2, onError2, {maximumAge:600000, timeout:80000, enableHighAccuracy: true});
 		
 		timer()
 		
-		//posizionegps()
+		posizionegps()
 
 	}
 	
@@ -1058,154 +1027,31 @@ function resetta1(focus) {
 	
 	//---------------------------
 		
+		function onSuccess22(position) {
+			
+			//alert("timer22")
+			
+			var lat = position.coords.latitude;
+			var lng = position.coords.longitude;
+			
+			localStorage.setItem("lat", lat)
+			localStorage.setItem("lng", lng)
+			
+			//var lat = localStorage.getItem("lat");
+			//var lng = localStorage.getItem("lng");
+			var latlng = new google.maps.LatLng(lat, lng);
+			
+			marker2.setPosition(latlng);
+			map.setCenter(latlng);
+			
+			//localStorage.setItem("lat", ciao)
+			//localStorage.setItem("lng", ciao1)
+		}
+
+		
 		function onSuccess2(position) {
-			//var iconn = new google.maps.MarkerImage("img/1p.png", null, null, null, new google.maps.Size(1,1));
-			//marker2.setIcon(iconn);
 			
-			var posizione = Math.round(position.coords.heading);
-			
-			if((posizione > 0)&&(posizione <= 10)){
-				var icon = new google.maps.MarkerImage("img_autista/car_010.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 10)&&(posizione <= 20)){
-				var icon = new google.maps.MarkerImage("img_autista/car_020.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 20)&&(posizione <= 30)){
-				//$("#rispondi").html("<img src='img_autista/car_030.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_030.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 30)&&(posizione <= 40)){
-				//$("#rispondi").html("<img src='img_autista/car_040.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_040.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 40)&&(posizione <= 50)){
-				//$("#rispondi").html("<img src='img_autista/car_050.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_050.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 50)&&(posizione <= 60)){
-				//$("#rispondi").html("<img src='img_autista/car_060.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_060.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 60)&&(posizione <= 70)){
-				//$("#rispondi").html("<img src='img_autista/car_070.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_070.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 70)&&(posizione <= 80)){
-				//$("#rispondi").html("<img src='img_autista/car_080.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_080.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 80)&&(posizione <= 90)){
-				//$("#rispondi").html("<img src='img_autista/car_090.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_090.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 90)&&(posizione <= 100)){
-				//$("#rispondi").html("<img src='img_autista/car_100.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_100.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 100)&&(posizione <= 110)){
-				//$("#rispondi").html("<img src='img_autista/car_110.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_110.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 110)&&(posizione <= 120)){
-				//$("#rispondi").html("<img src='img_autista/car_120.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_120.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 120)&&(posizione <= 130)){
-				//$("#rispondi").html("<img src='img_autista/car_130.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_130.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 130)&&(posizione <= 140)){
-				//$("#rispondi").html("<img src='img_autista/car_140.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_140.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 140)&&(posizione <= 150)){
-				//$("#rispondi").html("<img src='img_autista/car_150.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_150.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 150)&&(posizione <= 160)){
-				//$("#rispondi").html("<img src='img_autista/car_160.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_160.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 160)&&(posizione <= 170)){
-				//$("#rispondi").html("<img src='img_autista/car_170.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_170.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 170)&&(posizione <= 180)){
-				//$("#rispondi").html("<img src='img_autista/car_180.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_180.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 180)&&(posizione <= 190)){
-				//$("#rispondi").html("<img src='img_autista/car_190.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_190.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 190)&&(posizione <= 200)){
-				//$("#rispondi").html("<img src='img_autista/car_200.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_200.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 200)&&(posizione <= 210)){
-				//$("#rispondi").html("<img src='img_autista/car_210.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_210.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 210)&&(posizione <= 220)){
-				//$("#rispondi").html("<img src='img_autista/car_220.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_220.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 220)&&(posizione <= 230)){
-				//$("#rispondi").html("<img src='img_autista/car_230.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_230.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 230)&&(posizione <= 240)){
-				//$("#rispondi").html("<img src='img_autista/car_240.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_240.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 240)&&(posizione <= 250)){
-				//$("#rispondi").html("<img src='img_autista/car_250.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_250.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 250)&&(posizione <= 260)){
-				//$("#rispondi").html("<img src='img_autista/car_260.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_260.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 260)&&(posizione <= 270)){
-				//$("#rispondi").html("<img src='img_autista/car_270.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_270.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 270)&&(posizione <= 280)){
-				//$("#rispondi").html("<img src='img_autista/car_280.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_280.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 280)&&(posizione <= 290)){
-				//$("#rispondi").html("<img src='img_autista/car_290.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_290.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 290)&&(posizione <= 300)){
-				//$("#rispondi").html("<img src='img_autista/car_300.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_300.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 300)&&(posizione <= 310)){
-				//$("#rispondi").html("<img src='img_autista/car_310.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_310.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 310)&&(posizione <= 320)){
-				//$("#rispondi").html("<img src='img_autista/car_320.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_320.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 320)&&(posizione <= 330)){
-				//$("#rispondi").html("<img src='img_autista/car_330.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_330.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 330)&&(posizione <= 340)){
-				//$("#rispondi").html("<img src='img_autista/car_340.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_340.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else if((posizione > 340)&&(posizione <= 350)){
-				//$("#rispondi").html("<img src='img_autista/car_350.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_350.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
-			else{
-				//$("#rispondi").html("<img src='img_autista/car_000.png'>")
-				var icon = new google.maps.MarkerImage("img_autista/car_000.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			}
+			//alert("timer")
 			
             var lat = position.coords.latitude;
             var lng = position.coords.longitude;
@@ -1217,15 +1063,11 @@ function resetta1(focus) {
 			//var lng = localStorage.getItem("lng");
 			var latlng = new google.maps.LatLng(lat, lng);
 			
-			marker2.setIcon(icon);
 			marker2.setPosition(latlng);
+			//map.setCenter(latlng);
 			
-			if(muoviti==1){
-				map.setCenter(latlng);
-				//alert(muoviti);
-			}
-			
-			
+			//localStorage.setItem("lat", ciao)
+            //localStorage.setItem("lng", ciao1)
         }
         
 
@@ -1244,7 +1086,6 @@ function resetta1(focus) {
 function posizionegps(){
 
 	refreshPos = setInterval(function() {
-
 		var watchID = navigator.geolocation.getCurrentPosition(onSuccess2, onError3, {timeout: 10000, enableHighAccuracy: false, maximumAge: 0 });
 		//onSuccess2();
 	}, 3000);
@@ -1254,6 +1095,9 @@ function posizionegps(){
 function timer(){
 	
 	refreshIntervalId = setInterval(function() {
+									//$("#pass1").hide();
+									//$("#pass2").hide();
+									//$("#pass3").hide();
 									
 									//var watchID = navigator.geolocation.getCurrentPosition(onSuccess22, onError3, {timeout: 10000, enableHighAccuracy: false, maximumAge: 0 });
 									
@@ -1262,10 +1106,11 @@ function timer(){
 	connectionStatus = navigator.onLine ? 'online' : 'offline';
 									
 	if(connectionStatus=='online'){
-									var iconn = new google.maps.MarkerImage("img/1p.png", null, null, null, new google.maps.Size(1,1));
+									
+									
 									var lat = localStorage.getItem("lat");
 									var lng = localStorage.getItem("lng");
-		
+									
 									//var lat = "41.770447";  //  "41.783780"  "41.783780" localStorage.getItem("lat")
 									//var lng = "12.373529";  //  "12.364947"  "12.364947" localStorage.getItem("lng")
 									
@@ -1275,6 +1120,7 @@ function timer(){
 									
 									$("#loading").hide();
 									$("#esci").show();
+									
 									
 									beaches1.push(['Tua Posizione',lat,lng,1,0,0,0])
 									
@@ -1289,10 +1135,6 @@ function timer(){
 										   jsonp: 'callback',
 										   crossDomain: true,
 										   success:function(result){
-											   
-											marker1.setIcon(iconn);
-											marker3.setIcon(iconn);
-											marker4.setIcon(iconn);
 										   
 										   $.each(result, function(i,item){
 												  
@@ -1359,7 +1201,6 @@ function timer(){
 												  
 											       }
 												  
-												  
 												  /*$(document).on("tap", "#pass1", function(e){
 																 //window.location.href = "#index3";
 																 
@@ -1375,10 +1216,13 @@ function timer(){
 																 });*/
 												  
 												  
+												  
 												  var icon3 = new google.maps.MarkerImage("img/passeggero.png", null, null, null, new google.maps.Size(30,50));
 												  
 												  marker1.setMap(null);
 
+
+												  
 												  marker1 = new google.maps.Marker ({
 																					map : map,
 																					icon: icon3,
@@ -1423,50 +1267,6 @@ function timer(){
 												  $("#pass1").removeClass("custom-pass").addClass("custom-pass2");
 												  $("#pass1").removeClass("custom-pass1").addClass("custom-pass2");
 												  $("#pass1").removeClass("custom-pass3").addClass("custom-pass2");
-												  
-													//alert(accetta3)
-												  
-												   if(item.accettata==0){
-												    $("#blob3").show();
-												    for(i=0; i<10000; i++)
-												    {
-												     window.clearInterval(i);
-												    }
-												  
-												    $("#viaaccetta3").html(item.partenza);
-												  
-												  function countdown1(minutes) {
-												  var seconds = 30;
-												  var mins = minutes
-												  function tick() {
-												  var counter = document.getElementById("timer1");
-												  var current_minutes = 0;
-												  seconds--;
-												  counter.innerHTML =
-												  current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-												  if( seconds > 0 ) {
-												  setTimeout(tick, 1000);
-												  } else {
-												  $("#blob3").hide();
-												  //rifiuta1()
-												  //alert("finito");
-												  //if(mins > 1){
-												  
-												  // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
-												  //setTimeout(function () { countdown(mins - 1); }, 1000);
-												  
-												  //}
-												  }
-												  }
-												  tick();
-												  }
-												  
-												  countdown1(0);
-
-												  }
-												   else{
-													$("#blob3").hide();
-												   }
 												  }
 												  
 												  
@@ -1547,49 +1347,9 @@ function timer(){
 												  $("#pass2").removeClass("custom-pass").addClass("custom-pass2");
 												  $("#pass2").removeClass("custom-pass1").addClass("custom-pass2");
 												  $("#pass2").removeClass("custom-pass3").addClass("custom-pass2");
-												  
-												  if(item.accettata==0){
-												   $("#blob4").show();
-												   for(i=0; i<10000; i++)
-												   {
-												    window.clearInterval(i);
-												   }
-												  
-												  $("#viaaccetta2").html(item.partenza);
-												  
-												  function countdown2(minutes) {
-												  var seconds = 30;
-												  var mins = minutes
-												  function tick() {
-												  var counter = document.getElementById("timer2");
-												  var current_minutes = 0;
-												  seconds--;
-												  counter.innerHTML =
-												  current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-												  if( seconds > 0 ) {
-												  setTimeout(tick, 1000);
-												  } else {
-												  $("#blob4").hide();
-												  //rifiuta2()
-												  //alert("finito");
-												  //if(mins > 1){
-												  
-												  // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
-												  //setTimeout(function () { countdown(mins - 1); }, 1000);
-												  
-												  //}
-												  }
-												  }
-												  tick();
 												  }
 												  
-												  countdown2(0);
-												  }
-												  else{
-												  $("#blob4").hide();
-												  }
-
-												     }
+												  
 												  
 												  }
 												  
@@ -1656,50 +1416,6 @@ function timer(){
 												  $("#pass3").removeClass("custom-pass").addClass("custom-pass2");
 												  $("#pass3").removeClass("custom-pass1").addClass("custom-pass2");
 												  $("#pass3").removeClass("custom-pass3").addClass("custom-pass2");
-												  
-												  if(item.accettata==0){
-												  $("#blob5").show();
-												  for(i=0; i<10000; i++)
-												  {
-												  window.clearInterval(i);
-												  }
-												  
-												  $("#viaaccetta5").html(item.partenza);
-												  
-												  function countdown3(minutes) {
-												  var seconds = 30;
-												  var mins = minutes
-												  function tick() {
-												  var counter = document.getElementById("timer3");
-												  var current_minutes = 0;
-												  seconds--;
-												  counter.innerHTML =
-												  current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-												  if( seconds > 0 ) {
-												  setTimeout(tick, 1000);
-												  } else {
-												  $("#blob5").hide();
-												  //rifiuta3()
-												  //alert("finito");
-												  //if(mins > 1){
-												  
-												  // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
-												  //setTimeout(function () { countdown(mins - 1); }, 1000);
-												  
-												  //}
-												  }
-												  }
-												  tick();
-												  }
-												  
-												  countdown3(0);
-												  }
-												  else{
-												  $("#blob5").hide();
-												  }
-												  
-										
-												  
 												  }
 												  
 												  
@@ -1742,7 +1458,7 @@ function magia2C(utente,pass) {
 		window.clearInterval(i);
 	}
 	
-	//posizionegps2();
+	posizionegps2();
 	
 	//var watchID = navigator.geolocation.getCurrentPosition(onSuccess2, onError3, {timeout: 10000, enableHighAccuracy: false, maximumAge: 0 });
 	
@@ -2092,188 +1808,11 @@ function magia2C(utente,pass) {
 		
 		refreshPos = setInterval(function() {
 			var watchID = navigator.geolocation.getCurrentPosition(onSuccess2, onError3, {timeout: 10000, enableHighAccuracy: false, maximumAge: 0 });
-			//onSuccess2();
-		}, 3000);
+				//onSuccess2();
+			}, 3000);
 	}
 	
 	function onSuccess22(position) {
-			var iconn = new google.maps.MarkerImage("img/1p.png", null, null, null, new google.maps.Size(1,1));
-			var icon = new google.maps.MarkerImage("img/autista.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-			
-			marker2.setIcon(iconn);
-			
-            var lat = position.coords.latitude;
-            var lng = position.coords.longitude;
-			
-			localStorage.setItem("lat", lat)
-			localStorage.setItem("lng", lng)
-			
-			//var lat = localStorage.getItem("lat");
-			//var lng = localStorage.getItem("lng");
-			var latlng = new google.maps.LatLng(lat, lng);
-			
-			marker2.setIcon(icon);
-			marker2.setPosition(latlng);
-		
-		    if(muoviti==1){
-			  map.setCenter(latlng);
-			  //alert(muoviti);
-		    }
-			//map.setCenter(latlng);
-			
-			//localStorage.setItem("lat", ciao)
-            //localStorage.setItem("lng", ciao1)
-	}
-	
-	function onSuccess2(position) {
-		
-		var iconn = new google.maps.MarkerImage("img/1p.png", null, null, null, new google.maps.Size(1,1));
-		//marker2.setIcon(iconn);
-		
-		var posizione = Math.round(position.coords.heading);
-		
-		if((posizione > 0)&&(posizione <= 10)){
-			var icon = new google.maps.MarkerImage("img_autista/car_010.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 10)&&(posizione <= 20)){
-			var icon = new google.maps.MarkerImage("img_autista/car_020.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 20)&&(posizione <= 30)){
-			//$("#rispondi").html("<img src='img_autista/car_030.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_030.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 30)&&(posizione <= 40)){
-			//$("#rispondi").html("<img src='img_autista/car_040.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_040.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 40)&&(posizione <= 50)){
-			//$("#rispondi").html("<img src='img_autista/car_050.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_050.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 50)&&(posizione <= 60)){
-			//$("#rispondi").html("<img src='img_autista/car_060.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_060.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 60)&&(posizione <= 70)){
-			//$("#rispondi").html("<img src='img_autista/car_070.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_070.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 70)&&(posizione <= 80)){
-			//$("#rispondi").html("<img src='img_autista/car_080.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_080.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 80)&&(posizione <= 90)){
-			//$("#rispondi").html("<img src='img_autista/car_090.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_090.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 90)&&(posizione <= 100)){
-			//$("#rispondi").html("<img src='img_autista/car_100.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_100.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 100)&&(posizione <= 110)){
-			//$("#rispondi").html("<img src='img_autista/car_110.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_110.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 110)&&(posizione <= 120)){
-			//$("#rispondi").html("<img src='img_autista/car_120.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_120.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 120)&&(posizione <= 130)){
-			//$("#rispondi").html("<img src='img_autista/car_130.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_130.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 130)&&(posizione <= 140)){
-			//$("#rispondi").html("<img src='img_autista/car_140.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_140.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 140)&&(posizione <= 150)){
-			//$("#rispondi").html("<img src='img_autista/car_150.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_150.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 150)&&(posizione <= 160)){
-			//$("#rispondi").html("<img src='img_autista/car_160.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_160.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 160)&&(posizione <= 170)){
-			//$("#rispondi").html("<img src='img_autista/car_170.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_170.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 170)&&(posizione <= 180)){
-			//$("#rispondi").html("<img src='img_autista/car_180.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_180.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 180)&&(posizione <= 190)){
-			//$("#rispondi").html("<img src='img_autista/car_190.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_190.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 190)&&(posizione <= 200)){
-			//$("#rispondi").html("<img src='img_autista/car_200.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_200.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 200)&&(posizione <= 210)){
-			//$("#rispondi").html("<img src='img_autista/car_210.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_210.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 210)&&(posizione <= 220)){
-			//$("#rispondi").html("<img src='img_autista/car_220.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_220.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 220)&&(posizione <= 230)){
-			//$("#rispondi").html("<img src='img_autista/car_230.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_230.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 230)&&(posizione <= 240)){
-			//$("#rispondi").html("<img src='img_autista/car_240.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_240.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 240)&&(posizione <= 250)){
-			//$("#rispondi").html("<img src='img_autista/car_250.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_250.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 250)&&(posizione <= 260)){
-			//$("#rispondi").html("<img src='img_autista/car_260.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_260.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 260)&&(posizione <= 270)){
-			//$("#rispondi").html("<img src='img_autista/car_270.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_270.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 270)&&(posizione <= 280)){
-			//$("#rispondi").html("<img src='img_autista/car_280.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_280.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 280)&&(posizione <= 290)){
-			//$("#rispondi").html("<img src='img_autista/car_290.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_290.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 290)&&(posizione <= 300)){
-			//$("#rispondi").html("<img src='img_autista/car_300.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_300.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 300)&&(posizione <= 310)){
-			//$("#rispondi").html("<img src='img_autista/car_310.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_310.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 310)&&(posizione <= 320)){
-			//$("#rispondi").html("<img src='img_autista/car_320.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_320.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 320)&&(posizione <= 330)){
-			//$("#rispondi").html("<img src='img_autista/car_330.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_330.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 330)&&(posizione <= 340)){
-			//$("#rispondi").html("<img src='img_autista/car_340.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_340.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else if((posizione > 340)&&(posizione <= 350)){
-			//$("#rispondi").html("<img src='img_autista/car_350.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_350.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
-		else{
-			//$("#rispondi").html("<img src='img_autista/car_000.png'>")
-			var icon = new google.maps.MarkerImage("img_autista/car_000.png", null, null, new google.maps.Point(25, 25), new google.maps.Size(50,50));
-		}
 		
 		var lat = position.coords.latitude;
 		var lng = position.coords.longitude;
@@ -2285,15 +1824,36 @@ function magia2C(utente,pass) {
 		//var lng = localStorage.getItem("lng");
 		var latlng = new google.maps.LatLng(lat, lng);
 		
-		marker2.setIcon(icon);
 		marker2.setPosition(latlng);
+		//map.setCenter(latlng);
 		
-		if(muoviti==1){
-			map.setCenter(latlng);
-			//alert(muoviti);
-		}
+		//marker.setPosition(latlng);
+		//map.setCenter(latlng);
 		
-
+		//localStorage.setItem("lat", ciao)
+		//localStorage.setItem("lng", ciao1)
+	}
+	
+	function onSuccess2(position) {
+		
+		var lat = position.coords.latitude;
+		var lng = position.coords.longitude;
+		
+		localStorage.setItem("lat", lat)
+		localStorage.setItem("lng", lng)
+		
+		//var lat = localStorage.getItem("lat");
+		//var lng = localStorage.getItem("lng");
+		var latlng = new google.maps.LatLng(lat, lng);
+		
+		marker2.setPosition(latlng);
+		//map.setCenter(latlng);
+		
+		//marker.setPosition(latlng);
+		//map.setCenter(latlng);
+		
+		//localStorage.setItem("lat", ciao)
+		//localStorage.setItem("lng", ciao1)
 	}
 	
 	
@@ -2494,9 +2054,6 @@ function richiesta1() {
 				  
 				  }
 				  else{
-					  if(stato1==3){
-						  //conteggio dei 30 secondi
-					  }
 					$("#rif1").html("Rifiuta");
 					$("#gps1").hide();
 				  }
@@ -2772,192 +2329,6 @@ function richiesta3() {
 				   });
 	
 }
-
-// ACCETTA - RIFIUTA
-
-
-function accetta11() {
-	id = item1
-	$("#blob3").hide();
-	
-	$.ajax({
-		   type:"GET",
-		   url:"http://purplemiles.com/www2/check_accettaautista.php?id="+ id +"&id_autista="+ localStorage.getItem("id_autista") +"",
-		   contentType: "application/json",
-		   //data: {ID: "Lazio"}, LIMIT 10
-		   timeout: 7000,
-		   jsonp: 'callback',
-		   crossDomain: true,
-		   success:function(result){
-		   
-		   $.each(result, function(i,item){
-				  
-				  if(item.Token==1){
-				   //alert(item.Token)
-				  
-				  resetta1(1);
-				  
-				  }
-				  else{
-				  navigator.notification.alert(
-											   'Richiesta Annullata.',  // message
-											   alertDismissed,         // callback
-											   'Attenzione',           // title
-											   'Done'                  // buttonName
-											   );
-				  
-				  }
-				  });
-		   
-		   
-		   },
-		   error: function(){
-		   
-		   navigator.notification.alert(
-										'Possibile errore di rete, riprova tra qualche minuto.',  // message
-										alertDismissed,         // callback
-										'Attenzione',           // title
-										'Done'                  // buttonName
-										);
-		   
-		   },
-		   dataType:"jsonp"});
-	}
-
-
-function rifiuta1() {
-	id = item1
-	
-	
-	$("#blob3").hide();
-	cancella(id)
-	
-}
-
-function accetta22() {
-	id = item2
-	
-	$("#blob4").hide();
-	
-	$.ajax({
-		   type:"GET",
-		   url:"http://purplemiles.com/www2/check_accettaautista.php?id="+ id +"&id_autista="+ localStorage.getItem("id_autista") +"",
-		   contentType: "application/json",
-		   //data: {ID: "Lazio"}, LIMIT 10
-		   timeout: 7000,
-		   jsonp: 'callback',
-		   crossDomain: true,
-		   success:function(result){
-		   
-		   $.each(result, function(i,item){
-				  
-				  if(item.Token==1){
-				  //alert(item.Token)
-				  
-				  resetta1(1);
-				  
-				  }
-				  else{
-				  navigator.notification.alert(
-											   'Richiesta Annullata.',  // message
-											   alertDismissed,         // callback
-											   'Attenzione',           // title
-											   'Done'                  // buttonName
-											   );
-				  
-				  }
-				  });
-		   
-		   
-		   },
-		   error: function(){
-		   
-		   navigator.notification.alert(
-										'Possibile errore di rete, riprova tra qualche minuto.',  // message
-										alertDismissed,         // callback
-										'Attenzione',           // title
-										'Done'                  // buttonName
-										);
-		   
-		   },
-		   dataType:"jsonp"});
-	
-	
-}
-
-function accetta33() {
-	id = item3
-	
-	$("#blob5").hide();
-	
-	$.ajax({
-		   type:"GET",
-		   url:"http://purplemiles.com/www2/check_accettaautista.php?id="+ id +"&id_autista="+ localStorage.getItem("id_autista") +"",
-		   contentType: "application/json",
-		   //data: {ID: "Lazio"}, LIMIT 10
-		   timeout: 7000,
-		   jsonp: 'callback',
-		   crossDomain: true,
-		   success:function(result){
-		   
-		   $.each(result, function(i,item){
-				  
-				  if(item.Token==1){
-				  //alert(item.Token)
-				  
-				  resetta1(1);
-				  
-				  }
-				  else{
-				  navigator.notification.alert(
-											   'Richiesta Annullata.',  // message
-											   alertDismissed,         // callback
-											   'Attenzione',           // title
-											   'Done'                  // buttonName
-											   );
-				  
-				  }
-				  });
-		   
-		   
-		   },
-		   error: function(){
-		   
-		   navigator.notification.alert(
-										'Possibile errore di rete, riprova tra qualche minuto.',  // message
-										alertDismissed,         // callback
-										'Attenzione',           // title
-										'Done'                  // buttonName
-										);
-		   
-		   },
-		   dataType:"jsonp"});
-	
-	
-}
-
-
-
-function rifiuta2() {
-	id = item2
-	
-	
-	$("#blob4").hide();
-	cancella(id)
-	
-}
-
-function rifiuta3() {
-	id = item3
-	
-	
-	$("#blob5").hide();
-	cancella(id)
-	
-}
-
-
-
 
 
 function inviopasseggero(come){
