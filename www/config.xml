@@ -97,6 +97,7 @@
 		
 		<plugin name="com.darktalker.cordova.screenshot" source="npm" />
 		<gap:plugin name="cordova-plugin-admobpro" source="npm" />
+		<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 		
 		<!--<gap:plugin name="cordova-plugin-admobpro" source="npm" />
 		
