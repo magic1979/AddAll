@@ -217,19 +217,32 @@ var app = {
 		
 		$(document).on("tap", "#risultati", function(e){
 					   
-				 $("#tbllancia").hide()
+				$("#tbllancia").hide()
 					   
-				window.location.href = "#home4";
-						
+				//window.location.href = "#home4";
+				$.mobile.changePage ($("#home4"));
 						
 				var myScroll2;
-						
-						
-				myScroll2 = new IScroll('#wrapper2', { click: true });
-						
+					
+				myScroll2 = new iScroll('wrapper2', {
+											zoom: true,
+											click: true,
+											hScrollbar: false, 
+											vScrollbar: false,
+											zoomMin:1,
+											zoomMax:2,
+											zoomStart:1
+										});
 				setTimeout (function(){
+					
 					myScroll2.refresh();
-				}, 500);
+							
+				}, 1000);
+					
+					
+					document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+					
+					document.addEventListener('DOMContentLoaded', loaded, false);
 						
 						
 						
@@ -245,25 +258,32 @@ var app = {
 		
 		$(document).on("touchstart", "#btnsfida", function(e){
 					   
-					   window.location.href = "#home3";
-					   //$.mobile.changePage ($("#home3"));
+					   //window.location.href = "#home3";
+					   $.mobile.changePage ($("#home3"));
 
 					   $("#tbllancia").hide()
 					   
 					   var myScroll;
-					   
-					   
-					   myScroll = new IScroll('#wrapper', { click: true });
-					   
+					
+						myScroll = new iScroll('wrapper', {
+													zoom: true,
+													click: true,
+													hScrollbar: false, 
+													vScrollbar: false,
+													zoomMin:1,
+													zoomMax:2,
+													zoomStart:1
+												});
 						setTimeout (function(){
+							
 							myScroll.refresh();
-						}, 500);
-					   
-					   
-					   
-					   document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 300); }, false);
-					   
-					   document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+									
+						}, 1000);
+						
+						
+						document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+						
+						document.addEventListener('DOMContentLoaded', loaded, false);
 					   
 					   
 					  $("#esatte4").html("<br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br>")
