@@ -39,10 +39,44 @@ var app = {
     receivedEvent: function(id) {
 		//document.addEventListener("pause", onPause, false);
 		
-		//admob.initAdmob("ca-app-pub-5263503085775846/1999366017","ca-app-pub-5263503085775846~9522632812"); //admob id format ca-app-pub-xxxxxxxxxxxxxxxxxxx/xxxxxxxxxx
 		
-		//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);//show banner at the top of app
+		admob.initAdmob("ca-app-pub-5263503085775846/1999366017","ca-app-pub-5263503085775846~9522632812"); //admob IOS
+		admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
 		
+		
+		//// ANDROID //////
+		
+		/*var admobid = {};
+		
+		 if( /(android)/i.test(navigator.userAgent) ) {
+			admobid = {
+			banner: 'ca-app-pub-5263503085775846/1999366017',
+			interstitial: 'ca-app-pub-5263503085775846~9522632812'
+		  };
+		 } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
+			admobid = {
+			banner: 'ca-app-pub-5263503085775846/1999366017',
+			interstitial: 'ca-app-pub-5263503085775846~9522632812'
+		  };
+		 } else {
+			admobid = {
+			banner: 'ca-app-pub-5263503085775846/1999366017',
+			interstitial: 'ca-app-pub-5263503085775846~9522632812'
+		  };
+		 }
+		
+		 if(AdMob) AdMob.createBanner( {
+			adId:admobid.banner,
+			position:AdMob.AD_POSITION.BOTTOM_CENTER,
+			autoShow:true} );
+		
+		
+
+		 if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+		
+		 if(AdMob) AdMob.showInterstitial();*/
+		
+		///// FINE /////
 		
 		document.addEventListener("touchmove",function(e) {
 			e.preventDefault();
@@ -183,6 +217,8 @@ var app = {
 		
 		$(document).on("tap", "#risultati", function(e){
 					   
+				 $("#tbllancia").hide()
+					   
 				window.location.href = "#home4";
 						
 						
@@ -211,7 +247,8 @@ var app = {
 					   
 					   window.location.href = "#home3";
 					   //$.mobile.changePage ($("#home3"));
-					   
+
+					   $("#tbllancia").hide()
 					   
 					   var myScroll;
 					   
@@ -355,7 +392,9 @@ var app = {
 					   var somma=0;
 					   var punto=0;
 					   
-					   //admob.hideBanner()
+					   admob.hideBanner()
+					   
+					   //AdMob.removeBanner();
 					   
 					   localStorage.setItem("esatte",0)
 					   $("#esatte2").html("0")
@@ -500,7 +539,9 @@ var app = {
 					   var punto=0;
 
 					   
-			//admob.hideBanner()
+			admob.hideBanner()
+					   
+			//AdMob.removeBanner();
 					   
 			localStorage.setItem("esatte",0)
 			$("#esatte2").html("0")
@@ -544,6 +585,8 @@ var app = {
 		
 		
 		$(document).on("touchstart", "#going2", function(e){
+					   
+					   $("#tbllancia").hide()
 					   
 					   $("#load").show()
 					   
@@ -603,7 +646,9 @@ var app = {
 					   var punto=0;
 					   
 					   
-					   //admob.hideBanner()
+					   admob.hideBanner()
+					   
+					   //AdMob.removeBanner();
 					   
 					   localStorage.setItem("esatte",0)
 					   $("#esatte2").html("0")
@@ -1491,10 +1536,9 @@ var app = {
 			
 			//alert(r.response);
 			
-			localStorage.setItem("foto", localStorage.getItem("nomefoto")+".jpg");
+			localStorage.setItem("foto", localStorage.getItem("nomefoto"));
 			
-			$("#imgutente2").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("foto"));
-			
+			//$("#imgutente2").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("foto"));
 			/*$("#imgfoto").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
 			 $("#imguser").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
 			 $("#imgutente").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");*/
