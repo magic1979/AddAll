@@ -46,7 +46,7 @@ var app = {
 		
 		//// ANDROID //////
 		
-		/*var admobid = {};
+		var admobid = {};
 		
 		 if( /(android)/i.test(navigator.userAgent) ) {
 			admobid = {
@@ -74,7 +74,7 @@ var app = {
 
 		 if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 		
-		 if(AdMob) AdMob.showInterstitial();*/
+		 if(AdMob) AdMob.showInterstitial();
 		
 		///// FINE /////
 		
@@ -409,7 +409,7 @@ var app = {
 					   
 					   //admob.hideBanner()
 					   
-					   //AdMob.removeBanner();
+					   AdMob.removeBanner();
 					   
 					   localStorage.setItem("esatte",0)
 					   $("#esatte2").html("0")
@@ -556,7 +556,7 @@ var app = {
 					   
 			//admob.hideBanner()
 					   
-			//AdMob.removeBanner();
+			AdMob.removeBanner();
 					   
 			localStorage.setItem("esatte",0)
 			$("#esatte2").html("0")
@@ -663,7 +663,7 @@ var app = {
 					   
 					   //admob.hideBanner()
 					   
-					   //AdMob.removeBanner();
+					   AdMob.removeBanner();
 					   
 					   localStorage.setItem("esatte",0)
 					   $("#esatte2").html("0")
