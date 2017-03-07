@@ -221,6 +221,9 @@ var app = {
 					   
 				//window.location.href = "#home4";
 				$.mobile.changePage ($("#home4"));
+				
+				$("#esatte5").html("<br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br>")
+				
 						
 				var myScroll2;
 					
@@ -233,25 +236,14 @@ var app = {
 											zoomMax:2,
 											zoomStart:1
 										});
+										
 				setTimeout (function(){
 					
 					myScroll2.refresh();
 							
 				}, 1000);
 					
-					
-					document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-					
-					document.addEventListener('DOMContentLoaded', loaded, false);
-						
-						
-						
-				document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 300); }, false);
-						
-				document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-					   
-					   
-				$("#esatte5").html("<br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br>")
+	
 					   
 		});
 		
@@ -262,6 +254,9 @@ var app = {
 					   $.mobile.changePage ($("#home3"));
 
 					   $("#tbllancia").hide()
+					   
+					   $("#esatte4").html("<br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br>")
+					   
 					   
 					   var myScroll;
 					
@@ -274,6 +269,8 @@ var app = {
 													zoomMax:2,
 													zoomStart:1
 												});
+												
+												
 						setTimeout (function(){
 							
 							myScroll.refresh();
@@ -281,13 +278,11 @@ var app = {
 						}, 1000);
 						
 						
-						document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 						
-						document.addEventListener('DOMContentLoaded', loaded, false);
-					   
-					   
-					  $("#esatte4").html("<br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br><br><br>djskdj ssjdksd  ska da sadas d<br><br>")
-					   
+						//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+						
+						//document.addEventListener('DOMContentLoaded', loaded, false);
+	
 					   
 		});
 		
