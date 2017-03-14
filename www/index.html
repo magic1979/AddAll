@@ -31,15 +31,22 @@
 				<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 				<link rel="stylesheet" href="css/spinner.css" />
 				<link rel="stylesheet" href="font.css">
-										
+					
 					<meta name="apple-mobile-web-app-capable" content="yes">
 						<meta name="apple-mobile-web-app-status-bar-style" content="white">
 							
 							<script src="jquery-1.10.2.min.js"></script>
+							<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 							<script src="js/jquery.mobile-1.4.2.min.js"></script>
+
+							<!--<script type="text/javascript" src="PushNotification.js"></script>
+							 <script src="js/jquery.ui.touch-punch.js"></script>
+							 <script src="js/jquery.ui.touch-punch.min.js"></script>
+
+							<script type="text/javascript" src="js/iscroll.js"></script>-->
 							
 							<script type="text/javascript" src="js/iscroll4.js"></script>
-							
+
 					<style>
 						  
 						  body {
@@ -109,6 +116,7 @@
 								width: 100%;
 								background: #fff;
 								overflow: hidden;
+								
 							}
 							
 							#wrapper3 {
@@ -120,7 +128,7 @@
 								width: 100%;
 								background: #fff;
 								overflow: hidden;
-								
+								background-image: url("img/sfondo7.png");
 							}
 							
 							#wrapper4 {
@@ -1085,9 +1093,9 @@
     <body>
 		
 		<div data-role=page id="home" data-add-back-btn=true class="div2">
-		<audio id="successSound" src="/android_asset/www/sound/clic.mp3" type="audio/mpeg" ></audio>
-		<audio id="successSound2" src="/android_asset/www/sound/pool.mp3" type="audio/mpeg" ></audio>
-		<audio id="successSound3" src="/android_asset/www/sound/button.mp3" type="audio/mpeg" ></audio>
+		<audio id="successSound" src="sound/clic.mp3" type="audio/mpeg" ></audio>
+		<audio id="successSound2" src="sound/pool.mp3" type="audio/mpeg" ></audio>
+		<audio id="successSound3" src="sound/button.mp3" type="audio/mpeg" ></audio>
 		
 		<!--<audio id="successSound" src="/android_asset/www/sound/horn.mp3" type="audio/mpeg" ></audio>-->
 		
@@ -1109,16 +1117,50 @@
 			
 		<br><center>
 			
-			<table id="allenati" width="100%" style="display:none" align="center" border="0" ><tr><td align="center">
-			  <a id="going" >ROUND 1</a>&nbsp;&nbsp;<a id="going2" style="display:none">ROUND 2</a> <a id="going3" style="display:none">ROUND 3</a></td></tr>
+			<table id="allenati" width="100%" style="display:none" align="center" border="0" >
+				<tr>
+					<td align="center">
+						<!--<a id="going" >ROUND 1</a>&nbsp;&nbsp;<a id="going2" style="display:none">ROUND 2</a> <a id="going3" style="display:none">ROUND 3</a>-->
+						
+						<ul data-role="listview"  data-theme="c" data-inset="true">
+							<li><a id="going" ><img src="palle/1.png" >
+								<h2><img src="palle/1.png" width="16px">&nbsp;ROUND 1</h2>
+								<p><font color="#000">Round 1</font></p></a>
+							</li>
+							<li><a id="going2" ><img src="palle/2.png">
+								<h2><img src="palle/2.png" width="20px">&nbsp;ROUND2</h2>
+								<p><font color="#000">Round 2</font></p></a>
+							</li>
+							<li><a id="going3" ><img src="palle/3.png">
+								<h2><img src="palle/3.png" width="20px">&nbsp;ROUND3</h2>
+								<p><font color="#000">Round 3</font></p></a>
+							</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+					<br>
+						<img id="balls" src="palle/balls.png" width="200px">
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<a id="indietro2"><b>MENU PRINCIPALE</b></a>
+					</td>
+				</tr>
 			</table>
 			
 			
-			<div id="menu">
+			<div id="menu" align="center">
 				<ul data-role="listview"  data-theme="c" data-inset="true">
 					<li><a id="btnallenati" ><img src="icone/gioca.png" >
 						<h2><img src="palle/8.png" width="16px">&nbsp;Allenati</h2>
 						<p><font color="#000">Allenati</font></p></a>
+					</li>
+					<li><a id="risultati" ><img src="palle/classifica.jpg" >
+						<h2><img src="palle/15.png" width="16px">&nbsp;Classifica</h2>
+						<p><font color="#000">Classifica Allenamenti</font></p></a>
 					</li>
 					<li><a id="btnsfida" ><img src="icone/sfida.png">
 						<h2><img src="palle/9.png" width="20px">&nbsp;Cerca Sfida</h2>
@@ -1128,11 +1170,16 @@
 						<h2><img src="palle/9.png" width="20px">&nbsp;Lancia Nuova Sfida</h2>
 						<p><font color="#000">Sfida altri giocatori</font></p></a>
 					</li>
+					<!--<li><a id="btnlancia2" ><img src="icone/lancia.jpg">
+						<h2><img src="palle/10.png" width="20px">&nbsp;Sfida Amico</h2>
+						<p><font color="#000">Sfida Amici</font></p></a>
+					</li>-->
 				</ul>
+				<br><center>
+				<img id="bliard" src="palle/billard.png" width="250px"></center>
 			</div>
 			
-			<div id="lastpunt" style="display:none"> Ultimo Punteggio:<a id="punteggio2" >0</a> </div>
-			
+			<div id="lastpunt" style="display:none"><br><br> Ultimo Punteggio:<a id="punteggio2" >0</a> </div>
 			
 			
 			<table id="gioco" width="100%" style="display:none" align="center" border="0" height="460">
@@ -1208,11 +1255,10 @@
 				<center>
 					<br><font size="7" class="fontsforweb_fontid_2802" color="#488354">Addall</font><br><br>
 					<ul data-role="listview" data-inset="true">
-						<li><a id="risultati" href="#">Ultimo Allenamento</a></li>
 						<li><a id="mandaemail" href="#">Contattaci</a></li>
 						<li><a id="condividi" href="#">Condividi su Facebook</a></li>
-						<li><a id="termini" href="#" rel="external">Termini e Condizioni</a></li>
-						<!--<li><a id="testo" href="#" rel="external">Test</a></li>-->
+						<!--<li><a id="termini" href="#" rel="external">Termini e Condizioni</a></li>
+						<li><a id="testo" href="#" rel="external">Test</a></li>-->
 						<!--<li><a id="stampa" href="#" rel="external">Stampa</a></li>-->
 						<li><a id="esci" href="#" rel="external">Esci</a></li>
 					</ul>
@@ -1225,7 +1271,7 @@
 					<tr><td align="left" colspan="2"><b>Seguici su:</b></td></tr>
 					<tr><td align="left" width="30%"><a id="gofacebook" href='#'><img src="img/social1.png" height="40px"></td><td align="left" width="70%"><a id="goinsta" href='#'><img src="img/social2.png" height="45px"></a><br></td></tr>
 					<tr><td align="left" colspan="2"><br></td></tr>
-					<tr><td align="left" colspan="2"><br><img id="imgfoto22" src="icone/palla9.jpg" width="110px"></td></tr>
+					<tr><td align="left" colspan="2"><br><img id="imgfoto22" src="icone/palla9.jpg" width="100px"></td></tr>
 				</table>
 				
 				<!--<table border="1" align="left" width="100%" height="300px">
@@ -1322,7 +1368,7 @@
 			<div id="wrapper">
 				<div id="scroller">
 					
-					<table id="#" width="100%" align="center" border="0" height="460">
+					<table id="#" width="100%" align="center" border="0" >
 						
 						<tr>
 							<td width="100%" align="center">Cerca sfide aperte</td>
@@ -1351,7 +1397,7 @@
 						<td width="25%" align="center">
 							<a id="indietro" href="#"><img id="imgutente2" src="img/back.png" class="utenteimg"></a>
 						</td>
-						<td width="50%" align="center"><font size="6" class="fontsforweb_fontid_2802" color="#fff">Sfide</font>
+						<td width="50%" align="center"><font size="6" class="fontsforweb_fontid_2802" color="#fff">Classifica</font>
 						</td>
 						<td width="25%" align="center">
 							
@@ -1364,12 +1410,17 @@
 			<div id="wrapper2">
 				<div id="scroller">
 					
-					<table id="#" width="100%" align="center" border="0" height="460">
+					<table id="#" width="100%" align="center" border="0">
 						
-
 						<tr>
 							<td width="100%" align="center">
-								<font size="6" class="fontsforweb_fontid_2802" color="#fff">Sfide Lanciate</font>
+								<font size="4" color="#000">Classifica</font>
+							</td>
+							
+						</tr>
+						<tr>
+							<td width="100%" align="center">
+								<img src="palle/classifica.jpg" width="150">
 							</td>
 							
 						</tr>
@@ -1389,7 +1440,7 @@
 		</div>
 		
 
-        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 		
         <script type="text/javascript">
