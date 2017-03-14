@@ -71,6 +71,9 @@ var app = {
 		
 		//// AD MOB ////
 		
+		//admob.initAdmob("ca-app-pub-5263503085775846/1999366017","ca-app-pub-5263503085775846~9522632812"); //admob IOS
+		//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
+		
 		
 		//// ANDROID //////
 		
@@ -244,12 +247,18 @@ var app = {
 									 
 									 if(item.Token=="1"){
 									 
+									   var dataclass = item.data.replace(".000000","").replace("2017-","")
+									 
+									    if(dataclass == "0000-00-00 00:00:00"){
+									     dataclass = ""
+										}
+									 
 									    if(conta==1){
 									 
-									       esatte5 = esatte5 + "<b><img src='images/status_green.png' width='12'>"+item.nome+"</b>, Punti: "+item.punti+", Data,"+item.data.replace(".000000","").replace("2017-","")+"</a><br><br>"
+									       esatte5 = esatte5 + "<b><img src='images/status_green.png' width='12'>"+item.nome+"</b>, Punti: <b>"+item.punti+"</b>  "+dataclass+"</a><br><br>"
 										}
 									   else{
-									       esatte5 = esatte5 + "<b>"+item.nome+"</b>, Punti: "+item.punti+", Data,"+item.data.replace(".000000","").replace("2017-","")+"</a><br><br>"
+									       esatte5 = esatte5 + "<b>"+item.nome+"</b>, Punti: <b>"+item.punti+"</b>  "+dataclass+"</a><br><br>"
 									    }
 									 
 									 }
@@ -332,20 +341,19 @@ var app = {
 									   if(item.Token=="1"){
 									   var datasfida = item.data1
 									   
-									   esatte = esatte + "<br><img src='images/status_yellow.png' width='20'> "+item.nome+", Punti:"+item.punti+", "+datasfida.replace("2017-","")+"<br>"
+									   esatte = esatte + "<br><img src='images/status_yellow.png' width='20'> <b>"+item.nome+"</b>, Punti: <b>"+item.punti+"</b>, "+datasfida.replace("2017-","")+"<br>"
 									   
 									   }
 									   else if(item.Token=="2"){
 									   var datasfida = item.data1
 									   if(item.punti!="0"){
-									   esatte = esatte + "<br><a id='sfida"+item.idsfida+"' ><img src='images/play.png' width='30'></a> "+item.sfidante+", Punti:"+item.punti+", "+datasfida.replace("2017-","")+"<br>"
+									   esatte = esatte + "<br><a id='sfida"+item.idsfida+"' ><img src='images/play.png' width='30'></a> <b>"+item.sfidante+"</b>, Punti: <b>"+item.punti+"</b>, "+datasfida.replace("2017-","")+" <br>"
 									   }
 									   }
 									   else if(item.Token=="3"){
 									   var datasfida = item.data1
 									   var datasfida2 = item.data2
-									   
-									   esatte = esatte + "<br><img src='images/status_green.png' width='20'> "+item.sfidante+", Punti:"+item.punti2+", "+datasfida2.replace("2017-","")+" -- "+item.nome+", Punti:"+item.punti+", "+datasfida.replace("2017-","")+"<br>"
+									   esatte = esatte + "<br><img src='images/status_green.png' width='20'> <b>"+item.sfidante+"</b>, Punti: <b>"+item.punti2+"</b>, "+datasfida.replace("2017-","")+" -- <b>"+item.nome+"</b>, Punti: <b>"+item.punti+"</b>, "+datasfida.replace("2017-","")+"<br>"
 									   }
 									   else{
 									   esatte = esatte + "<br><br>Nessuna Sfida Aperta"
@@ -407,8 +415,6 @@ var app = {
 		
 		function btnsfida(){
 			
-						alert("2")
-			
 			           var esatte="";
 					   
 					   //window.location.href = "#home3";
@@ -431,19 +437,19 @@ var app = {
 									 if(item.Token=="1"){
 									 var datasfida = item.data1
 									 
-									 esatte = esatte + "<br><img src='images/status_yellow.png' width='20'> "+item.nome+", Punti:"+item.punti+", "+datasfida.replace("2017-","")+"<br>"
+									 esatte = esatte + "<br><img src='images/status_yellow.png' width='20'> <b>"+item.nome+"</b>, Punti: <b>"+item.punti+"</b>, "+datasfida.replace("2017-","")+"<br>"
 									 
 									 }
 									 else if(item.Token=="2"){
 									 var datasfida = item.data1
 									 if(item.punti!="0"){
-									 esatte = esatte + "<br><a id='sfida"+item.idsfida+"' ><img src='images/play.png' width='30'></a> "+item.sfidante+", Punti:"+item.punti+", "+datasfida.replace("2017-","")+" <br>"
+									 esatte = esatte + "<br><a id='sfida"+item.idsfida+"' ><img src='images/play.png' width='30'></a> <b>"+item.sfidante+"</b>, Punti: <b>"+item.punti+"</b>, "+datasfida.replace("2017-","")+" <br>"
 									 }
 									 }
 									 else if(item.Token=="3"){
 									 var datasfida = item.data1
 									 var datasfida2 = item.data2
-									 esatte = esatte + "<br><img src='images/status_green.png' width='20'> "+item.sfidante+", Punti:"+item.punti2+", "+datasfida.replace("2017-","")+" -- "+item.nome+", Punti:"+item.punti+", "+datasfida.replace("2017-","")+"<br>"
+									 esatte = esatte + "<br><img src='images/status_green.png' width='20'> <b>"+item.sfidante+"</b>, Punti: <b>"+item.punti2+"</b>, "+datasfida.replace("2017-","")+" -- <b>"+item.nome+"</b>, Punti: <b>"+item.punti+"</b>, "+datasfida.replace("2017-","")+"<br>"
 									 }
 									 else{
 									 esatte = esatte + "<br><br>Nessuna Sfida Aperta"
@@ -509,7 +515,7 @@ var app = {
 		// FINE //
 		
 		$(document).on("touchstart", "#btnlancia2", function(e){
-					   
+			$("#lastpunt").hide()
 			localStorage.setItem("round","1")
 			localStorage.setItem("sfidalanciata","1")
 		    localStorage.setItem("sfida","1")
@@ -826,8 +832,8 @@ var app = {
 		
 		$(document).on("touchstart", "#indietro", function(e){
 					   
-			//window.location.href = "index.html";
-					   $.mobile.changePage ($("#home"));
+			window.location.href = "index.html";
+			//$.mobile.changePage ($("#home"));
 					   
 		});
 		
@@ -1003,11 +1009,11 @@ var app = {
 		$(document).on("touchstart", "#indietro2", function(e){
 					   
 		    $("#allenati").hide()
-					   $("#btnallenati").show()
-					   $("#btnsfida").show()
-					   $("#bliard").show()
-					   $("#btnlancia").show()
-					   $("#risultati").show()
+			$("#btnallenati").show()
+			$("#btnsfida").show()
+			$("#bliard").show()
+			$("#btnlancia").show()
+			$("#risultati").show()
 		});
 		
 		
@@ -1350,7 +1356,18 @@ var app = {
 				   crossDomain: true,
 				   success:function(result){
 				   
+				   $("#palla1").show()
+				   $("#palla2").show()
+				   $("#palla3").show()
+				   $("#palla4").show()
+				   
 				   $.each(result, function(i,item){
+						  
+						  $("#palla1").show()
+						  $("#palla2").show()
+						  $("#palla3").show()
+						  $("#palla4").show()
+						  
 						  uno = item.num1;
 						  due = item.num2;
 						  tre = item.num3;
@@ -1423,7 +1440,18 @@ var app = {
 					   crossDomain: true,
 					   success:function(result){
 					   
+					   $("#palla1").show()
+					   $("#palla2").show()
+					   $("#palla3").show()
+					   $("#palla4").show()
+					   
 					   $.each(result, function(i,item){
+							  
+							  $("#palla1").show()
+							  $("#palla2").show()
+							  $("#palla3").show()
+							  $("#palla4").show()
+							  
 							  uno = item.num1;
 							  due = item.num2;
 							  tre = item.num3;
@@ -1497,7 +1525,19 @@ var app = {
 					   crossDomain: true,
 					   success:function(result){
 					   
+					   $("#palla1").show()
+					   $("#palla2").show()
+					   $("#palla3").show()
+					   $("#palla4").show()
+					   
+					   
 					   $.each(result, function(i,item){
+							  
+							  $("#palla1").show()
+							  $("#palla2").show()
+							  $("#palla3").show()
+							  $("#palla4").show()
+							  
 							  uno = item.num1;
 							  due = item.num2;
 							  tre = item.num3;
@@ -1586,7 +1626,18 @@ var app = {
 					   crossDomain: true,
 					   success:function(result){
 					   
+					   $("#palla1").show()
+					   $("#palla2").show()
+					   $("#palla3").show()
+					   $("#palla4").show()
+					   
 					   $.each(result, function(i,item){
+							  
+							  $("#palla1").show()
+							  $("#palla2").show()
+							  $("#palla3").show()
+							  $("#palla4").show()
+							  
 							  uno = item.num1;
 							  due = item.num2;
 							  tre = item.num3;
@@ -1675,7 +1726,18 @@ var app = {
 					   crossDomain: true,
 					   success:function(result){
 					   
+					   $("#palla1").show()
+					   $("#palla2").show()
+					   $("#palla3").show()
+					   $("#palla4").show()
+					   
 					   $.each(result, function(i,item){
+							  
+							  $("#palla1").show()
+							  $("#palla2").show()
+							  $("#palla3").show()
+							  $("#palla4").show()
+							  
 							  uno = item.num1;
 							  due = item.num2;
 							  tre = item.num3;
@@ -1758,7 +1820,19 @@ var app = {
 					   crossDomain: true,
 					   success:function(result){
 					   
+					   $("#palla1").show()
+					   $("#palla2").show()
+					   $("#palla3").show()
+					   $("#palla4").show()
+					   
+					   
 					   $.each(result, function(i,item){
+							  
+							  $("#palla1").show()
+							  $("#palla2").show()
+							  $("#palla3").show()
+							  $("#palla4").show()
+							  
 							  uno = item.num1;
 							  due = item.num2;
 							  tre = item.num3;
@@ -1845,6 +1919,8 @@ var app = {
 						//alert("caricadati")
 						
 						if(localStorage.getItem("sfidalanciata")=="1"){
+							
+						//alert("http://msop.it/addall/gioca1_player1.php?email="+localStorage.getItem("email")+"&rnd="+localStorage.getItem("punteggio1")+"&idsfida="+localStorage.getItem("idsfida")+"")
 						
 						$.ajax({
 							   type:"GET",
@@ -1955,14 +2031,18 @@ var app = {
 									  
 									if(item.Token=="1"){
 									  navigator.notification.alert(
-																   'Punteggio caricato in classifica.',  // message
+																   'Punteggio caricato.',  // message
 																   alertDismissed,         // callback
 																   'Punteggio',            // title
 																   'OK'                  // buttonName
 																   );
 									  
+									  window.location.href = "index.html";
+									  
 									}
 									else{
+									  
+									  window.location.href = "index.html";
 									  
 									}
 									  
@@ -1979,6 +2059,8 @@ var app = {
 															'Errore di Rete',            // title
 															'OK'                  // buttonName
 															);
+							   
+							   window.location.href = "index.html";
 							   
 							   },
 							   
@@ -2091,6 +2173,12 @@ var app = {
 						  $("#bianca").hide()
 						  $("#bianca1").hide()
 						  $("#bianca2").hide()
+					   
+					      $("#palla1").hide()
+					      $("#palla2").hide()
+						  $("#palla3").hide()
+					      $("#palla4").hide()
+					   
 					      playAudio('successSound2');
 					   
 						  localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + (Number(numero)))
@@ -2284,6 +2372,12 @@ var app = {
 						  $("#bianca").hide()
 						  $("#bianca1").hide()
 						  $("#bianca2").hide()
+					   
+					     $("#palla1").hide()
+					     $("#palla2").hide()
+						 $("#palla3").hide()
+					     $("#palla4").hide()
+					   
 						  playAudio('successSound2');
 					   
 					   localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + (Number(numero)))
@@ -2475,6 +2569,12 @@ var app = {
 						  $("#bianca").hide()
 						  $("#bianca1").hide()
 						  $("#bianca2").hide()
+					   
+					      $("#palla1").hide()
+					      $("#palla2").hide()
+						  $("#palla3").hide()
+					      $("#palla4").hide()
+					   
 					      playAudio('successSound2');
 					   
 					   localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + (Number(numero)))
@@ -2666,7 +2766,13 @@ var app = {
 						  $("#bianca").hide()
 						  $("#bianca1").hide()
 						  $("#bianca2").hide()
-					      playAudio('successSound2');
+					   
+					     $("#palla1").hide()
+					     $("#palla2").hide()
+						 $("#palla3").hide()
+					     $("#palla4").hide()
+					   
+						 playAudio('successSound2');
 					   
 					   localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + (Number(numero)))
 					   
