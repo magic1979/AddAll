@@ -90,7 +90,7 @@
 		<plugin name="cordova-plugin-pushplugin" source="npm" />
 		<plugin name="cordova-plugin-datepicker" source="npm" />
 		<plugin name="cordova-plugin-insomnia" source="npm" />
-		<plugin name="cordova-plugin-email-composer" version="0.8.3" source="npm" />
+		<plugin name="cordova-plugin-email-composer" source="npm" />
 		<plugin name="ionic-plugin-keyboard"  source="npm" />
 		<plugin name="cordova-plugin-request-location-accuracy" source="npm" />
 		<!--<plugin name="cordova-plugin-mauron85-background-geolocation" version="2.2.0"/>-->
