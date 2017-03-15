@@ -180,6 +180,8 @@ var app = {
 			
 			localStorage.setItem("punteggio1","0")
 			
+			$("#spinner1").hide()
+			
 		}
 		
 		//////////////////////////////////////////
@@ -1037,6 +1039,7 @@ var app = {
 					   $("#bianca2").hide()
 					   
 					   $("#allenati").hide()
+					   $("#lastpunt").hide()
 					   
 					   var uno;
 					   var due;
@@ -1146,7 +1149,8 @@ var app = {
 					   $("#bianca2").hide()
 					   
 					   $("#allenati").hide()
-					   
+					   $("#lastpunt").hide()
+
 					   var uno;
 					   var due;
 					   var tre;
@@ -1335,6 +1339,8 @@ var app = {
 		
 		function prendinumeri3(cosa) {
 			
+			$("#spinner1").show()
+			
 			uno = "2";
 			due = "1";
 			tre = "7";
@@ -1400,8 +1406,36 @@ var app = {
 						     $("#palla3").attr("src","palle/"+item.num3+"c.png")
 							}
 						  }
-
 						  
+						  
+						  $("#spinner1").hide()
+						  
+						  
+						  if (cosa==0){
+						  
+						  $("#palla1").attr("src","palle/"+item.num1+".png")
+						  $("#palla2").attr("src","palle/"+item.num2+".png")
+						  $("#palla3").attr("src","palle/"+item.num3+".png")
+						  
+						  }
+						  else{
+						  if(num1==0){
+						  $("#palla1").attr("src","palle/"+item.num1+"c.png")
+						  $("#palla2").attr("src","palle/"+item.num2+".png")
+						  $("#palla3").attr("src","palle/"+item.num3+".png")
+						  }
+						  if(num1==1){
+						  $("#palla1").attr("src","palle/"+item.num1+".png")
+						  $("#palla2").attr("src","palle/"+item.num2+"c.png")
+						  $("#palla3").attr("src","palle/"+item.num3+".png")
+						  }
+						  if(num1==2){
+							 $("#palla1").attr("src","palle/"+item.num1+".png")
+							 $("#palla2").attr("src","palle/"+item.num2+".png")
+						     $("#palla3").attr("src","palle/"+item.num3+"c.png")
+						  }
+						  }
+
 				   });
 				   
 			},
@@ -1414,10 +1448,18 @@ var app = {
 				
 			}
 			
+			
+			
+			$(document).on("touchstart", "#ricarica1", function(e){
+				prendinumeri3(cosa)
+			});
+			
 		}
 		
 		
 		function prendinumeri3_15(cosa) {
+			
+			$("#spinner1").show()
 			
 			uno = "2";
 			due = "1";
@@ -1485,12 +1527,39 @@ var app = {
 							  }
 							  }
 							  
+							  $("#spinner1").hide()
 							  
-							  });
+							  if (cosa==0){
+							  
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  
+							  }
+							  else{
+							  if(num1==0){
+							  $("#palla1").attr("src","palle/"+item.num1+"c.png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  }
+							  if(num1==1){
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+"c.png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  }
+							  if(num1==2){
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+"c.png")
+							  }
+							  }
+
+							  
+						 });
 					   
 					   },
 					   error: function(){
-					   
+					     $("#spinner1").hide()
 					   
 					   },
 					   
@@ -1502,6 +1571,8 @@ var app = {
 		
 		
 		function prendinumeri(cosa) {
+			
+			$("#spinner1").show()
 			
 			$("#val4").show()
 			
@@ -1586,11 +1657,48 @@ var app = {
 							  $("#val3").html(tre)
 							  $("#val4").html(quattro)*/
 							  
+							  $("#spinner1").hide()
+							  
+							  if (cosa==0){
+							  
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/"+item.num4+".png")
+							  
+							  }
+							  else{
+							  if(num1==0){
+							  $("#palla1").attr("src","palle/"+item.num1+"c.png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/"+item.num4+".png")
+							  }
+							  if(num1==1){
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+"c.png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/"+item.num4+".png")
+							  }
+							  if(num1==2){
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+"c.png")
+							  $("#palla4").attr("src","palle/"+item.num4+".png")
+							  }
+							  if(num1==3){
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/"+item.num4+"c.png")
+							  }
+							  }
+							  
 							  });
 					   
 					   },
 					   error: function(){
-					   
+					     $("#spinner1").hide()
 					   
 					   },
 					   
@@ -1603,6 +1711,8 @@ var app = {
 		
 		
 		function prendinumeri_15(cosa) {
+			
+			$("#spinner1").show()
 			
 			$("#val4").show()
 			
@@ -1686,11 +1796,48 @@ var app = {
 							   $("#val3").html(tre)
 							   $("#val4").html(quattro)*/
 							  
-							  });
+							  $("#spinner1").hide()
+							  
+							  if (cosa==0){
+							  
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/"+item.num4+".png")
+							  
+							  }
+							  else{
+							  if(num1==0){
+							  $("#palla1").attr("src","palle/"+item.num1+"c.png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/"+item.num4+".png")
+							  }
+							  if(num1==1){
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+"c.png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/"+item.num4+".png")
+							  }
+							  if(num1==2){
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+"c.png")
+							  $("#palla4").attr("src","palle/"+item.num4+".png")
+							  }
+							  if(num1==3){
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/"+item.num4+"c.png")
+							  }
+							  }
+							  
+						});
 					   
 					   },
 					   error: function(){
-					   
+					     $("#spinner1").hide()
 					   
 					   },
 					   
@@ -1703,6 +1850,8 @@ var app = {
 		
 		
 		function prendinumerimeno1(cosa) {
+			
+			$("#spinner1").show()
 			
 			$("#val4").show()
 			
@@ -1781,11 +1930,50 @@ var app = {
 							  }
 							  }
 							  
+							  
+							  $("#spinner1").hide()
+							  
+							  
+							  if (cosa==0){
+							  
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  
+							  }
+							  else{
+							  if(num1==0){
+							  $("#palla1").attr("src","palle/"+item.num1+"c.png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  }
+							  if(num1==1){
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+"c.png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  }
+							  if(num1==2){
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+"c.png")
+							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  }
+							  if(num1==3){
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  }
+							  }
+
 						 });
 					   
 					   },
 					   error: function(){
-					   
+					     $("#spinner1").hide()
 					   
 					   },
 					   
@@ -1797,6 +1985,8 @@ var app = {
 		
 		
 		function prendinumerimeno1_15(cosa) {
+			
+			$("#spinner1").show()
 			
 			$("#val4").show()
 			
@@ -1876,11 +2066,48 @@ var app = {
 							  }
 							  }
 							  
+							  $("#spinner1").hide()
+							  
+							  if (cosa==0){
+							  
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  
+							  }
+							  else{
+							  if(num1==0){
+							  $("#palla1").attr("src","palle/"+item.num1+"c.png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  }
+							  if(num1==1){
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+"c.png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  }
+							  if(num1==2){
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+"c.png")
+							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  }
+							  if(num1==3){
+							  $("#palla1").attr("src","palle/"+item.num1+".png")
+							  $("#palla2").attr("src","palle/"+item.num2+".png")
+							  $("#palla3").attr("src","palle/"+item.num3+".png")
+							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  }
+							  }
+							  
 							  });
 					   
 					   },
 					   error: function(){
-					   
+					     $("#spinner1").hide()
 					   
 					   },
 					   
@@ -1892,7 +2119,14 @@ var app = {
 		
 		
 		function countdown1(minutes) {
-			var seconds = 15;
+			
+			if(localStorage.getItem("round")=="1"){
+				var seconds = 59;
+			}
+			else{
+				var seconds = 75;
+			}
+			
 			var mins = minutes
 			function tick() {
 				var counter = document.getElementById("timer1");
@@ -2097,10 +2331,58 @@ var app = {
 					   
 			$("#totale").html("0/10")
 			$("#bianca0").hide()
-			$("#bianca").hide()
+			$("#palla1").show()
+			/*$("#bianca").hide()
 			$("#bianca1").hide()
-			$("#bianca2").hide()
+			$("#bianca2").hide()*/
 					   
+		});
+		
+		
+		$(document).on("touchstart", "#val00", function(e){
+								
+					   localStorage.setItem("session10","0")
+					   
+					   localStorage.setItem("esatte","0")
+					   $("#esatte2").html("0")
+					   $("#esatte3").html("0")
+					   
+					   $("#totale").html("0/10")
+					   
+					   $("#bianca").hide()
+					   $("#palla3").show()
+					   
+					   
+		});
+		
+		$(document).on("touchstart", "#val000", function(e){
+								
+					   localStorage.setItem("session10","0")
+					   
+					   localStorage.setItem("esatte","0")
+					   $("#esatte2").html("0")
+					   $("#esatte3").html("0")
+					   
+					   $("#totale").html("0/10")
+					   
+					   $("#bianca1").hide()
+					   $("#palla2").show()
+					   
+					   
+		});
+		
+		$(document).on("touchstart", "#val0000", function(e){
+								
+			localStorage.setItem("session10","0")
+					   
+			localStorage.setItem("esatte","0")
+			$("#esatte2").html("0")
+			$("#esatte3").html("0")
+					   
+			$("#totale").html("0/10")
+					   
+			$("#bianca2").hide()
+			 $("#palla4").show()
 		});
 		
 		
@@ -2113,6 +2395,7 @@ var app = {
 					   $("#gioco").show()
 					   
 					   $("#bianca0").show()
+					   $("#palla1").hide()
 					   
 								
 					   var valore = (Number(localStorage.getItem("session10"))) + (Number(uno));
@@ -2315,6 +2598,7 @@ var app = {
 					   playAudio('successSound');
 					   
 					   $("#bianca1").show()
+					   $("#palla2").hide()
 					   
 					   var valore = (Number(localStorage.getItem("session10"))) + (Number(due));
 					   localStorage.setItem("session10",valore)
@@ -2512,6 +2796,7 @@ var app = {
 					   playAudio('successSound');
 					   
 					   $("#bianca").show()
+					   $("#palla3").hide()
 					   
 					   var valore = (Number(localStorage.getItem("session10"))) + (Number(tre));
 					   localStorage.setItem("session10",valore)
@@ -2709,6 +2994,7 @@ var app = {
 					   playAudio('successSound');
 					   
 					   $("#bianca2").show()
+					   $("#palla4").hide()
 					   
 					   var valore = (Number(localStorage.getItem("session10"))) + (Number(quattro));
 					   localStorage.setItem("session10",valore)
@@ -2759,7 +3045,7 @@ var app = {
 					   }
 					   
 					   if(valore==parametro){
-					   somma = Number(somma)+1
+					     somma = Number(somma)+1
 						  $("#somma").html(somma)
 						  $("#totale").html("0/10")
 						  $("#bianca0").hide()
@@ -3149,12 +3435,13 @@ function playAudio(id) {
 
 $(document).on("tap", "#mandaemail", function(e){
 			   
-	window.plugin.email.open({
+	cordova.plugins.email.open({
 		to:      "info@pokeranswer.it",
 		subject: "Contattaci",
 		body:    "Richiedi informazioni",
 		isHtml:  true
 	});
+	
 			   
 });
 
