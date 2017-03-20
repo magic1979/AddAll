@@ -3815,7 +3815,7 @@ function playAudio(id) {
 }
 
 
-$(document).on("tap", "#mandaemail", function(e){
+$(document).on("touchstart", "#mandaemail", function(e){
 			   
 	cordova.plugins.email.open({
 		to:      "info@pokeranswer.it",
@@ -3823,6 +3823,7 @@ $(document).on("tap", "#mandaemail", function(e){
 		body:    "Richiedi informazioni",
 		isHtml:  true
 	});
+	
 			   
 });
 
