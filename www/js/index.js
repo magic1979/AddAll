@@ -40,7 +40,6 @@ var app = {
 		//document.addEventListener("pause", onPause, false);
 		
 
-		
 		document.addEventListener("touchmove",function(e) {
 			e.preventDefault();
 		},
@@ -48,7 +47,6 @@ var app = {
 		);
 		
 		
-
 		if (localStorage.getItem("email") === null || localStorage.getItem("email")=="null" || typeof(localStorage.getItem("email")) == 'undefined' || localStorage.getItem("email")==0 || localStorage.getItem("email")=="") {
 			
 			window.location.href = "Login.html";
@@ -163,7 +161,7 @@ var app = {
 			
 		  var somma=0;
 		  var punto=0;
-		  $("#imgutente2").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("foto")+"");
+		  $("#imgutente2").attr("src","http://msop.it/public/addall/"+localStorage.getItem("foto")+"");
 			
 			
 			//alert(localStorage.getItem("punteggio1"))
@@ -522,6 +520,8 @@ var app = {
 			localStorage.setItem("sfidalanciata","1")
 		    localStorage.setItem("sfida","1")
 			
+			$("#lastpunt").hide()
+			
 			$("#tbllancia").show()
 		});
 		
@@ -534,6 +534,7 @@ var app = {
 					localStorage.setItem("round","1")
 					localStorage.setItem("sfidalanciata","1")
 					localStorage.setItem("sfida","1")
+					$("#lastpunt").hide()
 					   
 					   
 					$.ajax({
@@ -551,7 +552,7 @@ var app = {
 									 if(item.Token=="1"){
 									   localStorage.setItem("idsfida",item.idsfida)
 									   
-									   alert(localStorage.getItem("idsfida"))
+									   //alert(localStorage.getItem("idsfida"))
 									   
 									   $("#btnallenati").hide()
 									   $("#btnsfida").hide()
@@ -636,6 +637,13 @@ var app = {
 									   
 									   
 									   $("#going").hide()
+									   
+									   navigator.notification.alert(
+											'la somma delle palle colpite deve essere 10',  // message
+											alertDismissed,         // callback
+											'Somma 10',            // title
+											'OK'                  // buttonName
+										);
 									   
 									   setTimeout(function() {
 												  
@@ -1021,6 +1029,15 @@ var app = {
 		
 		
 		$(document).on("touchstart", "#going", function(e){
+					   
+					   navigator.notification.alert(
+						 'la somma delle palle colpite deve essere 10',  // message
+						  alertDismissed,         // callback
+						 'Somma 10',            // title
+						 'OK'                  // buttonName
+						);
+					   
+					   
 					   localStorage.setItem("sfida","0")
 					   localStorage.setItem("round","1")
 					   
@@ -1131,6 +1148,15 @@ var app = {
 		
 		
 		$(document).on("touchstart", "#going2", function(e){
+					   
+					   navigator.notification.alert(
+													'la somma delle palle colpite deve essere 15',  // message
+													alertDismissed,         // callback
+													'Somma 15',            // title
+													'OK'                  // buttonName
+													);
+					   
+					   
 					   localStorage.setItem("sfida","0")
 					   localStorage.setItem("round","2")
 					   
@@ -1245,6 +1271,13 @@ var app = {
 			
 			// devo correggere andando a prendere BTNSFIDA aggiungendo il Round 2
 			
+			          navigator.notification.alert(
+						'la somma delle palle colpite deve essere 15',  // message
+						alertDismissed,         // callback
+						'Somma 15',            // title
+						'OK'                  // buttonName
+					  );
+			
 					   localStorage.setItem("sfida","1")
 					   localStorage.setItem("round","2")
 					   
@@ -1338,6 +1371,8 @@ var app = {
 		
 		
 		function prendinumeri3(cosa) {
+			
+			$("#val4").hide()
 			
 			$("#spinner1").show()
 			
@@ -1459,6 +1494,8 @@ var app = {
 		
 		function prendinumeri3_15(cosa) {
 			
+			$("#val4").hide()
+			
 			$("#spinner1").show()
 			
 			uno = "2";
@@ -1566,6 +1603,10 @@ var app = {
 					   dataType:"jsonp"});
 				
 			}
+			
+			$(document).on("touchstart", "#ricarica1", function(e){
+				prendinumeri3_15(cosa)
+			});
 			
 		}
 		
@@ -1706,6 +1747,9 @@ var app = {
 				
 			}
 			
+			$(document).on("touchstart", "#ricarica1", function(e){
+				prendinumeri(cosa)
+			});
 			
 		}
 		
@@ -1846,6 +1890,10 @@ var app = {
 			}
 			
 			
+			$(document).on("touchstart", "#ricarica1", function(e){
+				prendinumeri_15(cosa)
+			});
+			
 		}
 		
 		
@@ -1892,6 +1940,8 @@ var app = {
 							  tre = item.num3;
 							  quattro = item.num4;
 							  
+							  var quattro1 = item.num4.replace("-","")
+							  
 							  
 							  var num1 = Math.floor((Math.random() * 4));
 							  
@@ -1900,7 +1950,7 @@ var app = {
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  
 							  }
 							  else{
@@ -1908,25 +1958,25 @@ var app = {
 							  $("#palla1").attr("src","palle/"+item.num1+"c.png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  if(num1==1){
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+"c.png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  if(num1==2){
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+"c.png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  if(num1==3){
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  }
 							  
@@ -1939,7 +1989,7 @@ var app = {
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  
 							  }
 							  else{
@@ -1947,25 +1997,25 @@ var app = {
 							  $("#palla1").attr("src","palle/"+item.num1+"c.png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  if(num1==1){
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+"c.png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  if(num1==2){
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+"c.png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  if(num1==3){
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  }
 
@@ -1981,6 +2031,9 @@ var app = {
 				
 			}
 			
+			$(document).on("touchstart", "#ricarica1", function(e){
+				prendinumerimano1(cosa)
+			});
 		}
 		
 		
@@ -1994,6 +2047,7 @@ var app = {
 			due = "1";
 			tre = "7";
 			quattro = "4";
+			
 			
 			localStorage.setItem("session10","0")
 			
@@ -2028,6 +2082,8 @@ var app = {
 							  tre = item.num3;
 							  quattro = item.num4;
 							  
+							  var quattro1 = item.num4.replace("-","")
+							  
 							  
 							  var num1 = Math.floor((Math.random() * 4));
 							  
@@ -2036,7 +2092,7 @@ var app = {
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  
 							  }
 							  else{
@@ -2044,25 +2100,25 @@ var app = {
 							  $("#palla1").attr("src","palle/"+item.num1+"c.png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  if(num1==1){
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+"c.png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  if(num1==2){
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+"c.png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  if(num1==3){
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  }
 							  
@@ -2073,7 +2129,7 @@ var app = {
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  
 							  }
 							  else{
@@ -2081,25 +2137,25 @@ var app = {
 							  $("#palla1").attr("src","palle/"+item.num1+"c.png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  if(num1==1){
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+"c.png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  if(num1==2){
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+"c.png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  if(num1==3){
 							  $("#palla1").attr("src","palle/"+item.num1+".png")
 							  $("#palla2").attr("src","palle/"+item.num2+".png")
 							  $("#palla3").attr("src","palle/"+item.num3+".png")
-							  $("#palla4").attr("src","palle/meno"+item.num4+".png")
+							  $("#palla4").attr("src","palle/meno"+quattro1+".png")
 							  }
 							  }
 							  
@@ -2114,6 +2170,10 @@ var app = {
 					   dataType:"jsonp"});
 				
 			}
+			
+			$(document).on("touchstart", "#ricarica1", function(e){
+				prendinumerimeno1_15(cosa)
+			});
 			
 		}
 		
@@ -2174,6 +2234,15 @@ var app = {
 									      going2()
 									    }
 									    else{
+									   
+									       navigator.notification.alert(
+											 'Punteggio',  // message
+											  alertDismissed,         // callback
+											  localStorage.getItem("punteggio1"),            // title
+											  'OK'                  // buttonName
+											);
+									   
+									   
 									      btnsfida()
 									    }
 									   
@@ -2222,6 +2291,14 @@ var app = {
 										    going2()
 									       }
 										   else{
+										   
+										     navigator.notification.alert(
+												'Punteggio',  // message
+												alertDismissed,         // callback
+												localStorage.getItem("punteggio1"),            // title
+												'OK'                  // buttonName
+											 );
+										   
 										     btnsfida()
 									       }
 									   
@@ -2267,7 +2344,7 @@ var app = {
 									  navigator.notification.alert(
 																   'Punteggio caricato.',  // message
 																   alertDismissed,         // callback
-																   'Punteggio',            // title
+																   localStorage.getItem("punteggio1"),            // title
 																   'OK'                  // buttonName
 																   );
 									  
@@ -2402,7 +2479,6 @@ var app = {
 					   localStorage.setItem("session10",valore)
 					   
 					   
-					   
 					   if(localStorage.getItem("round")=="2"){
 					     parametro = 15;
 					     $("#totale").html(valore+"/15")
@@ -2419,7 +2495,37 @@ var app = {
 					     else if((Number(localStorage.getItem("esatte")))==10){
 						  var bonus = 20;
 						 }
-					     else{
+					   else if((Number(localStorage.getItem("esatte")))==15){
+					   var bonus = 30;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==20){
+					   var bonus = 40;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==25){
+					   var bonus = 50;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==30){
+					   var bonus = 60;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==35){
+					   var bonus = 70;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==40){
+					   var bonus = 80;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==45){
+					   var bonus = 90;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==50){
+					   var bonus = 100;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==55){
+					   var bonus = 110;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==60){
+					   var bonus = 120;
+					   }
+						else{
 					      var bonus = 0;
 					     }
 					   }
@@ -2443,6 +2549,36 @@ var app = {
 						else if((Number(localStorage.getItem("esatte")))==10){
 					     var bonus = 10;
 						}
+					   else if((Number(localStorage.getItem("esatte")))==15){
+					   var bonus = 15;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==20){
+					   var bonus = 20;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==25){
+					   var bonus = 25;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==30){
+					   var bonus = 30;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==35){
+					   var bonus = 35;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==40){
+					   var bonus = 40;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==45){
+					   var bonus = 45;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==50){
+					   var bonus = 50;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==55){
+					   var bonus = 55;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==60){
+					   var bonus = 60;
+					   }
 						else{
 					     var bonus = 0;
 					    }
@@ -2451,7 +2587,16 @@ var app = {
 					   if(valore==parametro){
 					      somma = Number(somma)+1
 						  $("#somma").html(somma)
-					      $("#totale").html("0/10")
+					   
+					   if(localStorage.getItem("round")=="2"){
+					    $("#totale").html("0/15")
+					   }
+					   else if(localStorage.getItem("round")=="3"){
+					    $("#totale").html("0/10")
+					   }
+					   else{
+					     $("#totale").html("0/10")
+					   }
 						  $("#bianca0").hide()
 						  $("#bianca").hide()
 						  $("#bianca1").hide()
@@ -2619,6 +2764,36 @@ var app = {
 					   else if((Number(localStorage.getItem("esatte")))==10){
 						  var bonus = 20;
 					   }
+					   else if((Number(localStorage.getItem("esatte")))==15){
+					   var bonus = 30;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==20){
+					   var bonus = 40;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==25){
+					   var bonus = 50;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==30){
+					   var bonus = 60;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==35){
+					   var bonus = 70;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==40){
+					   var bonus = 80;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==45){
+					   var bonus = 90;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==50){
+					   var bonus = 100;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==55){
+					   var bonus = 110;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==60){
+					   var bonus = 120;
+					   }
 					   else{
 					   var bonus = 0;
 					   }
@@ -2643,6 +2818,36 @@ var app = {
 					   else if((Number(localStorage.getItem("esatte")))==10){
 					   var bonus = 10;
 					   }
+					   else if((Number(localStorage.getItem("esatte")))==15){
+					   var bonus = 15;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==20){
+					   var bonus = 20;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==25){
+					   var bonus = 25;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==30){
+					   var bonus = 30;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==35){
+					   var bonus = 35;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==40){
+					   var bonus = 40;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==45){
+					   var bonus = 45;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==50){
+					   var bonus = 50;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==55){
+					   var bonus = 55;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==60){
+					   var bonus = 60;
+					   }
 					   else{
 					   var bonus = 0;
 					   }
@@ -2651,7 +2856,15 @@ var app = {
 					   if(valore==parametro){
 						  somma = Number(somma)+1
 						  $("#somma").html(somma)
-					      $("#totale").html("0/10")
+					   if(localStorage.getItem("round")=="2"){
+					   $("#totale").html("0/15")
+					   }
+					   else if(localStorage.getItem("round")=="3"){
+					   $("#totale").html("0/10")
+					   }
+					   else{
+					   $("#totale").html("0/10")
+					   }
 						  $("#bianca0").hide()
 						  $("#bianca").hide()
 						  $("#bianca1").hide()
@@ -2687,7 +2900,7 @@ var app = {
 					   }
 					   
 					   }
-					   else if((somma>=16)&&(somma<25)){
+						  else if((somma>=16)&&(somma<25)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero2)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -2817,6 +3030,36 @@ var app = {
 					   else if((Number(localStorage.getItem("esatte")))==10){
 						  var bonus = 20;
 					   }
+					   else if((Number(localStorage.getItem("esatte")))==15){
+					   var bonus = 30;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==20){
+					   var bonus = 40;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==25){
+					   var bonus = 50;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==30){
+					   var bonus = 60;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==35){
+					   var bonus = 70;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==40){
+					   var bonus = 80;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==45){
+					   var bonus = 90;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==50){
+					   var bonus = 100;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==55){
+					   var bonus = 110;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==60){
+					   var bonus = 120;
+					   }
 					   else{
 					   var bonus = 0;
 					   }
@@ -2841,6 +3084,36 @@ var app = {
 					   else if((Number(localStorage.getItem("esatte")))==10){
 					   var bonus = 10;
 					   }
+					   else if((Number(localStorage.getItem("esatte")))==15){
+					   var bonus = 15;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==20){
+					   var bonus = 20;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==25){
+					   var bonus = 25;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==30){
+					   var bonus = 30;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==35){
+					   var bonus = 35;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==40){
+					   var bonus = 40;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==45){
+					   var bonus = 45;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==50){
+					   var bonus = 50;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==55){
+					   var bonus = 55;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==60){
+					   var bonus = 60;
+					   }
 					   else{
 					   var bonus = 0;
 					   }
@@ -2849,7 +3122,15 @@ var app = {
 					   if(valore==parametro){
 					   somma = Number(somma)+1
 						  $("#somma").html(somma)
-						  $("#totale").html("0/10")
+					   if(localStorage.getItem("round")=="2"){
+					   $("#totale").html("0/15")
+					   }
+					   else if(localStorage.getItem("round")=="3"){
+					   $("#totale").html("0/10")
+					   }
+					   else{
+					   $("#totale").html("0/10")
+					   }
 						  $("#bianca0").hide()
 						  $("#bianca").hide()
 						  $("#bianca1").hide()
@@ -3015,6 +3296,36 @@ var app = {
 					   else if((Number(localStorage.getItem("esatte")))==10){
 						  var bonus = 20;
 					   }
+					   else if((Number(localStorage.getItem("esatte")))==15){
+					   var bonus = 30;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==20){
+					   var bonus = 40;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==25){
+					   var bonus = 50;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==30){
+					   var bonus = 60;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==35){
+					   var bonus = 70;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==40){
+					   var bonus = 80;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==45){
+					   var bonus = 90;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==50){
+					   var bonus = 100;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==55){
+					   var bonus = 110;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==60){
+					   var bonus = 120;
+					   }
 					   else{
 					   var bonus = 0;
 					   }
@@ -3039,6 +3350,36 @@ var app = {
 					   else if((Number(localStorage.getItem("esatte")))==10){
 					   var bonus = 10;
 					   }
+					   else if((Number(localStorage.getItem("esatte")))==15){
+					   var bonus = 15;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==20){
+					   var bonus = 20;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==25){
+					   var bonus = 25;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==30){
+					   var bonus = 30;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==35){
+					   var bonus = 35;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==40){
+					   var bonus = 40;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==45){
+					   var bonus = 45;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==50){
+					   var bonus = 50;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==55){
+					   var bonus = 55;
+					   }
+					   else if((Number(localStorage.getItem("esatte")))==60){
+					   var bonus = 60;
+					   }
 					   else{
 					   var bonus = 0;
 					   }
@@ -3047,7 +3388,15 @@ var app = {
 					   if(valore==parametro){
 					     somma = Number(somma)+1
 						  $("#somma").html(somma)
-						  $("#totale").html("0/10")
+					   if(localStorage.getItem("round")=="2"){
+					   $("#totale").html("0/15")
+					   }
+					   else if(localStorage.getItem("round")=="3"){
+					   $("#totale").html("0/10")
+					   }
+					   else{
+					   $("#totale").html("0/10")
+					   }
 						  $("#bianca0").hide()
 						  $("#bianca").hide()
 						  $("#bianca1").hide()
@@ -3296,14 +3645,14 @@ var app = {
 			options.mimeType="image/jpeg";
 			
 			var params = {};
-			params.value1 = localStorage.getItem("nomefoto");
+			params.value1 = "add_"+localStorage.getItem("email").replace("@","").replace(".","").replace(".","")+"";
 			params.value2 = "param";
 			
 			options.params = params;
 			options.chunkedMode = false;
 			
 			var ft = new FileTransfer();
-			ft.upload(imageURI, encodeURI("http://msop.it/uploadrides.php"), win, fail, options);
+			ft.upload(imageURI, "http://msop.it/uploadaddall.php", win, fail, options);
 			
 		}
 		
@@ -3314,9 +3663,42 @@ var app = {
 			console.log("Response = " + r.response);
 			console.log("Sent = " + r.bytesSent);
 			
-			//alert(r.response);
+
+			$.ajax({
+				   type:"GET",
+				   url:"http://msop.it/addall/caricafoto.php?nome=add_"+localStorage.getItem("email").replace("@","").replace(".","").replace(".","")+".jpg&email="+localStorage.getItem("email")+"",
+				   contentType: "application/json",
+				   //data: {Lat:3,Longi:4},
+				   timeout: 7000,
+				   jsonp: 'callback',
+				   crossDomain: true,
+				   success:function(result){
+				   
+				    localStorage.setItem("nomefoto", "add_"+localStorage.getItem("email").replace("@","").replace(".","").replace(".",""));
+				   //$.each(result, function(i,item){
+				   
+				   //});
+				   
+				   //alert(r.response);
+
+				   
+				   },
+				   error: function(){
+				   
+				     navigator.notification.alert(
+												'errore nel caricamento della foto, riprova in seguito',  // message
+												alertDismissed,         // callback
+												'Foto',            // title
+												'OK'                  // buttonName
+												);
+				   
+				   
+				   },
+			dataType:"jsonp"});
 			
-			localStorage.setItem("foto", localStorage.getItem("nomefoto"));
+			
+			
+			
 			
 			//$("#imgutente2").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("foto"));
 			/*$("#imgfoto").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
@@ -3435,13 +3817,12 @@ function playAudio(id) {
 
 $(document).on("tap", "#mandaemail", function(e){
 			   
-	cordova.plugins.email.open({
+	window.plugin.email.open({
 		to:      "info@pokeranswer.it",
 		subject: "Contattaci",
 		body:    "Richiedi informazioni",
 		isHtml:  true
 	});
-	
 			   
 });
 
