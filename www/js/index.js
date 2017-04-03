@@ -66,53 +66,6 @@ var app = {
 		}
 		
 		
-		
-		//// AD MOB ////
-		
-		//admob.initAdmob("ca-app-pub-5263503085775846/1999366017","ca-app-pub-5263503085775846~9522632812"); //admob IOS
-		//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
-		
-		
-		//// ANDROID //////
-		
-		var admobid = {};
-		 
-		 if( /(android)/i.test(navigator.userAgent) ) {
-			admobid = {
-			banner: 'ca-app-pub-5263503085775846/1999366017',
-			interstitial: 'ca-app-pub-5263503085775846~9522632812'
-		 };
-		 } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
-			admobid = {
-			banner: 'ca-app-pub-5263503085775846/1999366017',
-			interstitial: 'ca-app-pub-5263503085775846~9522632812'
-		 };
-		 } else {
-			admobid = {
-			banner: 'ca-app-pub-5263503085775846/1999366017',
-			interstitial: 'ca-app-pub-5263503085775846~9522632812'
-		 };
-		 }
-		 
-		 if(AdMob) AdMob.createBanner( {
-			adId:admobid.banner,
-			position:AdMob.AD_POSITION.BOTTOM_CENTER,
-			autoShow:true} );
-		 
-		 
-		 
-		 if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
-		 
-		 if(AdMob) AdMob.showInterstitial();
-		
-		///// FINE /////
-		
-		
-		////// AD MOB FINE ////
-		
-		
-		
-		
 		////////// controllo internet ///////////////
 		
 		var connectionStatus = false;
@@ -180,6 +133,59 @@ var app = {
 			
 			$("#spinner1").hide()
 			
+			
+			if (localStorage.getItem("email") === null || localStorage.getItem("email")=="null" || typeof(localStorage.getItem("email")) == 'undefined' || localStorage.getItem("email")==0 || localStorage.getItem("email")=="") {
+				
+				
+			}
+			else{
+				
+				//admob.initAdmob("ca-app-pub-5263503085775846/1999366017","ca-app-pub-5263503085775846~9522632812"); //admob IOS
+				//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
+				
+				//// AD MOB ////
+				
+				
+				//// ANDROID //////
+				
+				var admobid = {};
+				 
+				 if( /(android)/i.test(navigator.userAgent) ) {
+				 admobid = {
+				 banner: 'ca-app-pub-5263503085775846/1999366017',
+				 interstitial: 'ca-app-pub-5263503085775846~9522632812'
+				 };
+				 } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
+				 admobid = {
+				 banner: 'ca-app-pub-5263503085775846/1999366017',
+				 interstitial: 'ca-app-pub-5263503085775846~9522632812'
+				 };
+				 } else {
+				 admobid = {
+				 banner: 'ca-app-pub-5263503085775846/1999366017',
+				 interstitial: 'ca-app-pub-5263503085775846~9522632812'
+				 };
+				 }
+				 
+				 if(AdMob) AdMob.createBanner( {
+				 adId:admobid.banner,
+				 position:AdMob.AD_POSITION.BOTTOM_CENTER,
+				 autoShow:true} );
+				 
+				 
+				 
+				 if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+				 
+				 if(AdMob) AdMob.showInterstitial();
+				
+				///// FINE /////
+				
+				
+				////// AD MOB FINE ////
+				
+			}
+			
+			
 		}
 		
 		//////////////////////////////////////////
@@ -223,12 +229,26 @@ var app = {
 		});
 		
 		
+		
+		
+		$(document).on("touchstart", "#bliard", function(e){
+					   
+			//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
+					   
+			//window.location.href = "spec.html";
+					   
+		});
+		
+		
+		
 		$(document).on("tap", "#risultati", function(e){
 					   
 				var esatte5="<br>";
 				var conta=1;
 					   
 				$("#tbllancia").hide()
+					   
+				$("#spinner4").show()
 				
 				//window.location.href = "#home4";
 				$.mobile.changePage ($("#home4"));
@@ -253,12 +273,30 @@ var app = {
 									     dataclass = ""
 										}
 									 
+									    if(item.nome <= 12){
+									 
+									      var nome = item.nome;
+									 
+									    }
+									    else{
+									      var nome = item.nome.slice(0,10)
+										  nome = nome + ".."
+									    }
+									 
 									    if(conta==1){
 									 
-									       esatte5 = esatte5 + "<b><img src='images/status_green.png' width='12'>"+item.nome+"</b>, Punti: <b>"+item.punti+"</b>  "+dataclass+"</a><br><br>"
+									       esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+" , Round: <b>"+item.incontro+"</b><br><br>"
+										}
+									    else if(conta==2){
+									 
+									      esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+", Round: <b>"+item.incontro+"</b><br><br>"
+										}
+									    else if(conta==3){
+									 
+									      esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+", Round: <b>"+item.incontro+"</b><br><br>"
 										}
 									   else{
-									       esatte5 = esatte5 + "<b>"+item.nome+"</b>, Punti: <b>"+item.punti+"</b>  "+dataclass+"</a><br><br>"
+									       esatte5 = esatte5 + "<b>"+nome+"</b>, Punti: <b>"+item.punti+"</b>,  "+dataclass+", Round: <b>"+item.incontro+"</b><br><br>"
 									    }
 									 
 									 }
@@ -273,6 +311,9 @@ var app = {
 									 conta = conta+1
 									
 								});
+					   
+					       $("#spinner4").hide()
+					   
 					   },
 					   error: function(){
 					   
@@ -326,6 +367,8 @@ var app = {
 
 					   $("#tbllancia").hide()
 					   
+					   $("#spinner3").show()
+					   
 					   $.ajax({
 							  type:"GET",
 							  url:"http://msop.it/addall/crtround1_V2.php?email="+localStorage.getItem("email")+"&round=1",
@@ -367,9 +410,10 @@ var app = {
 											accettasfida(item.idsfida)
 													  
 										});
+									   
 								});
 							  
-							  
+								$("#spinner3").hide()
 							  
 							  },
 							  error: function(){
@@ -421,6 +465,8 @@ var app = {
 					   $.mobile.changePage ($("#home3"));
 					   
 					   $("#tbllancia").hide()
+			
+						$("#spinner3").show()
 					   
 					   $.ajax({
 							  type:"GET",
@@ -465,9 +511,10 @@ var app = {
 													
 									});
 									 
+									 
 								});
 							  
-							  
+							    $("#spinner3").hide()
 							  
 							  },
 							  error: function(){
@@ -835,8 +882,6 @@ var app = {
 						  
 						  prendinumeri3(0)
 			
-			
-						  
 		}
 		
 		
@@ -1012,6 +1057,8 @@ var app = {
 			$("#btnlancia").hide()
 			$("#risultati").hide()
 			$("#allenati").show()
+					   
+			
 		});
 		
 		
@@ -1030,241 +1077,262 @@ var app = {
 		
 		$(document).on("touchstart", "#going", function(e){
 					   
-					   navigator.notification.alert(
-						 'la somma delle palle colpite deve essere 10',  // message
-						  alertDismissed,         // callback
-						 'Somma 10',            // title
-						 'OK'                  // buttonName
-						);
+					   navigator.notification.confirm(
+													  'ROUND 1 la somma delle palle colpite deve essere 10',  // message
+													  onConfirm1,              // callback to invoke with index of button pressed
+													  'Spegni',            // title
+													  'Inizia,Annulla'      // buttonLabels
+													  );
 					   
-					   
-					   localStorage.setItem("sfida","0")
-					   localStorage.setItem("round","1")
-					   
-					   $("#load").show()
-					   
-					   localStorage.setItem("session10","0")
-					   
-					   localStorage.setItem("esatte","0")
-					   $("#esatte2").html("0")
-					   $("#esatte3").html("0")
-					   
-					   $("#totale").html("0/10")
-					   $("#bianca0").hide()
-					   $("#bianca").hide()
-					   $("#bianca1").hide()
-					   $("#bianca2").hide()
-					   
-					   $("#allenati").hide()
-					   $("#lastpunt").hide()
-					   
-					   var uno;
-					   var due;
-					   var tre;
-					   var quattro;
-					   var numero = 1;
-					   var numero1 = 2;
-					   var numero2 = 3;
-					   var numero3 = 4;
-					   var numero4 = 5;
-					   var numero5 = 6;
-					   
-					   //DATA
-					   var today = new Date();
-					   var dd = today.getDate();
-					   var mm = today.getMonth()+1;//January is 0, so always add + 1
-					   
-					   var ora = today.getHours()
-					   if(ora<10){ora="0"+ora}
-					   
-					   var minuti = today.getMinutes();
-					   if(minuti<10){minuti="0"+minuti}
-					   
-					   var secondi = today.getSeconds();
-					   if(secondi<10){secondi="0"+secondi}
-					   
-					   
-					   var yyyy = today.getFullYear();
-					   if(dd<10){dd="0"+dd}
-					   if(mm<10){mm="0"+mm}
-					   today = dd+'/'+mm+'/'+yyyy;
-					   
-					   $("#stamp").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
-					   $("#stamp2").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
-					   var ora_cell = yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00";
-					   
-					   localStorage.setItem("ora_cell", ora_cell);
-					   
-					   
-					   localStorage.setItem("start","0")
-					   localStorage.setItem("punteggio1","0")
-					   var somma=0;
-					   var punto=0;
+						
 
-					   
-			//admob.hideBanner()
-					   
-			AdMob.removeBanner();
-					   
-			localStorage.setItem("esatte",0)
-			$("#esatte2").html("0")
-			$("#esatte3").html("0")
-					   
-			playAudio('successSound');
-					   
-			localStorage.setItem("session10","0")
-			localStorage.setItem("punteggio1","0")
-			somma=0
-			punto = 0
-			$("#somma").html("0")
-			$("#totale").html("0")
-			$("#gioco").show()
-			
-					   
-			$("#going").hide()
-			
-					   setTimeout(function() {
-								  
-								  playAudio('successSound2');
-								  
-								  $("#load").hide()
-								  
-								  $("#dati").show()
-								  $("#dati0").show()
-								 
-								  $("#biliardo").show();
-								  
-								  $("#somma").html("0")
-								  $("#totale").html("0")
-								  countdown1(0);
-								  
-					   }, 1000);
-			
-			localStorage.setItem("start","0")
-					   
-			prendinumeri3(0)
-					   
 		});
+		
+		
+		function onConfirm1(button) {
+			
+			if(button==1){    //If User selected No, then we just do nothing
+				
+				localStorage.setItem("sfida","0")
+				localStorage.setItem("round","1")
+				
+				$("#load").show()
+				
+				localStorage.setItem("session10","0")
+				
+				localStorage.setItem("esatte","0")
+				$("#esatte2").html("0")
+				$("#esatte3").html("0")
+				
+				$("#totale").html("0/10")
+				$("#bianca0").hide()
+				$("#bianca").hide()
+				$("#bianca1").hide()
+				$("#bianca2").hide()
+				
+				$("#allenati").hide()
+				$("#lastpunt").hide()
+				
+				var uno;
+				var due;
+				var tre;
+				var quattro;
+				var numero = 1;
+				var numero1 = 2;
+				var numero2 = 3;
+				var numero3 = 4;
+				var numero4 = 5;
+				var numero5 = 6;
+				
+				//DATA
+				var today = new Date();
+				var dd = today.getDate();
+				var mm = today.getMonth()+1;//January is 0, so always add + 1
+				
+				var ora = today.getHours()
+				if(ora<10){ora="0"+ora}
+				
+				var minuti = today.getMinutes();
+				if(minuti<10){minuti="0"+minuti}
+				
+				var secondi = today.getSeconds();
+				if(secondi<10){secondi="0"+secondi}
+				
+				
+				var yyyy = today.getFullYear();
+				if(dd<10){dd="0"+dd}
+				if(mm<10){mm="0"+mm}
+				today = dd+'/'+mm+'/'+yyyy;
+				
+				$("#stamp").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
+				$("#stamp2").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
+				var ora_cell = yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00";
+				
+				localStorage.setItem("ora_cell", ora_cell);
+				
+				
+				localStorage.setItem("start","0")
+				localStorage.setItem("punteggio1","0")
+				var somma=0;
+				var punto=0;
+				
+				
+				//admob.hideBanner()
+				
+				AdMob.removeBanner();
+				
+				localStorage.setItem("esatte",0)
+				$("#esatte2").html("0")
+				$("#esatte3").html("0")
+				
+				playAudio('successSound');
+				
+				localStorage.setItem("session10","0")
+				localStorage.setItem("punteggio1","0")
+				somma=0
+				punto = 0
+				$("#somma").html("0")
+				$("#totale").html("0")
+				$("#gioco").show()
+				
+				
+				$("#going").hide()
+				
+				setTimeout(function() {
+						   
+						   playAudio('successSound2');
+						   
+						   $("#load").hide()
+						   
+						   $("#dati").show()
+						   $("#dati0").show()
+								 
+						   $("#biliardo").show();
+						   
+						   $("#somma").html("0")
+						   $("#totale").html("0")
+						   countdown1(0);
+						   
+						   }, 1000);
+				
+				localStorage.setItem("start","0")
+				
+				prendinumeri3(0)
+
+			}
+			
+		}
+
 		
 		
 		$(document).on("touchstart", "#going2", function(e){
 					   
-					   navigator.notification.alert(
-													'la somma delle palle colpite deve essere 15',  // message
-													alertDismissed,         // callback
-													'Somma 15',            // title
-													'OK'                  // buttonName
-													);
+					   navigator.notification.confirm(
+													  'ROUND 2 la somma delle palle colpite deve essere 15',  // message
+													  onConfirm2,              // callback to invoke with index of button pressed
+													  'Spegni',            // title
+													  'Inizia,Annulla'      // buttonLabels
+													  );
 					   
 					   
-					   localStorage.setItem("sfida","0")
-					   localStorage.setItem("round","2")
-					   
-					   $("#load").show()
-					   
-					   localStorage.setItem("session10","0")
-					   
-					   localStorage.setItem("esatte","0")
-					   $("#esatte2").html("0")
-					   $("#esatte3").html("0")
-					   
-					   $("#totale").html("0/15")
-					   $("#bianca0").hide()
-					   $("#bianca").hide()
-					   $("#bianca1").hide()
-					   $("#bianca2").hide()
-					   
-					   $("#allenati").hide()
-					   $("#lastpunt").hide()
 
-					   var uno;
-					   var due;
-					   var tre;
-					   var quattro;
-					   var numero = 2;
-					   var numero1 = 3;
-					   var numero2 = 4;
-					   var numero3 = 5;
-					   var numero4 = 6;
-					   var numero5 = 7;
-					   
-					   //DATA
-					   var today = new Date();
-					   var dd = today.getDate();
-					   var mm = today.getMonth()+1;//January is 0, so always add + 1
-					   
-					   var ora = today.getHours()
-					   if(ora<10){ora="0"+ora}
-					   
-					   var minuti = today.getMinutes();
-					   if(minuti<10){minuti="0"+minuti}
-					   
-					   var secondi = today.getSeconds();
-					   if(secondi<10){secondi="0"+secondi}
-					   
-					   
-					   var yyyy = today.getFullYear();
-					   if(dd<10){dd="0"+dd}
-					   if(mm<10){mm="0"+mm}
-					   today = dd+'/'+mm+'/'+yyyy;
-					   
-					   $("#stamp").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
-					   $("#stamp2").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
-					   var ora_cell = yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00";
-					   
-					   localStorage.setItem("ora_cell", ora_cell);
-					   
-					   
-					   localStorage.setItem("start","0")
-					   localStorage.setItem("punteggio1","0")
-					   var somma=0;
-					   var punto=0;
-					   
-					   
-					   //admob.hideBanner()
-					   
-					   AdMob.removeBanner();
-					   
-					   localStorage.setItem("esatte",0)
-					   $("#esatte2").html("0")
-					   $("#esatte3").html("0")
-					   
-					   playAudio('successSound');
-					   
-					   localStorage.setItem("session10","0")
-					   localStorage.setItem("punteggio1","0")
-					   somma=0
-					   punto = 0
-					   $("#somma").html("0")
-					   $("#totale").html("0")
-					   $("#gioco").show()
-					   
-					   
-					   $("#going").hide()
-					   
-					   setTimeout(function() {
-								  
-								  playAudio('successSound2');
-								  
-								  $("#load").hide()
-								  
-								  $("#dati").show()
-								  $("#dati0").show()
-								  
-								  $("#biliardo").show();
-								  
-								  $("#somma").html("0")
-								  $("#totale").html("0")
-								  countdown1(0);
-								  
-								  }, 1000);
-					   
-					   localStorage.setItem("start","0")
-					   
-					   prendinumeri3_15(0)
-					   
 		});
 		
+		
+		function onConfirm2(button) {
+			
+			if(button==1){    //If User selected No, then we just do nothing
+				
+				localStorage.setItem("sfida","0")
+				localStorage.setItem("round","2")
+				
+				$("#load").show()
+				
+				localStorage.setItem("session10","0")
+				
+				localStorage.setItem("esatte","0")
+				$("#esatte2").html("0")
+				$("#esatte3").html("0")
+				
+				$("#totale").html("0/15")
+				$("#bianca0").hide()
+				$("#bianca").hide()
+				$("#bianca1").hide()
+				$("#bianca2").hide()
+				
+				$("#allenati").hide()
+				$("#lastpunt").hide()
+				
+				var uno;
+				var due;
+				var tre;
+				var quattro;
+				var numero = 2;
+				var numero1 = 3;
+				var numero2 = 4;
+				var numero3 = 5;
+				var numero4 = 6;
+				var numero5 = 7;
+				
+				//DATA
+				var today = new Date();
+				var dd = today.getDate();
+				var mm = today.getMonth()+1;//January is 0, so always add + 1
+				
+				var ora = today.getHours()
+				if(ora<10){ora="0"+ora}
+				
+				var minuti = today.getMinutes();
+				if(minuti<10){minuti="0"+minuti}
+				
+				var secondi = today.getSeconds();
+				if(secondi<10){secondi="0"+secondi}
+				
+				
+				var yyyy = today.getFullYear();
+				if(dd<10){dd="0"+dd}
+				if(mm<10){mm="0"+mm}
+				today = dd+'/'+mm+'/'+yyyy;
+				
+				$("#stamp").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
+				$("#stamp2").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
+				var ora_cell = yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00";
+				
+				localStorage.setItem("ora_cell", ora_cell);
+				
+				
+				localStorage.setItem("start","0")
+				localStorage.setItem("punteggio1","0")
+				var somma=0;
+				var punto=0;
+				
+				
+				//admob.hideBanner()
+				
+				AdMob.removeBanner();
+				
+				localStorage.setItem("esatte",0)
+				$("#esatte2").html("0")
+				$("#esatte3").html("0")
+				
+				playAudio('successSound');
+				
+				localStorage.setItem("session10","0")
+				localStorage.setItem("punteggio1","0")
+				somma=0
+				punto = 0
+				$("#somma").html("0")
+				$("#totale").html("0")
+				$("#gioco").show()
+				
+				
+				$("#going").hide()
+				
+				setTimeout(function() {
+						   
+						   playAudio('successSound2');
+						   
+						   $("#load").hide()
+						   
+						   $("#dati").show()
+						   $("#dati0").show()
+						   
+						   $("#biliardo").show();
+						   
+						   $("#somma").html("0")
+						   $("#totale").html("0")
+						   countdown1(0);
+						   
+						   }, 1000);
+				
+				localStorage.setItem("start","0")
+				
+				prendinumeri3_15(0)
+				
+			}
+			
+		}
+
 		
 		function going2(){
 			// SONO ARRIVATO QUI
@@ -1272,7 +1340,7 @@ var app = {
 			// devo correggere andando a prendere BTNSFIDA aggiungendo il Round 2
 			
 			          navigator.notification.alert(
-						'la somma delle palle colpite deve essere 15',  // message
+						'ROUND 2, la somma delle palle colpite deve essere 15',  // message
 						alertDismissed,         // callback
 						'Somma 15',            // title
 						'OK'                  // buttonName
@@ -1329,7 +1397,13 @@ var app = {
 					   localStorage.setItem("ora_cell", ora_cell);
 			
 					   
-					   playAudio('successSound');
+					    playAudio('successSound');
+			
+						localStorage.setItem("esatte",0)
+						$("#esatte2").html("0")
+						$("#esatte3").html("0")
+			
+						var somma=0;
 
 					   $("#gioco").show()
 			
@@ -1348,6 +1422,9 @@ var app = {
 							$("#biliardo").show();
 
 							countdown1(0);
+								  
+							$("#somma").html("0")
+							$("#totale").html("0")
 								  
 						}, 1000);
 					   
@@ -2330,7 +2407,7 @@ var app = {
 					else{
 						$.ajax({
 							   type:"GET",
-							   url:"http://msop.it/addall/segnapunti.php?email="+localStorage.getItem("email")+"&rnd="+localStorage.getItem("punteggio1")+"",
+							   url:"http://msop.it/addall/segnapunti.php?email="+localStorage.getItem("email")+"&rnd="+localStorage.getItem("punteggio1")+"&incontro="+localStorage.getItem("round")+"",
 							   contentType: "application/json",
 							   //data: {Lat:3,Longi:4},
 							   timeout: 7000,
@@ -2348,7 +2425,16 @@ var app = {
 																   'OK'                  // buttonName
 																   );
 									  
-									  window.location.href = "index.html";
+									  
+									  $("#gioco").hide()
+									  $("#lastpunt").show()
+									  $("#punteggio2").html(localStorage.getItem("punteggio1"))
+									  $("#somma2").html(localStorage.getItem("somma1"))
+									  
+									  $("#punteggiotot").html("PUNTEGGIO ROUND "+localStorage.getItem("round"))
+									  $("#punteggiotot1").html(localStorage.getItem("punteggio1"))
+									  
+									  //window.location.href = "index.html";
 									  
 									}
 									else{
@@ -2396,70 +2482,706 @@ var app = {
 			tick();
 		}
 		
+		
+		$(document).on("touchstart", "#back", function(e){
+			$("#lastpunt").hide()
+			window.location.href = "index.html";		   
+		});
 
 		
 		$(document).on("touchstart", "#val0", function(e){
+					   
+			var valore = (Number(localStorage.getItem("session10"))) - (Number(localStorage.getItem("numerouno")));
+			localStorage.setItem("session10",valore)
 								
-			localStorage.setItem("session10","0")
+			var bonus=0
 					   
 			localStorage.setItem("esatte","0")
 			$("#esatte2").html("0")
 			$("#esatte3").html("0")
 					   
-			$("#totale").html("0/10")
+			if(localStorage.getItem("round")=="2"){
+				$("#totale").html(valore+"/15")
+				var parametro = 15
+				var numero = 2;
+				var numero1 = 3;
+				var numero2 = 4;
+				var numero3 = 5;
+				var numero4 = 6;
+				var numero5 = 7;
+			}
+			else if(localStorage.getItem("round")=="3"){
+				$("#totale").html(valore+"/20")
+				var parametro = 20
+			}
+			else{
+				$("#totale").html(valore+"/10")
+				var parametro = 10
+				var numero = 1;
+				var numero1 = 2;
+				var numero2 = 3;
+				var numero3 = 4;
+				var numero4 = 5;
+				var numero5 = 6;
+			}
+			
 			$("#bianca0").hide()
 			$("#palla1").show()
-			/*$("#bianca").hide()
-			$("#bianca1").hide()
-			$("#bianca2").hide()*/
+					   
+					   
+			if(valore==parametro){
+				somma = Number(somma)+1
+				$("#somma").html(somma)
+				localStorage.setItem("somma1",somma)
+					   
+				$("#bianca0").hide()
+				$("#bianca").hide()
+				$("#bianca1").hide()
+				$("#bianca2").hide()
+					   
+				$("#palla1").hide()
+				$("#palla2").hide()
+				$("#palla3").hide()
+				$("#palla4").hide()
+					   
+				playAudio('successSound2');
+					   
+					   if ((somma>=10)&&(somma<16)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri3(1)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri3_15(1)
+					   }
+					   else{
+					   
+					   }
+					   
+					   }
+						  else if((somma>=16)&&(somma<25)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero2)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri(0)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri_15(0)
+					   }
+					   else{
+					   
+					   }
+					   }
+						  else if((somma>=25)&&(somma<30)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero3)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri(1)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri_15(1)
+					   }
+					   else{
+					   
+					   }
+					   
+					   }
+					   else if((somma>=30)&&(somma<40)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero4)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumerimeno1(0)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumerimeno1_15(0)
+					   }
+					   else{
+					   
+					   }
+					   
+						  }
+					   else if((somma>=40)&&(somma<99)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero5)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumerimeno1(1)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumerimeno1_15(1)
+					   }
+					   else{
+					   
+					   }
+					   
+						  }
+						  else{
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").hide()
+					   
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri3(0)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri3_15(0)
+					   }
+					   else{
+					   
+					   }
+					   
+					   }
+			}
 					   
 		});
 		
 		
 		$(document).on("touchstart", "#val00", function(e){
+					   
+					   var valore = (Number(localStorage.getItem("session10"))) - (Number(localStorage.getItem("numerotre")));
+					   localStorage.setItem("session10",valore)
 								
-					   localStorage.setItem("session10","0")
+					   var bonus=0
 					   
 					   localStorage.setItem("esatte","0")
 					   $("#esatte2").html("0")
 					   $("#esatte3").html("0")
 					   
-					   $("#totale").html("0/10")
+					   if(localStorage.getItem("round")=="2"){
+					   $("#totale").html(valore+"/15")
+					   var parametro = 15
+					   var numero = 2;
+					   var numero1 = 3;
+					   var numero2 = 4;
+					   var numero3 = 5;
+					   var numero4 = 6;
+					   var numero5 = 7;
+					   }
+					   else if(localStorage.getItem("round")=="3"){
+					   $("#totale").html(valore+"/20")
+					   var parametro = 20
+					   }
+					   else{
+					   $("#totale").html(valore+"/10")
+					   var parametro = 10
+					   var numero = 1;
+					   var numero1 = 2;
+					   var numero2 = 3;
+					   var numero3 = 4;
+					   var numero4 = 5;
+					   var numero5 = 6;
+					   }
 					   
 					   $("#bianca").hide()
 					   $("#palla3").show()
+					   
+					   if(valore==parametro){
+					   somma = Number(somma)+1
+					   $("#somma").html(somma)
+					   localStorage.setItem("somma1",somma)
+					   
+					   $("#bianca0").hide()
+					   $("#bianca").hide()
+					   $("#bianca1").hide()
+					   $("#bianca2").hide()
+					   
+					   $("#palla1").hide()
+					   $("#palla2").hide()
+					   $("#palla3").hide()
+					   $("#palla4").hide()
+					   
+					   playAudio('successSound2');
+					   
+					   if ((somma>=10)&&(somma<16)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri3(1)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri3_15(1)
+					   }
+					   else{
+					   
+					   }
+					   
+					   }
+						  else if((somma>=16)&&(somma<25)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero2)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri(0)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri_15(0)
+					   }
+					   else{
+					   
+					   }
+					   }
+						  else if((somma>=25)&&(somma<30)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero3)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri(1)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri_15(1)
+					   }
+					   else{
+					   
+					   }
+					   
+					   }
+					   else if((somma>=30)&&(somma<40)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero4)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumerimeno1(0)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumerimeno1_15(0)
+					   }
+					   else{
+					   
+					   }
+					   
+						  }
+					   else if((somma>=40)&&(somma<99)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero5)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumerimeno1(1)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumerimeno1_15(1)
+					   }
+					   else{
+					   
+					   }
+					   
+						  }
+						  else{
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").hide()
+					   
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri3(0)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri3_15(0)
+					   }
+					   else{
+					   
+					   }
+					   
+					   }
+					   }
 					   
 					   
 		});
 		
 		$(document).on("touchstart", "#val000", function(e){
+					   
+					   var valore = (Number(localStorage.getItem("session10"))) - (Number(localStorage.getItem("numerodue")));
+					   localStorage.setItem("session10",valore)
 								
-					   localStorage.setItem("session10","0")
+					   var bonus=0
 					   
 					   localStorage.setItem("esatte","0")
 					   $("#esatte2").html("0")
 					   $("#esatte3").html("0")
 					   
-					   $("#totale").html("0/10")
+					   if(localStorage.getItem("round")=="2"){
+					   $("#totale").html(valore+"/15")
+					   var parametro = 15
+					   var numero = 2;
+					   var numero1 = 3;
+					   var numero2 = 4;
+					   var numero3 = 5;
+					   var numero4 = 6;
+					   var numero5 = 7;
+					   }
+					   else if(localStorage.getItem("round")=="3"){
+					   $("#totale").html(valore+"/20")
+					   var parametro = 20
+					   }
+					   else{
+					   $("#totale").html(valore+"/10")
+					   var parametro = 10
+					   var numero = 1;
+					   var numero1 = 2;
+					   var numero2 = 3;
+					   var numero3 = 4;
+					   var numero4 = 5;
+					   var numero5 = 6;
+					   }
 					   
 					   $("#bianca1").hide()
 					   $("#palla2").show()
+					   
+					   if(valore==parametro){
+					   somma = Number(somma)+1
+					   $("#somma").html(somma)
+					   localStorage.setItem("somma1",somma)
+					   
+					   $("#bianca0").hide()
+					   $("#bianca").hide()
+					   $("#bianca1").hide()
+					   $("#bianca2").hide()
+					   
+					   $("#palla1").hide()
+					   $("#palla2").hide()
+					   $("#palla3").hide()
+					   $("#palla4").hide()
+					   
+					   playAudio('successSound2');
+					   
+					   if ((somma>=10)&&(somma<16)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri3(1)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri3_15(1)
+					   }
+					   else{
+					   
+					   }
+					   
+					   }
+						  else if((somma>=16)&&(somma<25)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero2)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri(0)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri_15(0)
+					   }
+					   else{
+					   
+					   }
+					   }
+						  else if((somma>=25)&&(somma<30)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero3)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri(1)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri_15(1)
+					   }
+					   else{
+					   
+					   }
+					   
+					   }
+					   else if((somma>=30)&&(somma<40)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero4)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumerimeno1(0)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumerimeno1_15(0)
+					   }
+					   else{
+					   
+					   }
+					   
+						  }
+					   else if((somma>=40)&&(somma<99)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero5)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumerimeno1(1)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumerimeno1_15(1)
+					   }
+					   else{
+					   
+					   }
+					   
+						  }
+						  else{
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").hide()
+					   
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri3(0)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri3_15(0)
+					   }
+					   else{
+					   
+					   }
+					   
+					   }
+					   }
 					   
 					   
 		});
 		
 		$(document).on("touchstart", "#val0000", function(e){
+					   
+			var valore = (Number(localStorage.getItem("session10"))) - (Number(localStorage.getItem("numeroquattro")));
+			localStorage.setItem("session10",valore)
 								
-			localStorage.setItem("session10","0")
+			var bonus=0
 					   
 			localStorage.setItem("esatte","0")
 			$("#esatte2").html("0")
 			$("#esatte3").html("0")
 					   
-			$("#totale").html("0/10")
+					   if(localStorage.getItem("round")=="2"){
+					   $("#totale").html(valore+"/15")
+					   var parametro = 15
+					   var numero = 2;
+					   var numero1 = 3;
+					   var numero2 = 4;
+					   var numero3 = 5;
+					   var numero4 = 6;
+					   var numero5 = 7;
+					   }
+					   else if(localStorage.getItem("round")=="3"){
+					   $("#totale").html(valore+"/20")
+					   var parametro = 20
+					   }
+					   else{
+					   $("#totale").html(valore+"/10")
+					   var parametro = 10
+					   var numero = 1;
+					   var numero1 = 2;
+					   var numero2 = 3;
+					   var numero3 = 4;
+					   var numero4 = 5;
+					   var numero5 = 6;
+					   }
 					   
-			$("#bianca2").hide()
-			 $("#palla4").show()
+					   $("#bianca2").hide()
+					   $("#palla4").show()
+					   
+					   if(valore==parametro){
+					   somma = Number(somma)+1
+					   $("#somma").html(somma)
+					   localStorage.setItem("somma1",somma)
+					   
+					   $("#bianca0").hide()
+					   $("#bianca").hide()
+					   $("#bianca1").hide()
+					   $("#bianca2").hide()
+					   
+					   $("#palla1").hide()
+					   $("#palla2").hide()
+					   $("#palla3").hide()
+					   $("#palla4").hide()
+					   
+					   playAudio('successSound2');
+					   
+					   if ((somma>=10)&&(somma<16)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri3(1)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri3_15(1)
+					   }
+					   else{
+					   
+					   }
+					   
+					   }
+						  else if((somma>=16)&&(somma<25)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero2)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri(0)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri_15(0)
+					   }
+					   else{
+					   
+					   }
+					   }
+						  else if((somma>=25)&&(somma<30)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero3)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri(1)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri_15(1)
+					   }
+					   else{
+					   
+					   }
+					   
+					   }
+					   else if((somma>=30)&&(somma<40)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero4)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumerimeno1(0)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumerimeno1_15(0)
+					   }
+					   else{
+					   
+					   }
+					   
+						  }
+					   else if((somma>=40)&&(somma<99)){
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero5)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").show()
+					   
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumerimeno1(1)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumerimeno1_15(1)
+					   }
+					   else{
+					   
+					   }
+					   
+						  }
+						  else{
+					   
+					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero)) + (Number(bonus));
+					   localStorage.setItem("punteggio1",punto)
+					   $("#punteggio").html(punto)
+					   
+					   $("#val4").hide()
+					   
+					   
+					   if(localStorage.getItem("round")=="1"){
+					   prendinumeri3(0)
+					   }
+					   else if(localStorage.getItem("round")=="2"){
+					   prendinumeri3_15(0)
+					   }
+					   else{
+					   
+					   }
+					   
+					   }
+					   }
 		});
 		
 		
@@ -2472,11 +3194,15 @@ var app = {
 					   $("#gioco").show()
 					   
 					   $("#bianca0").show()
+					   
 					   $("#palla1").hide()
 					   
 								
 					   var valore = (Number(localStorage.getItem("session10"))) + (Number(uno));
 					   localStorage.setItem("session10",valore)
+					   
+					   $("#bianca0").attr("src","palle/"+uno.replace("-","")+"n.png")
+					   localStorage.setItem("numerouno",uno)
 					   
 					   
 					   if(localStorage.getItem("round")=="2"){
@@ -2587,12 +3313,13 @@ var app = {
 					   if(valore==parametro){
 					      somma = Number(somma)+1
 						  $("#somma").html(somma)
+						  localStorage.setItem("somma1",somma)
 					   
 					   if(localStorage.getItem("round")=="2"){
 					    $("#totale").html("0/15")
 					   }
 					   else if(localStorage.getItem("round")=="3"){
-					    $("#totale").html("0/10")
+					    $("#totale").html("0/13")
 					   }
 					   else{
 					     $("#totale").html("0/10")
@@ -2748,6 +3475,9 @@ var app = {
 					   var valore = (Number(localStorage.getItem("session10"))) + (Number(due));
 					   localStorage.setItem("session10",valore)
 					   
+					   $("#bianca1").attr("src","palle/"+due.replace("-","")+"n.png")
+					   localStorage.setItem("numerodue",due)
+					   
 					   if(localStorage.getItem("round")=="2"){
 					   parametro = 15;
 					   $("#totale").html(valore+"/15")
@@ -2856,6 +3586,8 @@ var app = {
 					   if(valore==parametro){
 						  somma = Number(somma)+1
 						  $("#somma").html(somma)
+					      localStorage.setItem("somma1",somma)
+					   
 					   if(localStorage.getItem("round")=="2"){
 					   $("#totale").html("0/15")
 					   }
@@ -3014,6 +3746,9 @@ var app = {
 					   var valore = (Number(localStorage.getItem("session10"))) + (Number(tre));
 					   localStorage.setItem("session10",valore)
 					   
+					   $("#bianca").attr("src","palle/"+tre.replace("-","")+"n.png")
+					   localStorage.setItem("numerotre",tre)
+					   
 					   if(localStorage.getItem("round")=="2"){
 					   parametro = 15;
 					   $("#totale").html(valore+"/15")
@@ -3122,6 +3857,8 @@ var app = {
 					   if(valore==parametro){
 					   somma = Number(somma)+1
 						  $("#somma").html(somma)
+						  localStorage.setItem("somma1",somma)
+					   
 					   if(localStorage.getItem("round")=="2"){
 					   $("#totale").html("0/15")
 					   }
@@ -3279,6 +4016,9 @@ var app = {
 					   
 					   var valore = (Number(localStorage.getItem("session10"))) + (Number(quattro));
 					   localStorage.setItem("session10",valore)
+					   
+					   $("#bianca2").attr("src","palle/"+quattro.replace("-","")+"n.png")
+					   localStorage.setItem("numeroquattro",quattro)
 
 					   if(localStorage.getItem("round")=="2"){
 					   parametro = 15;
@@ -3388,6 +4128,8 @@ var app = {
 					   if(valore==parametro){
 					     somma = Number(somma)+1
 						  $("#somma").html(somma)
+					      localStorage.setItem("somma1",somma)
+					   
 					   if(localStorage.getItem("round")=="2"){
 					   $("#totale").html("0/15")
 					   }
@@ -3652,7 +4394,7 @@ var app = {
 			options.chunkedMode = false;
 			
 			var ft = new FileTransfer();
-			ft.upload(imageURI, "http://msop.it/uploadaddall.php", win, fail, options);
+			ft.upload(imageURI, encodeURI("http://msop.it/uploadaddall.php"), win, fail, options);
 			
 		}
 		
@@ -3815,15 +4557,14 @@ function playAudio(id) {
 }
 
 
-$(document).on("touchstart", "#mandaemail", function(e){
+$(document).on("tap", "#mandaemail", function(e){
 			   
-	cordova.plugins.email.open({
+	window.plugin.email.open({
 		to:      "info@pokeranswer.it",
 		subject: "Contattaci",
 		body:    "Richiedi informazioni",
 		isHtml:  true
 	});
-	
 			   
 });
 
