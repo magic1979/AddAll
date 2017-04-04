@@ -91,7 +91,8 @@
 		<plugin name="cordova-plugin-pushplugin" source="npm" />
 		<plugin name="cordova-plugin-datepicker" source="npm" />
 		<plugin name="cordova-plugin-insomnia" source="npm" />
-		<plugin name="cordova-plugin-email-composer" source="npm" />
+		<!--<plugin name="cordova-plugin-email-composer" source="npm" />-->
+		 <plugin spec="https://github.com/katzer/cordova-plugin-email-composer.git#0.8.2" source="git" />
 		<plugin name="ionic-plugin-keyboard"  source="npm" />
 		<plugin name="cordova-plugin-request-location-accuracy" source="npm" />
 		<!--<plugin name="cordova-plugin-mauron85-background-geolocation" version="2.2.0"/>-->
@@ -170,6 +171,7 @@
 			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 			<uses-permission android:name="android.permission.CAMERA" />
 			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.GET_ACCOUNTS" />
 			<uses-feature android:name="android.hardware.camera" />  
 			<uses-feature android:name="android.hardware.camera.autofocus" />
 		</gap:config-file>
