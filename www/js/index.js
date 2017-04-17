@@ -5507,7 +5507,7 @@ var app = {
 			options.chunkedMode = false;
 			
 			var ft = new FileTransfer();
-			ft.upload(imageURI, encodeURI("http://msop.it/uploadaddall.php"), win, fail, options);
+			ft.upload(imageURI, "http://msop.it/uploadaddall.php", win, fail, options);
 			
 		}
 		
