@@ -47,149 +47,6 @@ var app = {
 		);
 		
 		
-		if (localStorage.getItem("email") === null || localStorage.getItem("email")=="null" || typeof(localStorage.getItem("email")) == 'undefined' || localStorage.getItem("email")==0 || localStorage.getItem("email")=="") {
-			
-			window.location.href = "Login.html";
-			
-		}
-		
-		
-		
-		if (localStorage.getItem("nomefoto") === null || localStorage.getItem("nomefoto")=="null" || typeof(localStorage.getItem("nomefoto")) == 'undefined' || localStorage.getItem("nomefoto")==0 || localStorage.getItem("nomefoto")=="") {
-			
-			localStorage.setItem("foto","default.png")
-			
-		}
-		else{
-			nomefoto = localStorage.getItem("nomefoto")+".jpg";
-			localStorage.setItem("foto",nomefoto)
-		}
-		
-		
-		
-		/*$('#mySelect').on('change', function(){
-						  
-		   var esatte5="<br>";
-		   var conta=1;
-						  
-           var $this = $(this),
-		   $value = $this.val();
-						  
-			
-		   $("#qround").html("<b>"+ $value +"</b>")
-						  
-  
-				$("#spinner4").show()
-						  
-						  $.ajax({
-							  type:"GET",
-							  url:"http://msop.it/addall/leggipuntiTOT.php?email="+localStorage.getItem("email")+"",
-							  contentType: "application/json",
-							  //data: {Lat:3,Longi:4},
-							  timeout: 7000,
-							  jsonp: 'callback',
-							  crossDomain: true,
-							  success:function(result){
-							  
-							  $.each(result, function(i,item){
-									 
-									 if(item.Token=="1"){
-									 
-									 var dataclass = item.data.replace(".000000","").replace("2017-","")
-									 
-									 if(dataclass == "0000-00-00 00:00:00"){
-									 dataclass = ""
-										}
-									 
-									 if(item.nome <= 12){
-									 
-									 var nome = item.nome;
-									 
-									 }
-									 else{
-									 var nome = item.nome.slice(0,10)
-									 nome = nome + ".."
-									 }
-									 
-									 if(conta==1){
-									 
-									 esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+" , Round: <b>"+item.incontro+"</b><br><br>"
-										}
-									 else if(conta==2){
-									 
-									 esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+", Round: <b>"+item.incontro+"</b><br><br>"
-										}
-									 else if(conta==3){
-									 
-									 esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+", Round: <b>"+item.incontro+"</b><br><br>"
-										}
-									 else{
-									 esatte5 = esatte5 + "<b>"+nome+"</b>, Punti: <b>"+item.punti+"</b>,  "+dataclass+", Round: <b>"+item.incontro+"</b><br><br>"
-									 }
-									 
-									 }
-									 
-									 else{
-									 esatte5 = esatte5 + "<br>Nessun Risultato"
-									 }
-									 
-									 
-									 $("#esatte5").html(esatte5)
-									 
-									 conta = conta+1
-									 
-									 });
-								 
-								 
-								 $("#spinner4").hide()
-								 
-								 $("#mySelect").val("00");
-								 $("#mySelect").selectmenu("refresh");
-								 
-								 
-								 var myScroll2;
-								 
-								 myScroll2 = new iScroll('wrapper2', {
-														 //zoom: true,
-														 click: true
-														 /*hScrollbar: false,
-														  vScrollbar: false,
-														  zoomMin:1,
-														  zoomMax:2,
-														  zoomStart:1*/
-								/* });
-								 
-								 setTimeout (function(){
-											 
-									myScroll2.refresh();
-											 
-								 }, 1000);
-
-								 
-								 
-								 },
-								 error: function(){
-								 
-								 
-								 $("#esatte5").html("<br><br>Nessuna Sfida Aperta")
-								 
-								 navigator.notification.alert(
-															  'Errore di rete, riprova sotto copertura',  // message
-															  alertDismissed,         // callback
-															  'Errore di Rete',            // title
-															  'OK'                  // buttonName
-															  );
-								 
-								 },
-								 
-								 dataType:"jsonp"});
-
-						  
-		});*/
-		
-		
-		
-
 		
 		////////// controllo internet ///////////////
 		
@@ -198,20 +55,7 @@ var app = {
 		
 		if(connectionStatus=='online'){
 		
-			
-		  var uno;
-		  var due;
-		  var tre;
-		  var quattro;
-		  var numero = 1;
-		  var numero1 = 2;
-		  var numero2 = 3;
-		  var numero3 = 4;
-		  var numero4 = 5;
-		  var numero5 = 6;
-			
-		  $("#lastpunt").hide()
-			
+
 		 //DATA
 			var today = new Date();
 			var dd = today.getDate();
@@ -236,258 +80,116 @@ var app = {
 			
 			localStorage.setItem("ora_cell", ora_cell);
 			
-			
-		  localStorage.setItem("start","0")
-			
+
 		  var somma=0;
 		  var punto=0;
 		  $("#imgutente2").attr("src","http://msop.it/public/addall/"+localStorage.getItem("foto")+"");
 			
 			
-			//alert(localStorage.getItem("punteggio1"))
-			
-			
-			if(localStorage.getItem("punteggio1") === null || localStorage.getItem("punteggio1") == "" || localStorage.getItem("punteggio1") == "0" || typeof(localStorage.getItem("punteggio1")) == 'undefined' ||localStorage.getItem("punteggio1")==0){
-				
-			   $("#lastpunt").hide()
-			}
-			else{
-				$("#lastpunt").hide()
-				$("#punteggio2").html(localStorage.getItem("punteggio1"))
-			}
-			
-			localStorage.setItem("punteggio1","0")
-			
-			$("#spinner1").hide()
-			
-			
-			if (localStorage.getItem("email") === null || localStorage.getItem("email")=="null" || typeof(localStorage.getItem("email")) == 'undefined' || localStorage.getItem("email")==0 || localStorage.getItem("email")=="") {
-				
-				
-			}
-			else{
-				
-				//admob.initAdmob("ca-app-pub-5263503085775846/1999366017","ca-app-pub-5263503085775846~9522632812"); //admob IOS
-				//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
-				
-				//// AD MOB ////
-				
-				
-				//// ANDROID //////
-				
-				var admobid = {};
-				 
-				 if( /(android)/i.test(navigator.userAgent) ) {
-				 admobid = {
-				 banner: 'ca-app-pub-5263503085775846/1999366017',
-				 interstitial: 'ca-app-pub-5263503085775846~9522632812'
-				 };
-				 } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
-				 admobid = {
-				 banner: 'ca-app-pub-5263503085775846/1999366017',
-				 interstitial: 'ca-app-pub-5263503085775846~9522632812'
-				 };
-				 } else {
-				 admobid = {
-				 banner: 'ca-app-pub-5263503085775846/1999366017',
-				 interstitial: 'ca-app-pub-5263503085775846~9522632812'
-				 };
-				 }
-				 
-				 if(AdMob) AdMob.createBanner( {
-				 adId:admobid.banner,
-				 position:AdMob.AD_POSITION.BOTTOM_CENTER,
-				 autoShow:true} );
-				 
-				 
-				 
-				 if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
-				 
-				 if(AdMob) AdMob.showInterstitial();
-				
-				///// FINE /////
-				
-				
-				////// AD MOB FINE ////
-				
-			}
+			 var myScroll4;
+			 var esatte5="";
+			 var conta=1;
+			 
+			 
+			 $("#qround").html("<b> ROUND 2</b>")
+			 
+			 
+			 $("#spinner4").show()
+			 
+			 $.ajax({
+			 type:"GET",
+			 url:"http://msop.it/addall/leggipuntiTOT.php?email="+localStorage.getItem("email")+"&rnd=2",
+			 contentType: "application/json",
+			 //data: {Lat:3,Longi:4},
+			 timeout: 7000,
+			 jsonp: 'callback',
+			 crossDomain: true,
+			 success:function(result){
+			 
+			 $.each(result, function(i,item){
+			 
+			 if(item.Token=="1"){
+			 
+			 var dataclass = item.data.replace(".000000","").replace("2017-","")
+			 
+			 if(dataclass == "0000-00-00 00:00:00"){
+			 dataclass = ""
+			 }
+			 
+			 if(conta == 1){
+					$("#puntimiei").html("<font color='red'>Punti: <b>"+item.puntimiei+"</b></font>")
+					$("#rnk").html("<font color='red'>Tua Posizione: <b>"+item.rnk+"</b></font>")
+			 }
+			 
+			 
+			 if(item.nome <= 12){
+			 
+			 var nome = item.nome;
+			 
+			 }
+			 else{
+			 var nome = item.nome.slice(0,10)
+			 nome = nome + ".."
+			 }
+			 
+			 if(conta==1){
+			 
+			 esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+"<br><br>"
+			 }
+			 else if(conta==2){
+			 
+			 esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+"<br><br>"
+			 }
+			 else if(conta==3){
+			 
+			 esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+"<br><br>"
+			 }
+			 else{
+			 esatte5 = esatte5 + " " + conta+") <b>"+nome+"</b>, Punti: <b>"+item.punti+"</b>,  "+dataclass+"<br><br>"
+			 }
+			 
+			 }
+			 
+			 else{
+			 esatte5 = esatte5 + "<br>Nessun Risultato"
+			 }
+			 
+			 
+			 $("#esatte5").html(esatte5)
+			 
+			 conta = conta+1
+			 
+			 });
+			 
+			 
+			 $("#spinner4").hide()
+			 
+			 
+			 ris1week()
+			 
+			 
+			 },
+			 error: function(){
+			 
+			 
+			 $("#esatte5").html("<br><br>Nessuna Sfida Aperta")
+			 
+			 navigator.notification.alert(
+			 'Errore di rete, riprova sotto copertura',  // message
+			 alertDismissed,         // callback
+			 'Errore di Rete',            // title
+			 'OK'                  // buttonName
+			 );
+			 
+			 },
+			 
+			 dataType:"jsonp"});
 			
 			
 		}
 		
 		//////////////////////////////////////////
 		
-		$(document).on("touchstart", "#condividi", function(e){
-					   
-			//alert()
-					   
-			if(localStorage.getItem("emailfacebook") == "1"){
-				window.plugins.socialsharing.shareViaFacebook('Sfidami su AddAll', 'http://www.msop.it/addall/logo.png', 'www.msop.it', function() {console.log('share ok')}, function(onPause){})
-			}
-			else{
-					navigator.notification.alert(
-					 							'Devi fare login con Facebook',  // message
-												 alertDismissed,         // callback
-												 'Login',            // title
-												 'OK'                  // buttonName
-					);
-			}
-					   
-					   e.stopImmediatePropagation();
-					   
-					   e.preventDefault();
-					   
-					   return false;
-					   
-					   if ($.browser.iphone || $.browser.ipad) $(this).trigger('click');
-		});
-		
-		
-		
-		$(document).on("touchstart", "#loading", function(e){
-					   
-			localStorage.setItem("session10","0")
-			localStorage.setItem("punteggio1","0")
-			somma=0
-			punto = 0
-			$("#somma").html("0")
-			$("#totale").html("0")
-					   
-		});
-		
-		
-		
-		
-		$(document).on("touchstart", "#bliard", function(e){
-					   
-			//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
-					   
-			//window.location.href = "spec.html";
-					   
-		});
-		
-		
-		
-		$(document).on("tap", "#risultati", function(e){
-					   
-				
-				$("#tbllancia").hide()
-					   
-				//window.location.href = "#home4";
-				$.mobile.changePage ($("#home4"));
-					   
-					   
-				$("#spinner4").hide()
-					   
-				
-		});
-		
-		
-		
-		$(document).on("tap", "#ris1", function(e){
-					   
-					   var esatte5="";
-					   var conta=1;
-					   
-					   var myScroll;
-					   
-
-					   $("#qround").html("<b> ROUND 1</b>")
-						  
-					   
-					   $("#spinner4").show()
-						  
-						  $.ajax({
-							  type:"GET",
-							  url:"http://msop.it/addall/leggipuntiTOT.php?email="+localStorage.getItem("email")+"&rnd=1",
-							  contentType: "application/json",
-							  //data: {Lat:3,Longi:4},
-							  timeout: 7000,
-							  jsonp: 'callback',
-							  crossDomain: true,
-							  success:function(result){
-							  
-							  $.each(result, function(i,item){
-									 
-									 if(item.Token=="1"){
-									 
-									 var dataclass = item.data.replace(".000000","").replace("2017-","")
-									 
-									 if(dataclass == "0000-00-00 00:00:00"){
-									 dataclass = ""
-										}
-									 
-									 if(conta == 1){
-									   $("#puntimiei").html("<font color='red'>Punti: <b>"+item.puntimiei+"</b></font>")
-									   $("#rnk").html("<font color='red'>Tua Posizione: <b>"+item.rnk+"</b></font>")
-									 }
-									 
-									 
-									 if(item.nome <= 12){
-									 
-									 var nome = item.nome;
-									 
-									 }
-									 else{
-									 var nome = item.nome.slice(0,10)
-									 nome = nome + ".."
-									 }
-									 
-									 if(conta==1){
-									 
-									 esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+"<br><br>"
-										}
-									 else if(conta==2){
-									 
-									 esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+"<br><br>"
-										}
-									 else if(conta==3){
-									 
-									 esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+"<br><br>"
-										}
-									 else{
-									 esatte5 = esatte5 + " " + conta+") <b>"+nome+"</b>, Punti: <b>"+item.punti+"</b>,  "+dataclass+"<br><br>"
-									 }
-									 
-									 }
-									 
-									 else{
-									 esatte5 = esatte5 + "<br>Nessun Risultato"
-									 }
-									 
-									 
-									 $("#esatte5").html(esatte5)
-									 
-									 conta = conta+1
-									 
-									 });
-								 
-								 
-								 $("#spinner4").hide()
-								 
-								 
-								 ris1week()
-								 
-
-
-								 },
-								 error: function(){
-								 
-								 
-								 $("#esatte5").html("<br><br>Nessuna Sfida Aperta")
-								 
-								 navigator.notification.alert(
-															  'Errore di rete, riprova sotto copertura',  // message
-															  alertDismissed,         // callback
-															  'Errore di Rete',            // title
-															  'OK'                  // buttonName
-															  );
-								 
-								 },
-								 
-								 dataType:"jsonp"});
-  
-		});
 		
 		
 		
@@ -499,14 +201,14 @@ var app = {
 			var myScroll;
 			
 			
-			$("#qround").html("<b> ROUND 1</b>")
+			$("#qround").html("<b> ROUND 2</b>")
 			
 			
 			$("#spinner4").show()
 			
 			$.ajax({
 				   type:"GET",
-				   url:"http://msop.it/addall/leggipuntiDay.php?email="+localStorage.getItem("email")+"&rnd=1",
+				   url:"http://msop.it/addall/leggipuntiDay.php?email="+localStorage.getItem("email")+"&rnd=2",
 				   contentType: "application/json",
 				   //data: {Lat:3,Longi:4},
 				   timeout: 7000,
@@ -569,22 +271,22 @@ var app = {
 				   
 				   
 				   myScroll = new iScroll('wrapper2', {
-										   //zoom: true,
-										   click: true,
-										   scrollbars: 'custom'
-										   /*hScrollbar: false,
-											vScrollbar: false,
-											zoomMin:1,
-											zoomMax:2,
-											zoomStart:1*/
-										   });
+										  //zoom: true,
+										  click: true,
+										  scrollbars: 'custom'
+										  /*hScrollbar: false,
+										   vScrollbar: false,
+										   zoomMin:1,
+										   zoomMax:2,
+										   zoomStart:1*/
+										  });
 				   
 				   
 				   setTimeout (function(){
 							   
-						myScroll.refresh();
+							   myScroll.refresh();
 							   
-					}, 1200);
+							   }, 1200);
 				   
 				   
 				   },
@@ -606,6 +308,15 @@ var app = {
 			
 		}
 		
+
+		
+		
+		$(document).on("tap", "#ris1", function(e){
+					   
+			window.location.href = "indexr1.html";
+  
+		});
+		
 		
 		
 		$(document).on("tap", "#ris2", function(e){
@@ -625,408 +336,11 @@ var app = {
 		
 		
 		// PULSANTE CONTROLLO SFIDA //
-		$(document).on("touchstart", "#btnsfida", function(e){
-					   
-					   var esatte="";
-					   
-					   $.mobile.changePage ($("#home3"));
-
-					   $("#tbllancia").hide()
-					   
-					   $("#spinner3").show()
-					   
-					   $.ajax({
-							  type:"GET",
-							  url:"http://msop.it/addall/crtround1_V2.php?email="+localStorage.getItem("email")+"&round=1",
-							  contentType: "application/json",
-							  //data: {Lat:3,Longi:4},
-							  timeout: 7000,
-							  jsonp: 'callback',
-							  crossDomain: true,
-							  success:function(result){
-							  
-							    $.each(result, function(i,item){
-									   
-									   if(item.Token=="1"){
-									   var datasfida = item.data1
-									   
-									   esatte = esatte + "<br><img src='images/status_yellow.png' width='20'> <b>"+item.nome+"</b>, Punti: <b>"+item.punti+"</b>, "+datasfida.replace("2017-","")+"<br>"
-									   
-									   }
-									   else if(item.Token=="2"){
-									   var datasfida = item.data1
-									   if(item.punti!="0"){
-									   esatte = esatte + "<br><a id='sfida"+item.idsfida+"' ><img src='images/play.png' width='30'></a> <b>"+item.sfidante+"</b>, Punti: <b>"+item.punti+"</b>, "+datasfida.replace("2017-","")+" <br>"
-									   }
-									   }
-									   else if(item.Token=="3"){
-									   var datasfida = item.data1
-									   var datasfida2 = item.data2
-									   esatte = esatte + "<br><img src='images/status_green.png' width='20'> <b>"+item.sfidante+"</b>, Punti: <b>"+item.punti2+"</b>, "+datasfida.replace("2017-","")+" -- <b>"+item.nome+"</b>, Punti: <b>"+item.punti+"</b>, "+datasfida.replace("2017-","")+"<br>"
-									   }
-									   else{
-									   esatte = esatte + "<br><br>Nessuna Sfida Aperta"
-									   }
-									 
-									   
-									   $("#esatte4").html(esatte)
-									   
-									   $(document).on("touchstart", "#sfida"+item.idsfida+"", function(e){
-											
-											accettasfida(item.idsfida)
-													  
-										});
-									   
-								});
-							  
-								$("#spinner3").hide()
-							  
-							  },
-							  error: function(){
-							  
-							  
-							    $("#esatte4").html("<br><br>Nessuna Sfida Aperta")
-							  
-							    navigator.notification.alert(
-														   'Errore di rete, riprova sotto copertura',  // message
-														    alertDismissed,         // callback
-														   'Errore di Rete',            // title
-														   'OK'                  // buttonName
-														   );
-							  
-							  },
-							  
-							  dataType:"jsonp"});
-					   
-					   
-					   
-					   var myScroll;
-					   
-					   myScroll = new iScroll('wrapper', {
-													//zoom: true,
-													click: true
-													/*hScrollbar: false,
-													vScrollbar: false,
-													zoomMin:1,
-													zoomMax:2,
-													zoomStart:1*/
-											  });
-					   
-					   
-					   setTimeout (function(){
-								   
-							myScroll.refresh();
-								   
-						}, 1000);
-   
-					   
-		});
-		
-		
-		function btnsfida(){
-			
-			           var esatte="";
-					   
-					   //window.location.href = "#home3";
-					   $.mobile.changePage ($("#home3"));
-					   
-					   $("#tbllancia").hide()
-			
-						$("#spinner3").show()
-					   
-					   $.ajax({
-							  type:"GET",
-							  url:"http://msop.it/addall/crtround1_V2.php?email="+localStorage.getItem("email")+"&round=1",
-							  contentType: "application/json",
-							  //data: {Lat:3,Longi:4},
-							  timeout: 7000,
-							  jsonp: 'callback',
-							  crossDomain: true,
-							  success:function(result){
-							  
-							  $.each(result, function(i,item){
-									 
-									 if(item.Token=="1"){
-									 var datasfida = item.data1
-									 
-									 esatte = esatte + "<br><img src='images/status_yellow.png' width='20'> <b>"+item.nome+"</b>, Punti: <b>"+item.punti+"</b>, "+datasfida.replace("2017-","")+"<br>"
-									 
-									 }
-									 else if(item.Token=="2"){
-									 var datasfida = item.data1
-									 if(item.punti!="0"){
-									 esatte = esatte + "<br><a id='sfida"+item.idsfida+"' ><img src='images/play.png' width='30'></a> <b>"+item.sfidante+"</b>, Punti: <b>"+item.punti+"</b>, "+datasfida.replace("2017-","")+" <br>"
-									 }
-									 }
-									 else if(item.Token=="3"){
-									 var datasfida = item.data1
-									 var datasfida2 = item.data2
-									 esatte = esatte + "<br><img src='images/status_green.png' width='20'> <b>"+item.sfidante+"</b>, Punti: <b>"+item.punti2+"</b>, "+datasfida.replace("2017-","")+" -- <b>"+item.nome+"</b>, Punti: <b>"+item.punti+"</b>, "+datasfida.replace("2017-","")+"<br>"
-									 }
-									 else{
-									 esatte = esatte + "<br><br>Nessuna Sfida Aperta"
-									 }
-									 
-									 
-									 $("#esatte4").html(esatte)
-									 
-									 
-									 $(document).on("touchstart", "#sfida"+item.idsfida+"", function(e){
-													
-										accettasfida(item.idsfida)
-													
-									});
-									 
-									 
-								});
-							  
-							    $("#spinner3").hide()
-							  
-							  },
-							  error: function(){
-							  
-							  
-							  $("#esatte4").html("<br><br>Nessuna Sfida Aperta")
-							  
-							  navigator.notification.alert(
-														   'Errore di rete, riprova sotto copertura',  // message
-														   alertDismissed,         // callback
-														   'Errore di Rete',            // title
-														   'OK'                  // buttonName
-														   );
-							  
-							  },
-							  
-							  dataType:"jsonp"});
-					   
-					   
-					   
-					   var myScroll;
-					   
-					   myScroll = new iScroll('wrapper', {
-													//zoom: true,
-													click: true
-													/*hScrollbar: false,
-													vScrollbar: false,
-													zoomMin:1,
-													zoomMax:2,
-													zoomStart:1*/
-											  });
-					   
-					   
-					   setTimeout (function(){
-								   
-								   myScroll.refresh();
-								   
-								   }, 1000);
-					   
-					   
-		}
 		
 
-		
 		// FINE //
 		
-		$(document).on("touchstart", "#btnlancia2", function(e){
-			$("#lastpunt").hide()
-			localStorage.setItem("round","1")
-			localStorage.setItem("sfidalanciata","1")
-		    localStorage.setItem("sfida","1")
-			
-			$("#lastpunt").hide()
-			
-			$("#tbllancia").show()
-		});
-		
-		
-		$(document).on("touchstart", "#btnlancia", function(e){
-					   
-					
-					//$("#tbllancia").show()
-					
-					localStorage.setItem("round","1")
-					localStorage.setItem("sfidalanciata","1")
-					localStorage.setItem("sfida","1")
-					$("#lastpunt").hide()
-					   
-					   
-					$.ajax({
-							type:"GET",
-							url:"http://msop.it/addall/lancia_sfida_V2.php?email="+localStorage.getItem("email")+"",
-							contentType: "application/json",
-							//data: {Lat:3,Longi:4},
-							timeout: 7000,
-							jsonp: 'callback',
-							crossDomain: true,
-							success:function(result){
-							  
-							    $.each(result, function(i,item){
-									 
-									 if(item.Token=="1"){
-									   localStorage.setItem("idsfida",item.idsfida)
-									   
-									   //alert(localStorage.getItem("idsfida"))
-									   
-									   $("#btnallenati").hide()
-									   $("#btnsfida").hide()
-									   $("#btnlancia").hide()
-									   $("#bliard").hide()
-									   $("#risultati").hide()
-									   
-									   $("#load").show()
-									   
-									   localStorage.setItem("session10","0")
-									   
-									   localStorage.setItem("esatte","0")
-									   $("#esatte2").html("0")
-									   $("#esatte3").html("0")
-									   
-									   $("#totale").html("0/10")
-									   $("#bianca0").hide()
-									   $("#bianca").hide()
-									   $("#bianca1").hide()
-									   $("#bianca2").hide()
-									   
-									   var uno;
-									   var due;
-									   var tre;
-									   var quattro;
-									   var numero = 1;
-									   var numero1 = 2;
-									   var numero2 = 3;
-									   var numero3 = 4;
-									   var numero4 = 5;
-									   var numero5 = 6;
-									   
-									   //DATA
-									   var today = new Date();
-									   var dd = today.getDate();
-									   var mm = today.getMonth()+1;//January is 0, so always add + 1
-									   
-									   var ora = today.getHours()
-									   if(ora<10){ora="0"+ora}
-									   
-									   var minuti = today.getMinutes();
-									   if(minuti<10){minuti="0"+minuti}
-									   
-									   var secondi = today.getSeconds();
-									   if(secondi<10){secondi="0"+secondi}
-									   
-									   
-									   var yyyy = today.getFullYear();
-									   if(dd<10){dd="0"+dd}
-									   if(mm<10){mm="0"+mm}
-									   today = dd+'/'+mm+'/'+yyyy;
-									   
-									   $("#stamp").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
-									   $("#stamp2").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
-									   var ora_cell = yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00";
-									   
-									   localStorage.setItem("ora_cell", ora_cell);
-									   
-									   
-									   localStorage.setItem("start","0")
-									   localStorage.setItem("punteggio1","0")
-									   var somma=0;
-									   var punto=0;
-									   
-									   //admob.hideBanner()
-									   
-									   AdMob.removeBanner();
-									   
-									   localStorage.setItem("esatte",0)
-									   $("#esatte2").html("0")
-									   $("#esatte3").html("0")
-									   
-									   playAudio('successSound');
-									   
-									   localStorage.setItem("session10","0")
-									   localStorage.setItem("punteggio1","0")
-									   somma=0
-									   punto = 0
-									   $("#somma").html("0")
-									   $("#totale").html("0")
-									   $("#gioco").show()
-									   
-									   
-									   $("#going").hide()
-									   
-									   navigator.notification.alert(
-											'la somma delle palle colpite deve essere 10',  // message
-											alertDismissed,         // callback
-											'Somma 10',            // title
-											'OK'                  // buttonName
-										);
-									   
-									   setTimeout(function() {
-												  
-												  playAudio('successSound2');
-												  
-												  $("#load").hide()
-												  
-												  $("#dati").show()
-												  $("#dati0").show()
-												  
-												  $("#biliardo").show();
-												  
-												  $("#somma").html("0")
-												  $("#totale").html("0")
-												  countdown1(0);
-												  
-												  }, 1000);
-									   
-									   localStorage.setItem("start","0")
-									   
-									   prendinumeri3(0)
-									   
-									   /*$("#btnallenati").hide()
-									   $("#btnsfida").hide()
-									   $("#btnlancia").hide()
-									   $("#allenati").show()*/
-									   
-									 }
-									 else{
-									   //Errore, al momento non è possibile sfidare
-									 }
-									 
-								});
-							  
-							  },
-							  error: function(){
-							  
-							  
-							  navigator.notification.alert(
-														   'Errore di rete, riprova sotto copertura',  // message
-														   alertDismissed,         // callback
-														   'Errore di Rete',            // title
-														   'OK'                  // buttonName
-														   );
-							  
-							  },
-							  
-							  dataType:"jsonp"});
-					   
-					/*window.location.href = "#home4";
-				   
-					   
-					var myScroll2;
-					   
-					   
-					myScroll2 = new IScroll('#wrapper2', { click: true });
-					   
-					setTimeout (function(){
-						myScroll2.refresh();
-					}, 500);
-					   
-					   
-					   
-					document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 300); }, false);
-					   
-					document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);*/
 
-					   
-		});
-		
 		
 		function accettasfida(id){
 			$.mobile.changePage ($("#home"));
@@ -1115,9 +429,9 @@ var app = {
 						  $("#totale").html("0")
 						  $("#gioco").show()
 			
-			              //admob.hideBanner()
+			              admob.hideBanner()
 			
-			              AdMob.removeBanner();
+			              //AdMob.removeBanner();
 			
 			
 						  $("#going").hide()
@@ -1240,9 +554,9 @@ var app = {
 					   var somma=0;
 					   var punto=0;
 					   
-					   //admob.hideBanner()
+					   admob.hideBanner()
 					   
-					   AdMob.removeBanner();
+					   //AdMob.removeBanner();
 					   
 					   localStorage.setItem("esatte",0)
 					   $("#esatte2").html("0")
@@ -1423,9 +737,9 @@ var app = {
 				var punto=0;
 				
 				
-				//admob.hideBanner()
+				admob.hideBanner()
 				
-				AdMob.removeBanner();
+				//AdMob.removeBanner();
 				
 				localStorage.setItem("esatte",0)
 				$("#esatte2").html("0")
@@ -1553,9 +867,9 @@ var app = {
 				var punto=0;
 				
 				
-				//admob.hideBanner()
+				admob.hideBanner()
 				
-				AdMob.removeBanner();
+				//AdMob.removeBanner();
 				
 				localStorage.setItem("esatte",0)
 				$("#esatte2").html("0")
@@ -1787,9 +1101,9 @@ var app = {
 				var punto=0;
 				
 				
-				//admob.hideBanner()
+				admob.hideBanner()
 				
-				AdMob.removeBanner();
+				//AdMob.removeBanner();
 				
 				localStorage.setItem("esatte",0)
 				$("#esatte2").html("0")
