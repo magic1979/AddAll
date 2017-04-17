@@ -4308,7 +4308,7 @@ var app = {
 					   
 					      playAudio('successSound2');
 					   
-						  localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + (Number(numero)))
+						  localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + 1)
 					   
 					      $("#esatte2").html((Number(localStorage.getItem("esatte"))))
 					   
@@ -4628,7 +4628,7 @@ var app = {
 					   
 						  playAudio('successSound2');
 					   
-					   localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + (Number(numero)))
+					   localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + 1)
 					   
 					   $("#esatte2").html((Number(localStorage.getItem("esatte"))))
 					   $("#esatte3").html((Number(localStorage.getItem("esatte"))))
@@ -4946,7 +4946,7 @@ var app = {
 					   
 					      playAudio('successSound2');
 					   
-					   localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + (Number(numero)))
+					   localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + 1)
 					   
 					   $("#esatte2").html((Number(localStorage.getItem("esatte"))))
 					   $("#esatte3").html((Number(localStorage.getItem("esatte"))))
@@ -5264,7 +5264,7 @@ var app = {
 					   
 						 playAudio('successSound2');
 					   
-					   localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + (Number(numero)))
+					   localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + 1)
 					   
 					   $("#esatte2").html((Number(localStorage.getItem("esatte"))))
 					   $("#esatte3").html((Number(localStorage.getItem("esatte"))))
