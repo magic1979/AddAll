@@ -280,7 +280,7 @@ var app = {
 				 if( /(android)/i.test(navigator.userAgent) ) {
 				 admobid = {
 				 banner: 'ca-app-pub-5263503085775846/1999366017',
-				 interstitial: 'ca-app-pub-5263503085775846~9522632812'
+				 interstitial: 'ca-app-pub-5263503085775846/9788582818'
 				 };
 				 } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
 				 admobid = {
@@ -290,7 +290,7 @@ var app = {
 				 } else {
 				 admobid = {
 				 banner: 'ca-app-pub-5263503085775846/1999366017',
-				 interstitial: 'ca-app-pub-5263503085775846~9522632812'
+				 interstitial: 'ca-app-pub-5263503085775846/9788582818'
 				 };
 				 }
 				 
