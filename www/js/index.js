@@ -367,6 +367,15 @@ var app = {
 		});
 		
 		
+		$(document).on("touchstart", "#testo", function(e){
+					   
+			//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
+					   
+			window.location.href = "map.html";
+					   
+		});
+		
+		
 		
 		$(document).on("tap", "#risultati", function(e){
 					   
