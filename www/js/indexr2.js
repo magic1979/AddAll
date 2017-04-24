@@ -92,6 +92,8 @@ var app = {
 			 
 			 
 			 $("#qround").html("<b> ROUND 2</b>")
+			
+			$("#migliori2017").html("<b>I MIGLIORI DEL 2017</b>")
 			 
 			 
 			 $("#spinner4").show()
@@ -112,16 +114,8 @@ var app = {
 			 
 			 var dataclass = item.data.replace(".000000","").replace("2017-","")
 			 
-			 if(dataclass == "0000-00-00 00:00:00"){
-			 dataclass = ""
-			 }
-			 
-			 if(conta == 1){
-					$("#puntimiei").html("<font color='red'>Punti: <b>"+item.puntimiei+"</b></font>")
-					$("#rnk").html("<font color='red'>Tua Posizione: <b>"+item.rnk+"</b></font>")
-			 }
-			 
-			 
+			  dataclass = dataclass.slice(0,11)
+					
 			 if(item.nome <= 12){
 			 
 			 var nome = item.nome;
@@ -133,6 +127,9 @@ var app = {
 			 }
 			 
 			 if(conta==1){
+					
+			 $("#puntimiei").html("<font color='red'>Punti: <b>"+item.puntimiei+"</b></font>")
+			 $("#rnk").html("<font color='red'>Tua Posizione: <b>"+item.rnk+"</b></font>")
 			 
 			 esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+"<br><br>"
 			 }
@@ -203,6 +200,8 @@ var app = {
 			
 			$("#qround").html("<b> ROUND 2</b>")
 			
+			$("#migliorisett").html("<b>I MIGLIORI DELLA SETTIMANA</b>")
+			
 			
 			$("#spinner4").show()
 			
@@ -222,9 +221,7 @@ var app = {
 						  
 						  var dataclass = item.data.replace(".000000","").replace("2017-","")
 						  
-						  if(dataclass == "0000-00-00 00:00:00"){
-						  dataclass = ""
-						  }
+						   dataclass = dataclass.slice(0,11)
 						  
 						  
 						  if(item.nome <= 12){
@@ -238,6 +235,9 @@ var app = {
 						  }
 						  
 						  if(conta==1){
+						  
+						  $("#puntimiei2").html("<font color='red'>Punti: <b>"+item.puntimiei2+"</b></font>")
+						  $("#rnk2").html("<font color='red'>Tua Posizione: <b>"+item.rnk2+"</b></font>")
 						  
 						  esatte6 = esatte6 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+"<br><br>"
 						  }

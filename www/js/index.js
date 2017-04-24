@@ -267,13 +267,16 @@ var app = {
 			}
 			else{
 				
-				//admob.initAdmob("ca-app-pub-5263503085775846/1999366017","ca-app-pub-5263503085775846~9522632812"); //admob IOS
+				//admob.initAdmob("ca-app-pub-5263503085775846/5025370017","ca-app-pub-5263503085775846~9522632812"); //admob IOS
 				//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
 				
 				//// AD MOB ////
-				
+				// VIDEO ca-app-pub-5263503085775846/7188370010
+				//BANNER ca-app-pub-5263503085775846/1999366017
 				
 				//// ANDROID //////
+				
+				//https://github.com/floatinghotpot/cordova-admob-pro#usage
 				
 				var admobid = {};
 				 
@@ -290,9 +293,10 @@ var app = {
 				 } else {
 				 admobid = {
 				 banner: 'ca-app-pub-5263503085775846/1999366017',
-				 interstitial: 'ca-app-pub-5263503085775846/9788582818'
+				 interstitial: 'ca-app-pub-5263503085775846~9522632812'
 				 };
 				 }
+				 
 				 
 				 if(AdMob) AdMob.createBanner( {
 				 adId:admobid.banner,
@@ -300,8 +304,8 @@ var app = {
 				 autoShow:true} );
 				 
 				 
-				 
 				 if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+				 
 				 
 				 if(AdMob) AdMob.showInterstitial();
 				
@@ -366,7 +370,6 @@ var app = {
 					   
 		});
 		
-		
 		$(document).on("touchstart", "#testo", function(e){
 					   
 			//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
@@ -402,6 +405,9 @@ var app = {
 					   
 
 					   $("#qround").html("<b> ROUND 1</b>")
+					   
+					   $("#migliori2017").html("<b>I MIGLIORI DEL 2017</b>")
+					   
 						  
 					   
 					   $("#spinner4").show()
@@ -422,15 +428,9 @@ var app = {
 									 
 									 var dataclass = item.data.replace(".000000","").replace("2017-","")
 									 
-									 if(dataclass == "0000-00-00 00:00:00"){
-									 dataclass = ""
-										}
 									 
-									 if(conta == 1){
-									   $("#puntimiei").html("<font color='red'>Punti: <b>"+item.puntimiei+"</b></font>")
-									   $("#rnk").html("<font color='red'>Tua Posizione: <b>"+item.rnk+"</b></font>")
-									 }
-									 
+									 dataclass = dataclass.slice(0,11)
+									
 									 
 									 if(item.nome <= 12){
 									 
@@ -444,8 +444,11 @@ var app = {
 									 
 									 if(conta==1){
 									 
-									 esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+"<br><br>"
-										}
+									   $("#puntimiei").html("<font color='red'>Punti: <b>"+item.puntimiei+"</b></font>")
+									   $("#rnk").html("<font color='red'>Tua Posizione: <b>"+item.rnk+"</b></font>")
+									 
+									    esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+"<br><br>"
+									 }
 									 else if(conta==2){
 									 
 									 esatte5 = esatte5 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+"<br><br>"
@@ -510,6 +513,8 @@ var app = {
 			
 			$("#qround").html("<b> ROUND 1</b>")
 			
+			$("#migliorisett").html("<b>I MIGLIORI DELLA SETTIMANA</b>")
+			
 			
 			$("#spinner4").show()
 			
@@ -529,10 +534,7 @@ var app = {
 						  
 						  var dataclass = item.data.replace(".000000","").replace("2017-","")
 						  
-						  if(dataclass == "0000-00-00 00:00:00"){
-						  dataclass = ""
-						  }
-						  
+						  dataclass = dataclass.slice(0,11)
 						  
 						  if(item.nome <= 12){
 						  
@@ -546,7 +548,10 @@ var app = {
 						  
 						  if(conta==1){
 						  
-						  esatte6 = esatte6 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+"<br><br>"
+						    $("#puntimiei2").html("<font color='red'>Punti: <b>"+item.puntimiei2+"</b></font>")
+						    $("#rnk2").html("<font color='red'>Tua Posizione: <b>"+item.rnk2+"</b></font>")
+						  
+						    esatte6 = esatte6 + "<b><img src='http://msop.it/public/addall/"+item.foto+"' rel='external' class='utenteimg' width='20'>"+nome+"</b>, Punti: <b>"+item.punti+"</b>, "+dataclass+"<br><br>"
 						  }
 						  else if(conta==2){
 						  
@@ -632,11 +637,14 @@ var app = {
 		
 		
 		
-		
 		// PULSANTE CONTROLLO SFIDA //
 		$(document).on("touchstart", "#btnsfida", function(e){
 					   
-					   var esatte="";
+					   var esatte="<table width='100%' align='center' border='0'>";
+					   
+					    var esatte44="<table width='100%' align='center' border='0'>";
+					   
+					    var esatte444="<table width='100%' align='center' border='0'>";
 					   
 					   $.mobile.changePage ($("#home3"));
 
@@ -659,26 +667,36 @@ var app = {
 									   if(item.Token=="1"){
 									   var datasfida = item.data1
 									   
-									   esatte = esatte + "<br><img src='images/status_yellow.png' width='20'> <b>"+item.nome+"</b>, Punti: <b>"+item.punti+"</b>, "+datasfida.replace("2017-","")+"<br>"
+									   esatte = esatte + "<tr><td width='150px' align='center' valign='center'><img src='images/vs.png' width='20'></td><td width='150px' align='center'> <b>"+item.nome+"</b></td></tr><tr><td width='100px' align='center' valign='center'> "+datasfida.replace("2017-","")+" </td><td width='150px' align='center'> --> <b>"+item.punti+"</b></td></tr>"
 									   
 									   }
 									   else if(item.Token=="2"){
 									   var datasfida = item.data1
 									   if(item.punti!="0"){
-									   esatte = esatte + "<br><a id='sfida"+item.idsfida+"' ><img src='images/play.png' width='30'></a> <b>"+item.sfidante+"</b>, Punti: <b>"+item.punti+"</b>, "+datasfida.replace("2017-","")+" <br>"
+									   esatte44 = esatte44 + "<tr><td width='150px' align='center'> <b>"+item.sfidante+"</b></td><td width='150px' align='center'> --> <b>"+item.punti+"</b></td></tr><tr><td width='100px' align='center' valign='center'><a id='sfida"+item.idsfida+"' ><img src='images/play.png' width='40px'></a></td><td width='150px' align='center' valign='center'><img src='images/vs.png' height='30'></td><tr> "
+									   
 									   }
 									   }
 									   else if(item.Token=="3"){
 									   var datasfida = item.data1
 									   var datasfida2 = item.data2
-									   esatte = esatte + "<br><img src='images/status_green.png' width='20'> <b>"+item.sfidante+"</b>, Punti: <b>"+item.punti2+"</b>, "+datasfida.replace("2017-","")+" -- <b>"+item.nome+"</b>, Punti: <b>"+item.punti+"</b>, "+datasfida.replace("2017-","")+"<br>"
+									   
+									   esatte444 = esatte444 + "<tr><td width='150px' align='center' valign='center'></td><td width='150px' align='center' valign='center'></td><tr><td width='100px' align='center'> <b>"+item.nome+"</b></td><td width='150px' align='center' valign='center'> --> <b>"+item.punti+"</b> </td></tr><tr><td width='100px' align='center'> <b>"+item.sfidante+"</b> </td><td width='150px' align='center' valign='center'> --> <b>"+item.punti2+"</b> </td></tr><tr><td width='150px' align='center' valign='center'><font size='1'>"+datasfida.replace("2017-","")+"</font></td><td width='150px' align='center' valign='center'></td></tr>"
+									   
+									   //"<tr><td width='100%' align='left' valign='center' colspan='2'></td></tr><tr></td><td width='100px' align='center'> <b>"+item.sfidante+"</b> --> <b>"+item.punti2+"</b></td><td width='150px' align='center' valign='center'> <b>"+item.nome+"</b>, --> <b>"+item.punti+"</b></td></tr>"
+
 									   }
 									   else{
-									   esatte = esatte + "<br><br>Nessuna Sfida Aperta"
+									     esatte = esatte + "<br><br>Nessuna Sfida Aperta"
 									   }
 									 
 									   
-									   $("#esatte4").html(esatte)
+									   $("#esatte4").html(esatte + "</table>")
+									   
+									   $("#esatte44").html(esatte44 + "</table>")
+									   
+									   $("#esatte444").html(esatte444 + "</table>")
+									   
 									   
 									   $(document).on("touchstart", "#sfida"+item.idsfida+"", function(e){
 											
@@ -969,7 +987,7 @@ var app = {
 									   
 									   setTimeout(function() {
 												  
-												  playAudio('successSound2');
+												  playAudio2('successSound2');
 												  
 												  $("#load").hide()
 												  
@@ -1138,7 +1156,7 @@ var app = {
 									 $("#btnlancia").hide()
 									 $("#risultati").hide()
 									 
-									 playAudio('successSound2');
+									 playAudio2('successSound2');
 									 
 									 $("#load").hide()
 									 
@@ -1272,7 +1290,7 @@ var app = {
 					   
 					   setTimeout(function() {
 								  
-								  playAudio('successSound2');
+								  playAudio2('successSound2');
 								  
 								  $("#load").hide()
 								  
@@ -1355,7 +1373,7 @@ var app = {
 					   navigator.notification.confirm(
 													  'ROUND 1 la somma delle palle colpite deve essere 10',  // message
 													  onConfirm1,              // callback to invoke with index of button pressed
-													  'Spegni',            // title
+													  'ROUND 1',            // title
 													  'Inizia,Annulla'      // buttonLabels
 													  );
 					   
@@ -1378,6 +1396,8 @@ var app = {
 				localStorage.setItem("esatte","0")
 				$("#esatte2").html("0")
 				$("#esatte3").html("0")
+				
+				localStorage.setItem("MaxEsatte","")
 				
 				$("#totale").html("0/10")
 				$("#bianca0").hide()
@@ -1455,7 +1475,7 @@ var app = {
 				
 				setTimeout(function() {
 						   
-						   playAudio('successSound2');
+						   playAudio2('successSound2');
 						   
 						   $("#load").hide()
 						   
@@ -1485,7 +1505,7 @@ var app = {
 					   navigator.notification.confirm(
 													  'ROUND 2 la somma delle palle colpite deve essere 15',  // message
 													  onConfirm2,              // callback to invoke with index of button pressed
-													  'Spegni',            // title
+													  'ROUND 2',            // title
 													  'Inizia,Annulla'      // buttonLabels
 													  );
 					   
@@ -1508,6 +1528,8 @@ var app = {
 				localStorage.setItem("esatte","0")
 				$("#esatte2").html("0")
 				$("#esatte3").html("0")
+				
+				localStorage.setItem("MaxEsatte","")
 				
 				$("#totale").html("0/15")
 				$("#bianca0").hide()
@@ -1585,7 +1607,7 @@ var app = {
 				
 				setTimeout(function() {
 						   
-						   playAudio('successSound2');
+						   playAudio2('successSound2');
 						   
 						   $("#load").hide()
 						   
@@ -1615,7 +1637,7 @@ var app = {
 			navigator.notification.confirm(
 										   'ROUND 2 la somma delle palle colpite deve essere 15',  // message
 										   onConfirm22,              // callback to invoke with index of button pressed
-										   'Spegni',            // title
+										   'ROUND 2',            // title
 										   'Inizia,Annulla'      // buttonLabels
 										   );
 			
@@ -1683,6 +1705,8 @@ var app = {
 						$("#esatte3").html("0")
 			
 						var somma=0;
+				
+						somma=0
 
 					   $("#gioco").show()
 			
@@ -1691,7 +1715,7 @@ var app = {
 			
 					   setTimeout(function() {
 								  
-							playAudio('successSound2');
+							playAudio2('successSound2');
 								  
 							$("#load").hide()
 								  
@@ -1722,7 +1746,7 @@ var app = {
 					   navigator.notification.confirm(
 													  'ROUND 3 la somma delle palle colpite deve essere 20',  // message
 													  onConfirm3,              // callback to invoke with index of button pressed
-													  'Spegni',            // title
+													  'ROUND 3',            // title
 													  'Inizia,Annulla'      // buttonLabels
 													  );
 		});
@@ -1742,6 +1766,8 @@ var app = {
 				localStorage.setItem("esatte","0")
 				$("#esatte2").html("0")
 				$("#esatte3").html("0")
+				
+				localStorage.setItem("MaxEsatte","")
 				
 				$("#totale").html("0/20")
 				$("#bianca0").hide()
@@ -1806,20 +1832,22 @@ var app = {
 				
 				playAudio('successSound');
 				
-				localStorage.setItem("session10","0")
-				localStorage.setItem("punteggio1","0")
-				somma=0
-				punto = 0
-				$("#somma").html("0")
-				$("#totale").html("0")
-				$("#gioco").show()
+				localStorage.setItem("esatte",0)
+				$("#esatte2").html("0")
+				$("#esatte3").html("0")
 				
+				var somma=0;
+				
+				somma=0
+				
+				$("#gioco").show()
 				
 				$("#going").hide()
 				
+				
 				setTimeout(function() {
 						   
-						   playAudio('successSound2');
+						   playAudio2('successSound2');
 						   
 						   $("#load").hide()
 						   
@@ -1828,9 +1856,10 @@ var app = {
 						   
 						   $("#biliardo").show();
 						   
+						   countdown1(0);
+						   
 						   $("#somma").html("0")
 						   $("#totale").html("0")
-						   countdown1(0);
 						   
 						   }, 1000);
 				
@@ -1848,7 +1877,7 @@ var app = {
 			navigator.notification.confirm(
 										   'ROUND 3 la somma delle palle colpite deve essere 20',  // message
 										   onConfirm33,              // callback to invoke with index of button pressed
-										   'Spegni',            // title
+										   'ROUND 3',            // title
 										   'Inizia,Annulla'      // buttonLabels
 										   );
 			
@@ -1915,6 +1944,8 @@ var app = {
 			$("#esatte3").html("0")
 			
 			var somma=0;
+				
+			somma=0
 			
 			$("#gioco").show()
 			
@@ -1923,7 +1954,7 @@ var app = {
 			
 			setTimeout(function() {
 					   
-					   playAudio('successSound2');
+					   playAudio2('successSound2');
 					   
 					   $("#load").hide()
 					   
@@ -2062,7 +2093,13 @@ var app = {
 			
 			
 			$(document).on("touchstart", "#ricarica1", function(e){
-				prendinumeri3(cosa)
+						   
+						   $("#bianca0").hide()
+						   $("#bianca").hide()
+						   $("#bianca1").hide()
+						   $("#bianca2").hide()
+						   	   
+				         prendinumeri3(cosa)
 			});
 			
 		}
@@ -2181,6 +2218,13 @@ var app = {
 			}
 			
 			$(document).on("touchstart", "#ricarica1", function(e){
+						   
+						   $("#bianca0").hide()
+						   $("#bianca").hide()
+						   $("#bianca1").hide()
+						   $("#bianca2").hide()
+
+						   
 				prendinumeri3_15(cosa)
 			});
 			
@@ -2300,6 +2344,13 @@ var app = {
 			}
 			
 			$(document).on("touchstart", "#ricarica1", function(e){
+						   
+						   $("#bianca0").hide()
+						   $("#bianca").hide()
+						   $("#bianca1").hide()
+						   $("#bianca2").hide()
+
+						   
 				prendinumeri3_20(cosa)
 			});
 			
@@ -2443,6 +2494,13 @@ var app = {
 			}
 			
 			$(document).on("touchstart", "#ricarica1", function(e){
+						   
+						   $("#bianca0").hide()
+						   $("#bianca").hide()
+						   $("#bianca1").hide()
+						   $("#bianca2").hide()
+
+						   
 				prendinumeri(cosa)
 			});
 			
@@ -2586,6 +2644,13 @@ var app = {
 			
 			
 			$(document).on("touchstart", "#ricarica1", function(e){
+						   
+						   $("#bianca0").hide()
+						   $("#bianca").hide()
+						   $("#bianca1").hide()
+						   $("#bianca2").hide()
+
+						   
 				prendinumeri_15(cosa)
 			});
 			
@@ -2729,6 +2794,13 @@ var app = {
 			
 			
 			$(document).on("touchstart", "#ricarica1", function(e){
+						   
+						   $("#bianca0").hide()
+						   $("#bianca").hide()
+						   $("#bianca1").hide()
+						   $("#bianca2").hide()
+
+						   
 				prendinumeri_20(cosa)
 			});
 			
@@ -2870,6 +2942,13 @@ var app = {
 			}
 			
 			$(document).on("touchstart", "#ricarica1", function(e){
+						   
+						   $("#bianca0").hide()
+						   $("#bianca").hide()
+						   $("#bianca1").hide()
+						   $("#bianca2").hide()
+
+						   
 				prendinumerimano1(cosa)
 			});
 		}
@@ -3010,6 +3089,13 @@ var app = {
 			}
 			
 			$(document).on("touchstart", "#ricarica1", function(e){
+						   
+						   $("#bianca0").hide()
+						   $("#bianca").hide()
+						   $("#bianca1").hide()
+						   $("#bianca2").hide()
+
+						   
 				prendinumerimeno1_15(cosa)
 			});
 			
@@ -3151,6 +3237,13 @@ var app = {
 			}
 			
 			$(document).on("touchstart", "#ricarica1", function(e){
+						   
+						   $("#bianca0").hide()
+						   $("#bianca").hide()
+						   $("#bianca1").hide()
+						   $("#bianca2").hide()
+
+						   
 				prendinumerimeno1_20(cosa)
 			});
 			
@@ -3166,7 +3259,7 @@ var app = {
 				var seconds = 75;
 			}
 			else{
-			    var seconds = 80;
+			    var seconds = 90;
 			}
 			
 			var mins = minutes
@@ -3180,7 +3273,7 @@ var app = {
 					setTimeout(tick, 1000);
 					
 					if( seconds == 10 ) {
-						playAudio('successSound3');
+						playAudio3('successSound3');
 					}
 					
 					if( seconds < 10 ) {
@@ -3345,7 +3438,18 @@ var app = {
 									  $("#punteggiotot").html("PUNTEGGIO ROUND "+localStorage.getItem("round"))
 									  $("#punteggiotot1").html(localStorage.getItem("punteggio1"))
 									  
-									  //window.location.href = "index.html";
+									  
+									  
+									  if (localStorage.getItem("MaxEsatte") === null || localStorage.getItem("MaxEsatte")=="null" || typeof(localStorage.getItem("MaxEsatte")) == 'undefined' || localStorage.getItem("MaxEsatte")==0 || localStorage.getItem("MaxEsatte")=="") {
+									  
+									  
+									  }
+									  
+									  else{
+
+									     $("#esatte3").html(localStorage.getItem("MaxEsatte"))
+									  }
+									  
 									  
 									}
 									else{
@@ -3407,6 +3511,27 @@ var app = {
 								
 			var bonus=0
 					   
+					   
+					   if (localStorage.getItem("MaxEsatte") === null || localStorage.getItem("MaxEsatte")=="null" || typeof(localStorage.getItem("MaxEsatte")) == 'undefined' || localStorage.getItem("MaxEsatte")==0 || localStorage.getItem("MaxEsatte")=="") {
+					   
+						    //alert("esatte " + localStorage.getItem("esatte"))
+					   
+					        localStorage.setItem("MaxEsatte", localStorage.getItem("esatte"))
+					   }
+
+					   else{
+					   
+					     if((Number(localStorage.getItem("MaxEsatte"))) < (Number(localStorage.getItem("esatte")))) {
+					   
+					       //alert("esatte nuove" + localStorage.getItem("esatte"))
+					   
+					       localStorage.setItem("MaxEsatte", localStorage.getItem("esatte"))
+					   
+					     }
+					   }
+					   
+			
+					   
 			localStorage.setItem("esatte","0")
 			$("#esatte2").html("0")
 			$("#esatte3").html("0")
@@ -3461,7 +3586,7 @@ var app = {
 				$("#palla3").hide()
 				$("#palla4").hide()
 					   
-				playAudio('successSound2');
+				playAudio2('successSound2');
 					   
 					   if ((somma>=10)&&(somma<16)){
 					   
@@ -3588,6 +3713,20 @@ var app = {
 								
 					   var bonus=0
 					   
+					   if (localStorage.getItem("MaxEsatte") === null || localStorage.getItem("MaxEsatte")=="null" || typeof(localStorage.getItem("MaxEsatte")) == 'undefined' || localStorage.getItem("MaxEsatte")==0 || localStorage.getItem("MaxEsatte")=="") {
+					   
+					      localStorage.setItem("MaxEsatte", localStorage.getItem("esatte"))
+					   }
+					   
+					   else{
+					   
+					   if((Number(localStorage.getItem("MaxEsatte")))<(Number(localStorage.getItem("esatte")))) {
+					   
+					      localStorage.setItem("MaxEsatte", localStorage.getItem("esatte"))
+					   
+					   }
+					   }
+					   
 					   localStorage.setItem("esatte","0")
 					   $("#esatte2").html("0")
 					   $("#esatte3").html("0")
@@ -3641,7 +3780,7 @@ var app = {
 					   $("#palla3").hide()
 					   $("#palla4").hide()
 					   
-					   playAudio('successSound2');
+					   playAudio2('successSound2');
 					   
 					   if ((somma>=10)&&(somma<16)){
 					   
@@ -3768,6 +3907,20 @@ var app = {
 								
 					   var bonus=0
 					   
+					   if (localStorage.getItem("MaxEsatte") === null || localStorage.getItem("MaxEsatte")=="null" || typeof(localStorage.getItem("MaxEsatte")) == 'undefined' || localStorage.getItem("MaxEsatte")==0 || localStorage.getItem("MaxEsatte")=="") {
+					   
+					      localStorage.setItem("MaxEsatte", localStorage.getItem("esatte"))
+					   }
+					   
+					   else{
+					   
+					   if((Number(localStorage.getItem("MaxEsatte")))<(Number(localStorage.getItem("esatte")))) {
+					   
+					      localStorage.setItem("MaxEsatte", localStorage.getItem("esatte"))
+					   
+					   }
+					   }
+					   
 					   localStorage.setItem("esatte","0")
 					   $("#esatte2").html("0")
 					   $("#esatte3").html("0")
@@ -3821,7 +3974,7 @@ var app = {
 					   $("#palla3").hide()
 					   $("#palla4").hide()
 					   
-					   playAudio('successSound2');
+					   playAudio2('successSound2');
 					   
 					   if ((somma>=10)&&(somma<16)){
 					   
@@ -3948,6 +4101,20 @@ var app = {
 								
 			var bonus=0
 					   
+					   if (localStorage.getItem("MaxEsatte") === null || localStorage.getItem("MaxEsatte")=="null" || typeof(localStorage.getItem("MaxEsatte")) == 'undefined' || localStorage.getItem("MaxEsatte")==0 || localStorage.getItem("MaxEsatte")=="") {
+					   
+					      localStorage.setItem("MaxEsatte", localStorage.getItem("esatte"))
+					   }
+					   
+					   else{
+					   
+					   if((Number(localStorage.getItem("MaxEsatte")))<(Number(localStorage.getItem("esatte")))) {
+					   
+					      localStorage.setItem("MaxEsatte", localStorage.getItem("esatte"))
+					   
+					   }
+					   }
+					   
 			localStorage.setItem("esatte","0")
 			$("#esatte2").html("0")
 			$("#esatte3").html("0")
@@ -4001,7 +4168,7 @@ var app = {
 					   $("#palla3").hide()
 					   $("#palla4").hide()
 					   
-					   playAudio('successSound2');
+					   playAudio2('successSound2');
 					   
 					   if ((somma>=10)&&(somma<16)){
 					   
@@ -4315,7 +4482,7 @@ var app = {
 						  $("#palla3").hide()
 					      $("#palla4").hide()
 					   
-					      playAudio('successSound2');
+					      playAudio2('successSound2');
 					   
 						  localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + 1)
 					   
@@ -4635,7 +4802,7 @@ var app = {
 						 $("#palla3").hide()
 					     $("#palla4").hide()
 					   
-						  playAudio('successSound2');
+						  playAudio2('successSound2');
 					   
 					   localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + 1)
 					   
@@ -4953,7 +5120,7 @@ var app = {
 						  $("#palla3").hide()
 					      $("#palla4").hide()
 					   
-					      playAudio('successSound2');
+					      playAudio2('successSound2');
 					   
 					   localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + 1)
 					   
@@ -5271,7 +5438,7 @@ var app = {
 						 $("#palla3").hide()
 					     $("#palla4").hide()
 					   
-						 playAudio('successSound2');
+						 playAudio2('successSound2');
 					   
 					   localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + 1)
 					   
@@ -5516,7 +5683,7 @@ var app = {
 			options.chunkedMode = false;
 			
 			var ft = new FileTransfer();
-			ft.upload(imageURI, "http://msop.it/uploadaddall.php", win, fail, options);
+			ft.upload(imageURI, encodeURI("http://msop.it/uploadaddall.php"), win, fail, options);
 			
 		}
 		
@@ -5662,6 +5829,7 @@ function onPause3() {
 function playAudio(id) {
 	var audioElement = document.getElementById(id);
 	var url = audioElement.getAttribute('src');
+	
 	var my_media = new Media(url,
 							 // success callback
 							 function () { console.log("playAudio():Audio Success"); },
@@ -5675,6 +5843,46 @@ function playAudio(id) {
 	/*setTimeout(function() {
 			   my_media.stop();
 			   }, 3000);*/
+	
+}
+
+function playAudio2(id) {
+	var audioElement = document.getElementById(id);
+	var url = audioElement.getAttribute('src');
+	
+	var my_media = new Media(url,
+							 // success callback
+							 function () { console.log("playAudio():Audio Success"); },
+							 // error callback
+							 function (err) { console.log("playAudio():Audio Error: " + err); }
+							 );
+	
+	my_media.play();
+	
+	
+	/*setTimeout(function() {
+	 my_media.stop();
+	 }, 3000);*/
+	
+}
+
+function playAudio3(id) {
+	var audioElement = document.getElementById(id);
+	var url = audioElement.getAttribute('src');
+	
+	var my_media = new Media(url,
+							 // success callback
+							 function () { console.log("playAudio():Audio Success"); },
+							 // error callback
+							 function (err) { console.log("playAudio():Audio Error: " + err); }
+							 );
+	
+	my_media.play();
+	
+	
+	/*setTimeout(function() {
+	 my_media.stop();
+	 }, 3000);*/
 	
 }
 
