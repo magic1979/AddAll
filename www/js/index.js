@@ -43,7 +43,17 @@ var app = {
     
 				// Preload audio resources
 				
-				window.plugins.NativeAudio.preloadSimple( 'click', 'sound/open.mp3', function(msg){
+				window.plugins.NativeAudio.preloadSimple( 'musica', 'sound/open.mp3', function(msg){
+				}, function(msg){
+					alert( 'error: ' + msg );
+				});
+				
+				window.plugins.NativeAudio.preloadSimple( 'bella', 'sound/bell.mp3', function(msg){
+				}, function(msg){
+					alert( 'error: ' + msg );
+				});
+				
+				window.plugins.NativeAudio.preloadSimple( 'forse', 'sound/clic.mp3', function(msg){
 				}, function(msg){
 					alert( 'error: ' + msg );
 				});
@@ -385,7 +395,54 @@ var app = {
 			
 			
 			// Play 
-			window.plugins.NativeAudio.play( 'click' );
+			window.plugins.NativeAudio.play( 'musica' );
+		 
+		 
+		 
+			// Stop multichannel clip after 60 seconds 
+			window.setTimeout( function(){
+		 
+				//window.plugins.NativeAudio.stop( 'music' );
+					
+				//window.plugins.NativeAudio.unload( 'click' );
+		 
+			}, 6000 );
+			
+			//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
+					   
+			//window.location.href = "map.html";
+					   
+		});
+		
+		$(document).on("touchstart", "#testo1", function(e){
+			
+			
+			// Play 
+			window.plugins.NativeAudio.play( 'bella' );
+		 
+		 
+		 
+			// Stop multichannel clip after 60 seconds 
+			window.setTimeout( function(){
+		 
+				//window.plugins.NativeAudio.stop( 'music' );
+					
+				//window.plugins.NativeAudio.unload( 'click' );
+		 
+			}, 6000 );
+			
+			//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
+					   
+			//window.location.href = "map.html";
+					   
+		});
+		
+		
+		$(document).on("touchstart", "#test2", function(e){
+			
+			
+			// Play 
+			window.plugins.NativeAudio.play( 'forse' );
 		 
 		 
 		 
@@ -5858,7 +5915,7 @@ function playAudio(id) {
 	
 	setTimeout(function() {
 		my_media.stop();
-	}, 500);
+	}, 700);
 	
 }
 
@@ -5878,7 +5935,7 @@ function playAudio2(id) {
 	
 	setTimeout(function() {
 	  my_media2.stop();
-	 }, 500);
+	 }, 700);
 	
 }
 
@@ -5898,7 +5955,7 @@ function playAudio3(id) {
 	
 	setTimeout(function() {
 	 my_media3.stop();
-	 }, 500);
+	}, 2000);
 	
 }
 
