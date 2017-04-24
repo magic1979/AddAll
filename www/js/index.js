@@ -5840,9 +5840,9 @@ function playAudio(id) {
 	my_media.play();
 	
 	
-	/*setTimeout(function() {
-			   my_media.stop();
-			   }, 3000);*/
+	setTimeout(function() {
+		my_media.stop();
+	}, 500);
 	
 }
 
@@ -5850,19 +5850,19 @@ function playAudio2(id) {
 	var audioElement = document.getElementById(id);
 	var url = audioElement.getAttribute('src');
 	
-	var my_media = new Media(url,
+	var my_media2 = new Media(url,
 							 // success callback
 							 function () { console.log("playAudio():Audio Success"); },
 							 // error callback
 							 function (err) { console.log("playAudio():Audio Error: " + err); }
 							 );
 	
-	my_media.play();
+	my_media2.play();
 	
 	
-	/*setTimeout(function() {
-	 my_media.stop();
-	 }, 3000);*/
+	setTimeout(function() {
+	  my_media2.stop();
+	 }, 500);
 	
 }
 
@@ -5870,19 +5870,19 @@ function playAudio3(id) {
 	var audioElement = document.getElementById(id);
 	var url = audioElement.getAttribute('src');
 	
-	var my_media = new Media(url,
+	var my_media3 = new Media(url,
 							 // success callback
 							 function () { console.log("playAudio():Audio Success"); },
 							 // error callback
 							 function (err) { console.log("playAudio():Audio Error: " + err); }
 							 );
 	
-	my_media.play();
+	my_media3.play();
 	
 	
-	/*setTimeout(function() {
-	 my_media.stop();
-	 }, 3000);*/
+	setTimeout(function() {
+	 my_media3.stop();
+	 }, 500);
 	
 }
 
