@@ -39,6 +39,17 @@ var app = {
     receivedEvent: function(id) {
 		//document.addEventListener("pause", onPause, false);
 		
+		if( window.plugins && window.plugins.NativeAudio ) {
+    
+				// Preload audio resources
+				
+				window.plugins.NativeAudio.preloadSimple( 'click', 'sound/open.mp3', function(msg){
+				}, function(msg){
+					alert( 'error: ' + msg );
+				});
+			 
+		}
+		
 
 		document.addEventListener("touchmove",function(e) {
 			e.preventDefault();
@@ -371,10 +382,25 @@ var app = {
 		});
 		
 		$(document).on("touchstart", "#testo", function(e){
-					   
+			
+			
+			// Play 
+			window.plugins.NativeAudio.play( 'click' );
+		 
+		 
+		 
+			// Stop multichannel clip after 60 seconds 
+			window.setTimeout( function(){
+		 
+				//window.plugins.NativeAudio.stop( 'music' );
+					
+				//window.plugins.NativeAudio.unload( 'click' );
+		 
+			}, 6000 );
+			
 			//admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP);
 					   
-			window.location.href = "map.html";
+			//window.location.href = "map.html";
 					   
 		});
 		
@@ -965,7 +991,7 @@ var app = {
 									   $("#esatte2").html("0")
 									   $("#esatte3").html("0")
 									   
-									   playAudio('successSound');
+									   
 									   
 									   localStorage.setItem("session10","0")
 									   localStorage.setItem("punteggio1","0")
@@ -1132,7 +1158,7 @@ var app = {
 						  $("#esatte2").html("0")
 						  $("#esatte3").html("0")
 						  
-						  playAudio('successSound');
+						  
 						  
 						  localStorage.setItem("session10","0")
 						  localStorage.setItem("punteggio1","0")
@@ -1275,7 +1301,7 @@ var app = {
 					   $("#esatte2").html("0")
 					   $("#esatte3").html("0")
 					   
-					   playAudio('successSound');
+					  
 					   
 					   localStorage.setItem("session10","0")
 					   localStorage.setItem("punteggio1","0")
@@ -1460,7 +1486,6 @@ var app = {
 				$("#esatte2").html("0")
 				$("#esatte3").html("0")
 				
-				playAudio('successSound');
 				
 				localStorage.setItem("session10","0")
 				localStorage.setItem("punteggio1","0")
@@ -1592,7 +1617,6 @@ var app = {
 				$("#esatte2").html("0")
 				$("#esatte3").html("0")
 				
-				playAudio('successSound');
 				
 				localStorage.setItem("session10","0")
 				localStorage.setItem("punteggio1","0")
@@ -1696,9 +1720,6 @@ var app = {
 					   var ora_cell = yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00";
 					   
 					   localStorage.setItem("ora_cell", ora_cell);
-			
-					   
-					    playAudio('successSound');
 			
 						localStorage.setItem("esatte",0)
 						$("#esatte2").html("0")
@@ -1829,8 +1850,7 @@ var app = {
 				localStorage.setItem("esatte",0)
 				$("#esatte2").html("0")
 				$("#esatte3").html("0")
-				
-				playAudio('successSound');
+	
 				
 				localStorage.setItem("esatte",0)
 				$("#esatte2").html("0")
@@ -1935,9 +1955,6 @@ var app = {
 			var ora_cell = yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00";
 			
 			localStorage.setItem("ora_cell", ora_cell);
-			
-			
-			playAudio('successSound');
 			
 			localStorage.setItem("esatte",0)
 			$("#esatte2").html("0")
@@ -4291,7 +4308,6 @@ var app = {
 		$(document).on("touchstart", "#val1", function(e){
 					   
 					   var parametro=10;
-					   playAudio('successSound');
 					   
 					   $("#gioco").show()
 					   
@@ -4615,7 +4631,7 @@ var app = {
 		$(document).on("touchstart", "#val2", function(e){
 					   var parametro=10;
 					   
-					   playAudio('successSound');
+					   
 					   
 					   $("#bianca1").show()
 					   $("#palla2").hide()
@@ -4933,7 +4949,7 @@ var app = {
 		$(document).on("touchstart", "#val3", function(e){
 					   var parametro=10;
 					   
-					   playAudio('successSound');
+					   
 					   
 					   $("#bianca").show()
 					   $("#palla3").hide()
@@ -5251,7 +5267,7 @@ var app = {
 		$(document).on("touchstart", "#val4", function(e){
 					   var parametro=10;
 					   
-					   playAudio('successSound');
+					  
 					   
 					   $("#bianca2").show()
 					   $("#palla4").hide()
