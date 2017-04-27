@@ -200,7 +200,7 @@ var app = {
 			
 			$("#qround").html("<b> ROUND 2</b>")
 			
-			$("#migliorisett").html("<b>I MIGLIORI DELLA SETTIMANA</b>")
+			$("#migliorisett").html("<b>ULTIMI 7 GIORNI</b>")
 			
 			
 			$("#spinner4").show()

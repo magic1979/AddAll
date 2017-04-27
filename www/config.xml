@@ -87,7 +87,6 @@
 		-->
 		
 		
-		
 		<plugin name="cordova-plugin-pushplugin" source="npm" />
 		<plugin name="cordova-plugin-datepicker" source="npm" />
 		<plugin name="cordova-plugin-insomnia" source="npm" />
