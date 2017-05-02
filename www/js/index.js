@@ -39,26 +39,26 @@ var app = {
     receivedEvent: function(id) {
 		//document.addEventListener("pause", onPause, false);
 		
-		/*if( window.plugins && window.plugins.NativeAudio ) {
+		if( window.plugins && window.plugins.NativeAudio ) {
     
 				// Preload audio resources
 				
-				window.plugins.NativeAudio.preloadSimple( 'musica', 'sound/open.mp3', function(msg){
+				window.plugins.NativeAudio.preloadSimple( 'schiocco', 'sound/pool.mp3', function(msg){
 				}, function(msg){
 					//alert( 'error: ' + msg );
 				});
 				
-				window.plugins.NativeAudio.preloadSimple( 'bella', 'sound/bell.mp3', function(msg){
+				window.plugins.NativeAudio.preloadSimple( 'attenzione', 'sound/horn.mp3', function(msg){
 				}, function(msg){
 					//alert( 'error: ' + msg );
 				});
 				
-				window.plugins.NativeAudio.preloadSimple( 'forse', 'sound/clic.mp3', function(msg){
+				window.plugins.NativeAudio.preloadSimple( 'clic', 'sound/clic.mp3', function(msg){
 				}, function(msg){
 					//alert( 'error: ' + msg );
 				});
 			 
-		}*/
+		}
 		
 
 		document.addEventListener("touchmove",function(e) {
@@ -255,7 +255,6 @@ var app = {
 			$("#totale").html("0")
 					   
 		});
-		
 		
 		
 		
@@ -463,7 +462,7 @@ var app = {
 			
 			$("#qround").html("<b> ROUND 1</b>")
 			
-			$("#migliorisett").html("<b>ULTIMI 7 GIORNI</b>")
+			$("#migliorisett").html("<b>MIGLIORE DEL GIORNO</b>")
 			
 			
 			$("#spinner4").show()
@@ -729,7 +728,9 @@ var app = {
 				   $.each(result, function(i,item){
 						  
 						  if(item.Token=="1"){
-						  var datasfida = item.data1
+						  var datasfida = item.data1.replace("2017-","")
+						  
+						  datasfida = datasfida.slice(0,11)
 						  
 						  esatte = esatte + "<tr><td width='150px' align='center' valign='center'><img src='images/vs.png' width='20'></td><td width='150px' align='center'> <b>"+item.nome+"</b></td></tr><tr><td width='100px' align='center' valign='center'> "+datasfida.replace("2017-","")+" </td><td width='150px' align='center'> --> <b>"+item.punti+"</b></td></tr>"
 						  
@@ -972,16 +973,11 @@ var app = {
 									 
 									 $("#going").hide()
 									 
-									 navigator.notification.alert(
-																  'la somma delle palle colpite deve essere 10',  // message
-																  alertDismissed,         // callback
-																  'Somma 10',            // title
-																  'OK'                  // buttonName
-																  );
 									 
 									 setTimeout(function() {
 												
-												playAudio2('successSound2');
+												//playAudio2('successSound2');
+												window.plugins.NativeAudio.play( 'schiocco' );
 												
 												$("#load").hide()
 												
@@ -1152,7 +1148,8 @@ var app = {
 									 $("#btnlancia").hide()
 									 $("#risultati").hide()
 									 
-									 playAudio2('successSound2');
+									 //playAudio2('successSound2');
+									 window.plugins.NativeAudio.play( 'schiocco' );
 									 
 									 $("#load").hide()
 									 
@@ -1287,7 +1284,8 @@ var app = {
 					   
 					   setTimeout(function() {
 								  
-								  playAudio2('successSound2');
+								  //playAudio2('successSound2');
+								  window.plugins.NativeAudio.play( 'schiocco' );
 								  
 								  $("#load").hide()
 								  
@@ -1471,7 +1469,8 @@ var app = {
 				
 				setTimeout(function() {
 						   
-						   playAudio2('successSound2');
+						   //playAudio2('successSound2');
+						   window.plugins.NativeAudio.play( 'schiocco' );
 						   
 						   $("#load").hide()
 						   
@@ -1602,7 +1601,8 @@ var app = {
 				
 				setTimeout(function() {
 						   
-						   playAudio2('successSound2');
+						   //playAudio2('successSound2');
+						   window.plugins.NativeAudio.play( 'schiocco' );
 						   
 						   $("#load").hide()
 						   
@@ -1710,7 +1710,8 @@ var app = {
 			
 					   setTimeout(function() {
 								  
-							playAudio2('successSound2');
+							//playAudio2('successSound2');
+							window.plugins.NativeAudio.play( 'schiocco' );
 								  
 							$("#load").hide()
 								  
@@ -1841,7 +1842,8 @@ var app = {
 				
 				setTimeout(function() {
 						   
-						   playAudio2('successSound2');
+						   //playAudio2('successSound2');
+						   window.plugins.NativeAudio.play( 'schiocco' );
 						   
 						   $("#load").hide()
 						   
@@ -1948,7 +1950,8 @@ var app = {
 			
 			setTimeout(function() {
 					   
-					   playAudio2('successSound2');
+					   //playAudio2('successSound2');
+					   window.plugins.NativeAudio.play( 'schiocco' );
 					   
 					   $("#load").hide()
 					   
@@ -2093,9 +2096,13 @@ var app = {
 						   $("#bianca1").hide()
 						   $("#bianca2").hide()
 						   
-						   localStorage.setItem("esatte","0")
-						   $("#esatte2").html("0")
-						   $("#esatte3").html("0")
+						   if(localStorage.getItem("toccata")=="1"){
+						   
+						     localStorage.setItem("esatte","0")
+						     $("#esatte2").html("0")
+						     $("#esatte3").html("0")
+						   
+						   }
 						   	   
 				         prendinumeri3(cosa)
 			});
@@ -2133,14 +2140,14 @@ var app = {
 					   $("#palla1").show()
 					   $("#palla2").show()
 					   $("#palla3").show()
-					   $("#palla4").show()
+					   $("#palla4").hide()
 					   
 					   $.each(result, function(i,item){
 							  
 							  $("#palla1").show()
 							  $("#palla2").show()
 							  $("#palla3").show()
-							  $("#palla4").show()
+							  $("#palla4").hide()
 							  
 							  uno = item.num1;
 							  due = item.num2;
@@ -2222,9 +2229,13 @@ var app = {
 						   $("#bianca1").hide()
 						   $("#bianca2").hide()
 						   
+						   if(localStorage.getItem("toccata")=="1"){
+						   
 						   localStorage.setItem("esatte","0")
 						   $("#esatte2").html("0")
 						   $("#esatte3").html("0")
+						   
+						   }
 
 						   
 				prendinumeri3_15(cosa)
@@ -2263,14 +2274,14 @@ var app = {
 					   $("#palla1").show()
 					   $("#palla2").show()
 					   $("#palla3").show()
-					   $("#palla4").show()
+					   $("#palla4").hide()
 					   
 					   $.each(result, function(i,item){
 							  
 							  $("#palla1").show()
 							  $("#palla2").show()
 							  $("#palla3").show()
-							  $("#palla4").show()
+							  $("#palla4").hide()
 							  
 							  uno = item.num1;
 							  due = item.num2;
@@ -2352,9 +2363,13 @@ var app = {
 						   $("#bianca1").hide()
 						   $("#bianca2").hide()
 						   
+						   if(localStorage.getItem("toccata")=="1"){
+						   
 						   localStorage.setItem("esatte","0")
 						   $("#esatte2").html("0")
 						   $("#esatte3").html("0")
+						   
+						   }
 
 						   
 				prendinumeri3_20(cosa)
@@ -2506,9 +2521,13 @@ var app = {
 						   $("#bianca1").hide()
 						   $("#bianca2").hide()
 						   
+						   if(localStorage.getItem("toccata")=="1"){
+						   
 						   localStorage.setItem("esatte","0")
 						   $("#esatte2").html("0")
 						   $("#esatte3").html("0")
+						   
+						   }
 
 						   
 				prendinumeri(cosa)
@@ -2660,9 +2679,13 @@ var app = {
 						   $("#bianca1").hide()
 						   $("#bianca2").hide()
 						   
+						   if(localStorage.getItem("toccata")=="1"){
+						   
 						   localStorage.setItem("esatte","0")
 						   $("#esatte2").html("0")
 						   $("#esatte3").html("0")
+						   
+						   }
 
 						   
 				prendinumeri_15(cosa)
@@ -2814,9 +2837,13 @@ var app = {
 						   $("#bianca1").hide()
 						   $("#bianca2").hide()
 						   
+						   if(localStorage.getItem("toccata")=="1"){
+						   
 						   localStorage.setItem("esatte","0")
 						   $("#esatte2").html("0")
 						   $("#esatte3").html("0")
+						   
+						   }
 
 						   
 				prendinumeri_20(cosa)
@@ -2966,9 +2993,13 @@ var app = {
 						   $("#bianca1").hide()
 						   $("#bianca2").hide()
 						   
+						   if(localStorage.getItem("toccata")=="1"){
+						   
 						   localStorage.setItem("esatte","0")
 						   $("#esatte2").html("0")
 						   $("#esatte3").html("0")
+						   
+						   }
 
 						   
 				prendinumerimano1(cosa)
@@ -3117,9 +3148,13 @@ var app = {
 						   $("#bianca1").hide()
 						   $("#bianca2").hide()
 						   
+						   if(localStorage.getItem("toccata")=="1"){
+						   
 						   localStorage.setItem("esatte","0")
 						   $("#esatte2").html("0")
 						   $("#esatte3").html("0")
+						   
+						   }
 
 						   
 				prendinumerimeno1_15(cosa)
@@ -3269,10 +3304,13 @@ var app = {
 						   $("#bianca1").hide()
 						   $("#bianca2").hide()
 						   
+						   if(localStorage.getItem("toccata")=="1"){
 						   
 						   localStorage.setItem("esatte","0")
 						   $("#esatte2").html("0")
 						   $("#esatte3").html("0")
+						   
+						   }
 
 						   
 				prendinumerimeno1_20(cosa)
@@ -3305,6 +3343,7 @@ var app = {
 					
 					if( seconds == 10 ) {
 						playAudio3('successSound3');
+						//window.plugins.NativeAudio.play( 'bella' );
 					}
 					
 					if( seconds < 10 ) {
@@ -3621,7 +3660,8 @@ var app = {
 				$("#palla3").hide()
 				$("#palla4").hide()
 					   
-				playAudio2('successSound2');
+				//playAudio2('successSound2');
+				window.plugins.NativeAudio.play( 'schiocco' );
 					   
 					   if ((somma>=10)&&(somma<16)){
 					   
@@ -3815,7 +3855,8 @@ var app = {
 					   $("#palla3").hide()
 					   $("#palla4").hide()
 					   
-					   playAudio2('successSound2');
+					   //playAudio2('successSound2');
+					   window.plugins.NativeAudio.play( 'schiocco' );
 					   
 					   if ((somma>=10)&&(somma<16)){
 					   
@@ -4009,7 +4050,8 @@ var app = {
 					   $("#palla3").hide()
 					   $("#palla4").hide()
 					   
-					   playAudio2('successSound2');
+					   //playAudio2('successSound2');
+					   window.plugins.NativeAudio.play( 'schiocco' );
 					   
 					   if ((somma>=10)&&(somma<16)){
 					   
@@ -4120,7 +4162,7 @@ var app = {
 					   prendinumeri3_15(0)
 					   }
 					   else{
-					   
+					   prendinumeri3_20(0)
 					   }
 					   
 					   }
@@ -4203,7 +4245,8 @@ var app = {
 					   $("#palla3").hide()
 					   $("#palla4").hide()
 					   
-					   playAudio2('successSound2');
+					   //playAudio2('successSound2');
+					   window.plugins.NativeAudio.play( 'schiocco' );
 					   
 					   if ((somma>=10)&&(somma<16)){
 					   
@@ -4255,7 +4298,7 @@ var app = {
 					   prendinumeri_15(1)
 					   }
 					   else{
-					   
+					   prendinumeri_20(1)
 					   }
 					   
 					   }
@@ -4324,6 +4367,8 @@ var app = {
 		
 		
 		$(document).on("touchstart", "#val1", function(e){
+					   
+					   localStorage.setItem("toccata","1")
 					   
 					   var parametro=10;
 					   
@@ -4497,6 +4542,7 @@ var app = {
 					      somma = Number(somma)+1
 						  $("#somma").html(somma)
 						  localStorage.setItem("somma1",somma)
+						  localStorage.setItem("toccata","0")
 					   
 					   if(localStorage.getItem("round")=="2"){
 					    $("#totale").html("0/15")
@@ -4517,7 +4563,8 @@ var app = {
 						  $("#palla3").hide()
 					      $("#palla4").hide()
 					   
-					      playAudio2('successSound2');
+					      //playAudio2('successSound2');
+						  window.plugins.NativeAudio.play( 'schiocco' );
 					   
 						  localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + 1)
 					   
@@ -4650,7 +4697,7 @@ var app = {
 		$(document).on("touchstart", "#val2", function(e){
 					   var parametro=10;
 					   
-					   
+					   localStorage.setItem("toccata","1")
 					   
 					   $("#bianca1").show()
 					   $("#palla2").hide()
@@ -4818,6 +4865,8 @@ var app = {
 						  $("#somma").html(somma)
 					      localStorage.setItem("somma1",somma)
 					   
+					      localStorage.setItem("toccata","0")
+					   
 					   if(localStorage.getItem("round")=="2"){
 					   $("#totale").html("0/15")
 					   }
@@ -4837,7 +4886,8 @@ var app = {
 						 $("#palla3").hide()
 					     $("#palla4").hide()
 					   
-						  playAudio2('successSound2');
+						  //playAudio2('successSound2');
+						  window.plugins.NativeAudio.play( 'schiocco' );
 					   
 					   localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + 1)
 					   
@@ -4968,7 +5018,7 @@ var app = {
 		$(document).on("touchstart", "#val3", function(e){
 					   var parametro=10;
 					   
-					   
+					   localStorage.setItem("toccata","1")
 					   
 					   $("#bianca").show()
 					   $("#palla3").hide()
@@ -5136,6 +5186,8 @@ var app = {
 						  $("#somma").html(somma)
 						  localStorage.setItem("somma1",somma)
 					   
+					      localStorage.setItem("toccata","0")
+					   
 					   if(localStorage.getItem("round")=="2"){
 					   $("#totale").html("0/15")
 					   }
@@ -5155,7 +5207,8 @@ var app = {
 						  $("#palla3").hide()
 					      $("#palla4").hide()
 					   
-					      playAudio2('successSound2');
+					      //playAudio2('successSound2');
+					     window.plugins.NativeAudio.play( 'schiocco' );
 					   
 					   localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + 1)
 					   
@@ -5286,7 +5339,7 @@ var app = {
 		$(document).on("touchstart", "#val4", function(e){
 					   var parametro=10;
 					   
-					  
+					   localStorage.setItem("toccata","1")
 					   
 					   $("#bianca2").show()
 					   $("#palla4").hide()
@@ -5454,6 +5507,8 @@ var app = {
 						  $("#somma").html(somma)
 					      localStorage.setItem("somma1",somma)
 					   
+					      localStorage.setItem("toccata","0")
+					   
 					   if(localStorage.getItem("round")=="2"){
 					   $("#totale").html("0/15")
 					   }
@@ -5473,7 +5528,8 @@ var app = {
 						 $("#palla3").hide()
 					     $("#palla4").hide()
 					   
-						 playAudio2('successSound2');
+						 //playAudio2('successSound2');
+					     window.plugins.NativeAudio.play( 'schiocco' );
 					   
 					   localStorage.setItem("esatte",(Number(localStorage.getItem("esatte"))) + 1)
 					   
