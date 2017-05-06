@@ -199,7 +199,7 @@ var app = {
 			
 			$("#qround").html("<b> ROUND 3</b>")
 			
-			$("#migliorisett").html("<b>ULTIMI 7 GIORNI</b>")
+			$("#migliorisett").html("<b>MIGLIORI DEL GIORNO</b>")
 			
 			
 			$("#spinner4").show()
@@ -2463,13 +2463,13 @@ var app = {
 		function countdown1(minutes) {
 			
 			if(localStorage.getItem("round")=="1"){
-				var seconds = 59;
+				var seconds = 09;
 			}
 			else if (localStorage.getItem("round")=="2"){
-				var seconds = 75;
+				var seconds = 19;
 			}
 			else{
-			    var seconds = 80;
+			    var seconds = 19;
 			}
 			
 			var mins = minutes
