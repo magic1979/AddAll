@@ -1026,6 +1026,7 @@ var app = {
 									 $("#btnlancia").hide()
 									 $("#bliard").hide()
 									 $("#risultati").hide()
+									 $("#risultatisfida").hide()
 									 
 									 $("#load").show()
 									 
@@ -1193,6 +1194,7 @@ var app = {
 						  $("#bliard").hide()
 						  $("#btnlancia").hide()
 					      $("#risultati").hide()
+						  $("#risultatisfida").hide()
 						  
 						  $("#load").show()
 						  
@@ -1279,6 +1281,7 @@ var app = {
 									 $("#bliard").hide()
 									 $("#btnlancia").hide()
 									 $("#risultati").hide()
+									 $("#risultatisfida").hide()
 									 
 									 //playAudio2('successSound2');
 									 window.plugins.NativeAudio.play( 'schiocco' );
@@ -1476,6 +1479,7 @@ var app = {
 			$("#bliard").hide()
 			$("#btnlancia").hide()
 			$("#risultati").hide()
+			$("#risultatisfida").hide()
 			$("#allenati").show()
 					   
 			
@@ -1491,6 +1495,7 @@ var app = {
 			$("#bliard").show()
 			$("#btnlancia").show()
 			$("#risultati").show()
+			$("#risultatisfida").show()
 		});
 		
 		
@@ -3526,13 +3531,13 @@ var app = {
 		function countdown1(minutes) {
 			
 			if(localStorage.getItem("round")=="1"){
-				var seconds = 09;
+				var seconds = 59;
 			}
 			else if (localStorage.getItem("round")=="2"){
-				var seconds = 19;
+				var seconds = 75;
 			}
 			else{
-			    var seconds = 19;
+			    var seconds = 90;
 			}
 			
 			var mins = minutes
