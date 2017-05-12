@@ -583,7 +583,7 @@ var app = {
 			
 			$("#qround").html("<b> ROUND 1</b>")
 			
-			$("#migliorisett").html("<b>MIGLIORE DEL GIORNO</b>")
+			$("#migliorisett").html("<b>MIGLIORI DEL GIORNO</b>")
 			
 			
 			$("#spinner4").show()
@@ -1006,7 +1006,7 @@ var app = {
 					   
 					   $.ajax({
 							  type:"GET",
-							  url:"http://msop.it/addall/lancia_sfida_V2.php?email="+localStorage.getItem("email")+"",
+							  url:"http://msop.it/addall/lancia_sfida_V3.php?email="+localStorage.getItem("email")+"",
 							  contentType: "application/json",
 							  //data: {Lat:3,Longi:4},
 							  timeout: 7000,
@@ -1136,7 +1136,14 @@ var app = {
 									 
 									 }
 									 else{
-									 //Errore, al momento non è possibile sfidare
+										 
+									  navigator.notification.alert(
+														   'Numero massimo di sfide aperte reaggiunto',  // message
+														   alertDismissed,         // callback
+														   'Sfide Aperte',            // title
+														   'OK'                  // buttonName
+														   );
+									 
 									 }
 									 
 									 });
@@ -1312,6 +1319,20 @@ var app = {
 					   
 			window.location.href = "index.html";
 			//$.mobile.changePage ($("#home"));
+					   
+		});
+		
+		
+		$(document).on("tap", "#gofacebook", function(e){
+					   
+			var ref = window.open('https://www.facebook.com/AddAll-1668688740106992/', '_system', 'location=no');
+					   
+		});
+		
+		
+		$(document).on("tap", "#gofacebook1", function(e){
+					   
+			var ref = window.open('https://www.facebook.com/AddAll-1668688740106992/', '_system', 'location=no');
 					   
 		});
 		
@@ -3692,6 +3713,9 @@ var app = {
 						
 					}
 					else{
+						
+						setTimeout(function() {
+						
 						$.ajax({
 							   type:"GET",
 							   url:"http://msop.it/addall/segnapunti.php?email="+localStorage.getItem("email")+"&rnd="+localStorage.getItem("punteggio1")+"&incontro="+localStorage.getItem("round")+"",
@@ -3760,8 +3784,11 @@ var app = {
 							   },
 							   
 							   dataType:"jsonp"});
+							 
+							   
+						}, 500);
+							   
 					}
-					
 					
 					//window.location.href = "index.html";
 					
