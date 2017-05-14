@@ -1138,7 +1138,7 @@ var app = {
 									 else{
 										 
 									  navigator.notification.alert(
-														   'Numero massimo di sfide aperte reaggiunto',  // message
+														   'Numero massimo di sfide aperte raggiunto',  // message
 														   alertDismissed,         // callback
 														   'Sfide Aperte',            // title
 														   'OK'                  // buttonName
@@ -1185,134 +1185,179 @@ var app = {
 		}
 					   
 					   
+					   
 		function onConfirm111(button) {
 					   
 			if(button==1){
 					   
-					   $.mobile.changePage ($("#home"));
+					$.mobile.changePage ($("#home"));
 					   
-					   localStorage.setItem("round","1")
-					   localStorage.setItem("sfidalanciata","2")
-					   localStorage.setItem("sfida","1")
+					localStorage.setItem("round","1")
+					localStorage.setItem("sfidalanciata","2")
+					localStorage.setItem("sfida","1")
+				
+				
+				$.ajax({
+					   type:"GET",
+					   url:"http://msop.it/addall/gioca1_player2.php?email="+localStorage.getItem("email")+"&rnd=0&idsfida="+localStorage.getItem("idsfida")+"",
+					   contentType: "application/json",
+					   //data: {Lat:3,Longi:4},
+					   timeout: 7000,
+					   jsonp: 'callback',
+					   crossDomain: true,
+					   success:function(result){
 					   
-						  
-						  $("#btnallenati").hide()
-						  $("#btnsfida").hide()
-						  $("#bliard").hide()
-						  $("#btnlancia").hide()
-					      $("#risultati").hide()
-						  $("#risultatisfida").hide()
-						  
-						  $("#load").show()
-						  
-						  localStorage.setItem("session10","0")
-						  
-						  localStorage.setItem("esatte","0")
-						  $("#esatte2").html("0")
-						  $("#esatte3").html("0")
-						  
-						  $("#totale").html("0/10")
-						  $("#bianca0").hide()
-						  $("#bianca").hide()
-						  $("#bianca1").hide()
-						  $("#bianca2").hide()
-						  
-						  var uno;
-						  var due;
-						  var tre;
-						  var quattro;
-						  var numero = 1;
-						  var numero1 = 2;
-						  var numero2 = 3;
-						  var numero3 = 4;
-						  var numero4 = 5;
-						  var numero5 = 6;
-						  
-						  //DATA
-						  var today = new Date();
-						  var dd = today.getDate();
-						  var mm = today.getMonth()+1;//January is 0, so always add + 1
-						  
-						  var ora = today.getHours()
-						  if(ora<10){ora="0"+ora}
-						  
-						  var minuti = today.getMinutes();
-						  if(minuti<10){minuti="0"+minuti}
-						  
-						  var secondi = today.getSeconds();
-						  if(secondi<10){secondi="0"+secondi}
-						  
-						  
-						  var yyyy = today.getFullYear();
-						  if(dd<10){dd="0"+dd}
-						  if(mm<10){mm="0"+mm}
-						  today = dd+'/'+mm+'/'+yyyy;
-						  
-						  $("#stamp").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
-						  $("#stamp2").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
-						  var ora_cell = yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00";
-						  
-						  localStorage.setItem("ora_cell", ora_cell);
-						  
-						  
-						  localStorage.setItem("start","0")
-						  localStorage.setItem("punteggio1","0")
-						  var somma=0;
-						  var punto=0;
+					   $.each(result, function(i,item){
+							  
+							if(item.Token=="1"){
+							  $("#btnallenati").hide()
+							  $("#btnsfida").hide()
+							  $("#bliard").hide()
+							  $("#btnlancia").hide()
+							  $("#risultati").hide()
+							  $("#risultatisfida").hide()
+							  
+							  $("#load").show()
+							  
+							  localStorage.setItem("session10","0")
+							  
+							  localStorage.setItem("esatte","0")
+							  $("#esatte2").html("0")
+							  $("#esatte3").html("0")
+							  
+							  $("#totale").html("0/10")
+							  $("#bianca0").hide()
+							  $("#bianca").hide()
+							  $("#bianca1").hide()
+							  $("#bianca2").hide()
+							  
+							  var uno;
+							  var due;
+							  var tre;
+							  var quattro;
+							  var numero = 1;
+							  var numero1 = 2;
+							  var numero2 = 3;
+							  var numero3 = 4;
+							  var numero4 = 5;
+							  var numero5 = 6;
+							  
+							  //DATA
+							  var today = new Date();
+							  var dd = today.getDate();
+							  var mm = today.getMonth()+1;//January is 0, so always add + 1
+							  
+							  var ora = today.getHours()
+							  if(ora<10){ora="0"+ora}
+							  
+							  var minuti = today.getMinutes();
+							  if(minuti<10){minuti="0"+minuti}
+							  
+							  var secondi = today.getSeconds();
+							  if(secondi<10){secondi="0"+secondi}
+							  
+							  
+							  var yyyy = today.getFullYear();
+							  if(dd<10){dd="0"+dd}
+							  if(mm<10){mm="0"+mm}
+							  today = dd+'/'+mm+'/'+yyyy;
+							  
+							  $("#stamp").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
+							  $("#stamp2").html(yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00");
+							  var ora_cell = yyyy+"-"+mm+"-"+dd+" "+ora+":"+minuti+":00";
+							  
+							  localStorage.setItem("ora_cell", ora_cell);
+							  
+							  
+							  localStorage.setItem("start","0")
+							  localStorage.setItem("punteggio1","0")
+							  var somma=0;
+							  var punto=0;
+							  
+							  
+							  localStorage.setItem("esatte",0)
+							  $("#esatte2").html("0")
+							  $("#esatte3").html("0")
+							  
+							  
+							  
+							    localStorage.setItem("session10","0")
+							    localStorage.setItem("punteggio1","0")
+							    somma=0
+							    punto = 0
+							    $("#somma").html("0")
+							    $("#totale").html("0")
+							    $("#gioco").show()
+							  
+							    //admob.hideBanner()
+							  
+							    AdMob.removeBanner();
+							  
+							  
+							    $("#going").hide()
+							  
+							    setTimeout(function() {
+										 $("#btnallenati").hide()
+										 $("#btnsfida").hide()
+										 $("#bliard").hide()
+										 $("#btnlancia").hide()
+										 $("#risultati").hide()
+										 $("#risultatisfida").hide()
+										 
+										 playAudio2('successSound2');
+										 //window.plugins.NativeAudio.play( 'schiocco' );
+										 
+										 $("#load").hide()
+										 
+										 $("#dati").show()
+										 $("#dati0").show()
+										 
+										 $("#biliardo").show();
+										 
+										 $("#somma").html("0")
+										 $("#totale").html("0")
+										 countdown1(0);
+										 
+									}, 1000);
+							  
+							    localStorage.setItem("start","0")
+							  
+							    prendinumeri3(0)
+							  
+							}
+							else{
+							 navigator.notification.alert(
+														   'Errore di rete, riprova sotto copertura',  // message
+														   alertDismissed,         // callback
+														   'Errore di Rete',            // title
+														   'OK'                  // buttonName
+														   );
+														   
+								window.location.href = "index.html";
+							}
+							  
+						});
 					   
-						  
-						  localStorage.setItem("esatte",0)
-						  $("#esatte2").html("0")
-						  $("#esatte3").html("0")
-						  
-						  
-						  
-						  localStorage.setItem("session10","0")
-						  localStorage.setItem("punteggio1","0")
-						  somma=0
-						  punto = 0
-						  $("#somma").html("0")
-						  $("#totale").html("0")
-						  $("#gioco").show()
-					   
-					   //admob.hideBanner()
-					   
-					   AdMob.removeBanner();
+					   },
+					   error: function(){
 					   
 					   
-						  $("#going").hide()
-						  
-						  setTimeout(function() {
-									 $("#btnallenati").hide()
-									 $("#btnsfida").hide()
-									 $("#bliard").hide()
-									 $("#btnlancia").hide()
-									 $("#risultati").hide()
-									 $("#risultatisfida").hide()
-									 
-									 //playAudio2('successSound2');
-									 window.plugins.NativeAudio.play( 'schiocco' );
-									 
-									 $("#load").hide()
-									 
-									 $("#dati").show()
-									 $("#dati0").show()
-									 
-									 $("#biliardo").show();
-									 
-									 $("#somma").html("0")
-									 $("#totale").html("0")
-									 countdown1(0);
-									 
-									 }, 1000);
 					   
-						  localStorage.setItem("start","0")
-						  
-						  prendinumeri3(0)
+					   navigator.notification.alert(
+													'Errore di rete, riprova sotto copertura',  // message
+													alertDismissed,         // callback
+													'Errore di Rete',            // title
+													'OK'                  // buttonName
+													);
 					   
+					   },
+					   
+					   dataType:"jsonp"});
+				
 			}
 					   
 		}
+		
 		
 		
 		$(document).on("touchstart", "#indietro", function(e){
@@ -3644,6 +3689,8 @@ var app = {
 															'Errore di Rete',            // title
 															'OK'                  // buttonName
 															);
+															
+								window.location.href = "index.html";
 							   
 							   },
 							   
@@ -3705,6 +3752,8 @@ var app = {
 																'Errore di Rete',            // title
 																'OK'                  // buttonName
 																);
+																
+									window.location.href = "index.html";
 								   
 								   },
 								   
