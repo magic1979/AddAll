@@ -6265,12 +6265,14 @@ function playAudio3(id) {
 
 $(document).on("tap", "#mandaemail", function(e){
 			   
-	window.plugin.email.open({
+	//window.plugin.email.open({
+	cordova.plugins.email.open({
 		to:      "info@pokeranswer.it",
 		subject: "Contattaci",
 		body:    "Richiedi informazioni",
 		isHtml:  true
 	});
+	
 			   
 });
 
