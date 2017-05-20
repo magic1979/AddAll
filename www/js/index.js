@@ -1377,15 +1377,9 @@ var app = {
 					   
 		});
 		
-		$(document).on("tap", "#termini", function(e){
-					   
-			var ref = window.open('http://www.msop.it/addall/termini.html', '_system', 'location=no');
-					   
-		});
-		
 		$(document).on("tap", "#privacy", function(e){
 					   
-			var ref = window.open('http://www.msop.it/addall/privacy.html', '_system', 'location=no');
+			var ref = window.open('http://www.msop.it/rides/policyaddall.html', '_system', 'location=no');
 					   
 		});
 		
