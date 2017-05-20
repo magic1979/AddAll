@@ -39,6 +39,9 @@ var app = {
     receivedEvent: function(id) {
 		//document.addEventListener("pause", onPause, false);
 		
+		StatusBar.hide();
+		//StatusBar.overlaysWebView(false);
+		
 		if( window.plugins && window.plugins.NativeAudio ) {
     
 				// Preload audio resources
@@ -1371,6 +1374,18 @@ var app = {
 		$(document).on("tap", "#gofacebook", function(e){
 					   
 			var ref = window.open('https://www.facebook.com/AddAll-1668688740106992/', '_system', 'location=no');
+					   
+		});
+		
+		$(document).on("tap", "#termini", function(e){
+					   
+			var ref = window.open('http://www.msop.it/addall/termini.html', '_system', 'location=no');
+					   
+		});
+		
+		$(document).on("tap", "#privacy", function(e){
+					   
+			var ref = window.open('http://www.msop.it/addall/privacy.html', '_system', 'location=no');
 					   
 		});
 		
@@ -6267,7 +6282,7 @@ $(document).on("tap", "#mandaemail", function(e){
 			   
 	//window.plugin.email.open({
 	cordova.plugins.email.open({
-		to:      "info@pokeranswer.it",
+		to:      "maurizio_p72@yahoo.it",
 		subject: "Contattaci",
 		body:    "Richiedi informazioni",
 		isHtml:  true
