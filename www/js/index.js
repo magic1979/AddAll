@@ -3957,7 +3957,7 @@ var app = {
 				//playAudio2('successSound2');
 				window.plugins.NativeAudio.play( 'schiocco' );
 					   
-					   if ((somma>=10)&&(somma<16)){
+					   if ((somma>=10)&&(somma<=15)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -3974,7 +3974,7 @@ var app = {
 					   }
 					   
 					   }
-						  else if((somma>=16)&&(somma<26)){
+						  else if((somma>=16)&&(somma<=25)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero2)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -3992,7 +3992,7 @@ var app = {
 					   prendinumeri_20(0)
 					   }
 					   }
-						  else if((somma>=26)&&(somma<31)){
+						  else if((somma>=26)&&(somma<=30)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero3)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4011,7 +4011,7 @@ var app = {
 					   }
 					   
 					   }
-					   else if((somma>=31)&&(somma<41)){
+					   else if((somma>=31)&&(somma<=40)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero4)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4030,7 +4030,7 @@ var app = {
 					   }
 					   
 						  }
-					   else if((somma>=41)&&(somma<99)){
+					   else if((somma>=41)&&(somma<=100)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero5)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4152,7 +4152,7 @@ var app = {
 					   //playAudio2('successSound2');
 					   window.plugins.NativeAudio.play( 'schiocco' );
 					   
-					   if ((somma>=10)&&(somma<16)){
+					   if ((somma>=10)&&(somma<=15)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4169,7 +4169,7 @@ var app = {
 					   }
 					   
 					   }
-						  else if((somma>=16)&&(somma<26)){
+						  else if((somma>=16)&&(somma<=25)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero2)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4187,7 +4187,7 @@ var app = {
 					   prendinumeri_20(0)
 					   }
 					   }
-						  else if((somma>=26)&&(somma<31)){
+						  else if((somma>=26)&&(somma<=30)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero3)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4206,7 +4206,7 @@ var app = {
 					   }
 					   
 					   }
-					   else if((somma>=31)&&(somma<41)){
+					   else if((somma>=31)&&(somma<=40)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero4)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4225,7 +4225,7 @@ var app = {
 					   }
 					   
 						  }
-					   else if((somma>=40)&&(somma<99)){
+					   else if((somma>=41)&&(somma<=100)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero5)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4347,7 +4347,7 @@ var app = {
 					   //playAudio2('successSound2');
 					   window.plugins.NativeAudio.play( 'schiocco' );
 					   
-					   if ((somma>=10)&&(somma<16)){
+					   if ((somma>=10)&&(somma<=15)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4364,7 +4364,7 @@ var app = {
 					   }
 					   
 					   }
-						  else if((somma>=16)&&(somma<26)){
+						  else if((somma>=16)&&(somma<=25)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero2)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4382,7 +4382,7 @@ var app = {
 					   prendinumeri_20(0)
 					   }
 					   }
-						  else if((somma>=26)&&(somma<31)){
+						  else if((somma>=26)&&(somma<=30)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero3)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4401,7 +4401,7 @@ var app = {
 					   }
 					   
 					   }
-					   else if((somma>=31)&&(somma<41)){
+					   else if((somma>=31)&&(somma<=40)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero4)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4420,7 +4420,7 @@ var app = {
 					   }
 					   
 						  }
-					   else if((somma>=41)&&(somma<99)){
+					   else if((somma>=41)&&(somma<=100)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero5)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4542,7 +4542,7 @@ var app = {
 					   //playAudio2('successSound2');
 					   window.plugins.NativeAudio.play( 'schiocco' );
 					   
-					   if ((somma>=10)&&(somma<16)){
+					   if ((somma>=10)&&(somma<=15)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4559,7 +4559,7 @@ var app = {
 					   }
 					   
 					   }
-						  else if((somma>=16)&&(somma<26)){
+						  else if((somma>=16)&&(somma<=25)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero2)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4577,7 +4577,7 @@ var app = {
 					   prendinumeri_20(0)
 					   }
 					   }
-						  else if((somma>=26)&&(somma<31)){
+						  else if((somma>=26)&&(somma<=30)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero3)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4596,7 +4596,7 @@ var app = {
 					   }
 					   
 					   }
-					   else if((somma>=31)&&(somma<41)){
+					   else if((somma>=31)&&(somma<=40)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero4)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4615,7 +4615,7 @@ var app = {
 					   }
 					   
 						  }
-					   else if((somma>=41)&&(somma<99)){
+					   else if((somma>=41)&&(somma<=100)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero5)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -4867,8 +4867,7 @@ var app = {
 						  $("#esatte3").html((Number(localStorage.getItem("esatte"))))
 					   
 
-						  
-						  if ((somma>=10)&&(somma<16)){
+						  if ((somma>=10)&&(somma<=15)){
 					   
 					        var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
 					        localStorage.setItem("punteggio1",punto)
@@ -4885,7 +4884,7 @@ var app = {
 					        }
 					   
 					      }
-						  else if((somma>=16)&&(somma<26)){
+						  else if((somma>=16)&&(somma<=25)){
 					   
 					        var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero2)) + (Number(bonus));
 					        localStorage.setItem("punteggio1",punto)
@@ -4903,7 +4902,7 @@ var app = {
 					         prendinumeri_20(0)
 					        }
 					      }
-						  else if((somma>=26)&&(somma<31)){
+						  else if((somma>=26)&&(somma<=30)){
 					   
 					        var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero3)) + (Number(bonus));
 					        localStorage.setItem("punteggio1",punto)
@@ -4922,7 +4921,7 @@ var app = {
 					         }
 					   
 						   }
-					      else if((somma>=31)&&(somma<41)){
+					      else if((somma>=31)&&(somma<=40)){
 					   
 					       var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero4)) + (Number(bonus));
 					       localStorage.setItem("punteggio1",punto)
@@ -4941,7 +4940,7 @@ var app = {
 					        }
 					   
 						  }
-					      else if((somma>=41)&&(somma<99)){
+					      else if((somma>=41)&&(somma<=100)){
 					   
 					       var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero5)) + (Number(bonus));
 					       localStorage.setItem("punteggio1",punto)
@@ -5189,7 +5188,7 @@ var app = {
 					   $("#esatte3").html((Number(localStorage.getItem("esatte"))))
 					   
   
-					   if ((somma>=10)&&(somma<16)){
+					   if ((somma>=10)&&(somma<=15)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5206,7 +5205,7 @@ var app = {
 					   }
 					   
 					   }
-						  else if((somma>=16)&&(somma<26)){
+						  else if((somma>=16)&&(somma<=25)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero2)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5224,7 +5223,7 @@ var app = {
 					   prendinumeri_20(0)
 					   }
 					   }
-						  else if((somma>=26)&&(somma<31)){
+						  else if((somma>=26)&&(somma<=30)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero3)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5243,7 +5242,7 @@ var app = {
 					   }
 					   
 					   }
-					   else if((somma>=31)&&(somma<41)){
+					   else if((somma>=31)&&(somma<=40)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero4)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5262,7 +5261,7 @@ var app = {
 					   }
 					   
 						  }
-					   else if((somma>=41)&&(somma<99)){
+					   else if((somma>=41)&&(somma<=100)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero5)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5510,7 +5509,7 @@ var app = {
 					   $("#esatte3").html((Number(localStorage.getItem("esatte"))))
 					   
 						  
-					   if ((somma>=10)&&(somma<16)){
+					   if ((somma>=10)&&(somma<=15)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5527,7 +5526,7 @@ var app = {
 					   }
 					   
 					   }
-						  else if((somma>=16)&&(somma<26)){
+						  else if((somma>=16)&&(somma<=25)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero2)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5545,7 +5544,7 @@ var app = {
 					   prendinumeri_20(0)
 					   }
 					   }
-						  else if((somma>=26)&&(somma<31)){
+						  else if((somma>=26)&&(somma<=30)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero3)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5564,7 +5563,7 @@ var app = {
 					   }
 					   
 					   }
-					   else if((somma>=31)&&(somma<41)){
+					   else if((somma>=31)&&(somma<=40)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero4)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5583,7 +5582,7 @@ var app = {
 					   }
 					   
 						  }
-					   else if((somma>=41)&&(somma<99)){
+					   else if((somma>=41)&&(somma<=100)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero5)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5831,7 +5830,7 @@ var app = {
 					   $("#esatte3").html((Number(localStorage.getItem("esatte"))))
 
 						  
-					   if ((somma>=10)&&(somma<16)){
+					   if ((somma>=10)&&(somma<=15)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5848,7 +5847,7 @@ var app = {
 					   }
 					   
 					   }
-						  else if((somma>=16)&&(somma<26)){
+						  else if((somma>=16)&&(somma<=25)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero2)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5866,7 +5865,7 @@ var app = {
 					   prendinumeri_20(0)
 					   }
 					   }
-						  else if((somma>=26)&&(somma<31)){
+						  else if((somma>=26)&&(somma<=30)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero3)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5885,7 +5884,7 @@ var app = {
 					   }
 					   
 					   }
-					   else if((somma>=31)&&(somma<41)){
+					   else if((somma>=31)&&(somma<=40)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero4)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5904,7 +5903,7 @@ var app = {
 					   }
 					   
 						  }
-					   else if((somma>=41)&&(somma<99)){
+					   else if((somma>=41)&&(somma<=100)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero5)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
