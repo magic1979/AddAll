@@ -6273,9 +6273,8 @@ function playAudio3(id) {
 
 $(document).on("tap", "#mandaemail", function(e){
 			   
-	//cordova.plugins.email.open({
-	
-	window.plugin.email.open({
+	//window.plugin.email.open({
+	cordova.plugins.email.open({
 		to:      "maurizio_p72@yahoo.it",
 		subject: "Contattaci",
 		body:    "Richiedi informazioni",
