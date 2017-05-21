@@ -4867,7 +4867,7 @@ var app = {
 						  $("#esatte3").html((Number(localStorage.getItem("esatte"))))
 					   
 
-						  if ((somma>=10)&&(somma<=15)){
+						  if ((somma>10)&&(somma<=15)){
 					   
 					        var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
 					        localStorage.setItem("punteggio1",punto)
@@ -5188,7 +5188,7 @@ var app = {
 					   $("#esatte3").html((Number(localStorage.getItem("esatte"))))
 					   
   
-					   if ((somma>=10)&&(somma<=15)){
+					   if ((somma>10)&&(somma<=15)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5509,7 +5509,7 @@ var app = {
 					   $("#esatte3").html((Number(localStorage.getItem("esatte"))))
 					   
 						  
-					   if ((somma>=10)&&(somma<=15)){
+					   if ((somma>10)&&(somma<=15)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -5830,7 +5830,7 @@ var app = {
 					   $("#esatte3").html((Number(localStorage.getItem("esatte"))))
 
 						  
-					   if ((somma>=10)&&(somma<=15)){
+					   if ((somma>10)&&(somma<=15)){
 					   
 					   var punto = (Number(localStorage.getItem("punteggio1"))) + (Number(numero1)) + (Number(bonus));
 					   localStorage.setItem("punteggio1",punto)
@@ -6273,8 +6273,9 @@ function playAudio3(id) {
 
 $(document).on("tap", "#mandaemail", function(e){
 			   
-	//window.plugin.email.open({
-	cordova.plugins.email.open({
+	//cordova.plugins.email.open({
+	
+	window.plugin.email.open({
 		to:      "maurizio_p72@yahoo.it",
 		subject: "Contattaci",
 		body:    "Richiedi informazioni",
