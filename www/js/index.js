@@ -4690,40 +4690,40 @@ var app = {
 					     var numero4 = 6;
 					     var numero5 = 7;
 					   
-					     if((Number(localStorage.getItem("esatte")))==5){
+					     if((Number(localStorage.getItem("esatte")))==4){
 					      var bonus = 10;
 					     }
-					     else if((Number(localStorage.getItem("esatte")))==10){
+					     else if((Number(localStorage.getItem("esatte")))==9){
 						  var bonus = 20;
 						 }
-					   else if((Number(localStorage.getItem("esatte")))==15){
+					   else if((Number(localStorage.getItem("esatte")))==14){
 					   var bonus = 30;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==20){
+					   else if((Number(localStorage.getItem("esatte")))==19){
 					   var bonus = 40;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==25){
+					   else if((Number(localStorage.getItem("esatte")))==24){
 					   var bonus = 50;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==30){
+					   else if((Number(localStorage.getItem("esatte")))==29){
 					   var bonus = 60;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==35){
+					   else if((Number(localStorage.getItem("esatte")))==34){
 					   var bonus = 70;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==40){
+					   else if((Number(localStorage.getItem("esatte")))==39){
 					   var bonus = 80;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==45){
+					   else if((Number(localStorage.getItem("esatte")))==44){
 					   var bonus = 90;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==50){
+					   else if((Number(localStorage.getItem("esatte")))==49){
 					   var bonus = 100;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==55){
+					   else if((Number(localStorage.getItem("esatte")))==54){
 					   var bonus = 110;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==60){
+					   else if((Number(localStorage.getItem("esatte")))==59){
 					   var bonus = 120;
 					   }
 						else{
@@ -4740,40 +4740,40 @@ var app = {
 					   var numero4 = 7;
 					   var numero5 = 8;
 					   
-					   if((Number(localStorage.getItem("esatte")))==5){
+					   if((Number(localStorage.getItem("esatte")))==4){
 					   var bonus = 20;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==10){
+					   else if((Number(localStorage.getItem("esatte")))==9){
 						  var bonus = 40;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==15){
+					   else if((Number(localStorage.getItem("esatte")))==14){
 					   var bonus = 60;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==20){
+					   else if((Number(localStorage.getItem("esatte")))==19){
 					   var bonus = 80;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==25){
+					   else if((Number(localStorage.getItem("esatte")))==24){
 					   var bonus = 100;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==30){
+					   else if((Number(localStorage.getItem("esatte")))==29){
 					   var bonus = 120;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==35){
+					   else if((Number(localStorage.getItem("esatte")))==34){
 					   var bonus = 140;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==40){
+					   else if((Number(localStorage.getItem("esatte")))==39){
 					   var bonus = 160;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==45){
+					   else if((Number(localStorage.getItem("esatte")))==44){
 					   var bonus = 180;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==50){
+					   else if((Number(localStorage.getItem("esatte")))==49){
 					   var bonus = 200;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==55){
+					   else if((Number(localStorage.getItem("esatte")))==54){
 					   var bonus = 220;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==60){
+					   else if((Number(localStorage.getItem("esatte")))==59){
 					   var bonus = 240;
 					   }
 					   else{
@@ -4790,40 +4790,40 @@ var app = {
 					    var numero4 = 5;
 					    var numero5 = 6;
 					   
-					    if((Number(localStorage.getItem("esatte")))==5){
+					    if((Number(localStorage.getItem("esatte")))==4){
 					     var bonus = 5;
 					    }
-						else if((Number(localStorage.getItem("esatte")))==10){
+						else if((Number(localStorage.getItem("esatte")))==9){
 					     var bonus = 10;
 						}
-					   else if((Number(localStorage.getItem("esatte")))==15){
+					   else if((Number(localStorage.getItem("esatte")))==14){
 					   var bonus = 15;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==20){
+					   else if((Number(localStorage.getItem("esatte")))==19){
 					   var bonus = 20;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==25){
+					   else if((Number(localStorage.getItem("esatte")))==24){
 					   var bonus = 25;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==30){
+					   else if((Number(localStorage.getItem("esatte")))==29){
 					   var bonus = 30;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==35){
+					   else if((Number(localStorage.getItem("esatte")))==34){
 					   var bonus = 35;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==40){
+					   else if((Number(localStorage.getItem("esatte")))==39){
 					   var bonus = 40;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==45){
+					   else if((Number(localStorage.getItem("esatte")))==44){
 					   var bonus = 45;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==50){
+					   else if((Number(localStorage.getItem("esatte")))==49){
 					   var bonus = 50;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==55){
+					   else if((Number(localStorage.getItem("esatte")))==54){
 					   var bonus = 55;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==60){
+					   else if((Number(localStorage.getItem("esatte")))==59){
 					   var bonus = 60;
 					   }
 						else{
@@ -5011,40 +5011,40 @@ var app = {
 					   var numero4 = 6;
 					   var numero5 = 7;
 					   
-					   if((Number(localStorage.getItem("esatte")))==5){
+					   if((Number(localStorage.getItem("esatte")))==4){
 					   var bonus = 10;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==10){
+					   else if((Number(localStorage.getItem("esatte")))==9){
 						  var bonus = 20;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==15){
+					   else if((Number(localStorage.getItem("esatte")))==14){
 					   var bonus = 30;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==20){
+					   else if((Number(localStorage.getItem("esatte")))==19){
 					   var bonus = 40;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==25){
+					   else if((Number(localStorage.getItem("esatte")))==24){
 					   var bonus = 50;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==30){
+					   else if((Number(localStorage.getItem("esatte")))==29){
 					   var bonus = 60;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==35){
+					   else if((Number(localStorage.getItem("esatte")))==34){
 					   var bonus = 70;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==40){
+					   else if((Number(localStorage.getItem("esatte")))==39){
 					   var bonus = 80;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==45){
+					   else if((Number(localStorage.getItem("esatte")))==44){
 					   var bonus = 90;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==50){
+					   else if((Number(localStorage.getItem("esatte")))==49){
 					   var bonus = 100;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==55){
+					   else if((Number(localStorage.getItem("esatte")))==54){
 					   var bonus = 110;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==60){
+					   else if((Number(localStorage.getItem("esatte")))==59){
 					   var bonus = 120;
 					   }
 					   else{
@@ -5061,40 +5061,40 @@ var app = {
 					   var numero4 = 7;
 					   var numero5 = 8;
 					   
-					   if((Number(localStorage.getItem("esatte")))==5){
+					   if((Number(localStorage.getItem("esatte")))==4){
 					   var bonus = 20;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==10){
+					   else if((Number(localStorage.getItem("esatte")))==9){
 						  var bonus = 40;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==15){
+					   else if((Number(localStorage.getItem("esatte")))==14){
 					   var bonus = 60;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==20){
+					   else if((Number(localStorage.getItem("esatte")))==19){
 					   var bonus = 80;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==25){
+					   else if((Number(localStorage.getItem("esatte")))==24){
 					   var bonus = 100;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==30){
+					   else if((Number(localStorage.getItem("esatte")))==29){
 					   var bonus = 120;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==35){
+					   else if((Number(localStorage.getItem("esatte")))==34){
 					   var bonus = 140;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==40){
+					   else if((Number(localStorage.getItem("esatte")))==39){
 					   var bonus = 160;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==45){
+					   else if((Number(localStorage.getItem("esatte")))==44){
 					   var bonus = 180;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==50){
+					   else if((Number(localStorage.getItem("esatte")))==49){
 					   var bonus = 200;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==55){
+					   else if((Number(localStorage.getItem("esatte")))==54){
 					   var bonus = 220;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==60){
+					   else if((Number(localStorage.getItem("esatte")))==59){
 					   var bonus = 240;
 					   }
 					   else{
@@ -5112,40 +5112,40 @@ var app = {
 					   var numero4 = 5;
 					   var numero5 = 6;
 					   
-					   if((Number(localStorage.getItem("esatte")))==5){
+					   if((Number(localStorage.getItem("esatte")))==4){
 					   var bonus = 5;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==10){
+					   else if((Number(localStorage.getItem("esatte")))==9){
 					   var bonus = 10;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==15){
+					   else if((Number(localStorage.getItem("esatte")))==14){
 					   var bonus = 15;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==20){
+					   else if((Number(localStorage.getItem("esatte")))==19){
 					   var bonus = 20;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==25){
+					   else if((Number(localStorage.getItem("esatte")))==24){
 					   var bonus = 25;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==30){
+					   else if((Number(localStorage.getItem("esatte")))==29){
 					   var bonus = 30;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==35){
+					   else if((Number(localStorage.getItem("esatte")))==34){
 					   var bonus = 35;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==40){
+					   else if((Number(localStorage.getItem("esatte")))==39){
 					   var bonus = 40;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==45){
+					   else if((Number(localStorage.getItem("esatte")))==44){
 					   var bonus = 45;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==50){
+					   else if((Number(localStorage.getItem("esatte")))==49){
 					   var bonus = 50;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==55){
+					   else if((Number(localStorage.getItem("esatte")))==54){
 					   var bonus = 55;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==60){
+					   else if((Number(localStorage.getItem("esatte")))==59){
 					   var bonus = 60;
 					   }
 					   else{
@@ -5332,40 +5332,40 @@ var app = {
 					   var numero4 = 6;
 					   var numero5 = 7;
 					   
-					   if((Number(localStorage.getItem("esatte")))==5){
+					   if((Number(localStorage.getItem("esatte")))==4){
 					   var bonus = 10;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==10){
+					   else if((Number(localStorage.getItem("esatte")))==9){
 						  var bonus = 20;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==15){
+					   else if((Number(localStorage.getItem("esatte")))==14){
 					   var bonus = 30;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==20){
+					   else if((Number(localStorage.getItem("esatte")))==19){
 					   var bonus = 40;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==25){
+					   else if((Number(localStorage.getItem("esatte")))==24){
 					   var bonus = 50;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==30){
+					   else if((Number(localStorage.getItem("esatte")))==29){
 					   var bonus = 60;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==35){
+					   else if((Number(localStorage.getItem("esatte")))==34){
 					   var bonus = 70;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==40){
+					   else if((Number(localStorage.getItem("esatte")))==39){
 					   var bonus = 80;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==45){
+					   else if((Number(localStorage.getItem("esatte")))==44){
 					   var bonus = 90;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==50){
+					   else if((Number(localStorage.getItem("esatte")))==49){
 					   var bonus = 100;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==55){
+					   else if((Number(localStorage.getItem("esatte")))==54){
 					   var bonus = 110;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==60){
+					   else if((Number(localStorage.getItem("esatte")))==59){
 					   var bonus = 120;
 					   }
 					   else{
@@ -5382,40 +5382,40 @@ var app = {
 					   var numero4 = 7;
 					   var numero5 = 8;
 					   
-					   if((Number(localStorage.getItem("esatte")))==5){
+					   if((Number(localStorage.getItem("esatte")))==4){
 					   var bonus = 20;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==10){
+					   else if((Number(localStorage.getItem("esatte")))==9){
 						  var bonus = 40;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==15){
+					   else if((Number(localStorage.getItem("esatte")))==14){
 					   var bonus = 60;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==20){
+					   else if((Number(localStorage.getItem("esatte")))==19){
 					   var bonus = 80;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==25){
+					   else if((Number(localStorage.getItem("esatte")))==24){
 					   var bonus = 100;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==30){
+					   else if((Number(localStorage.getItem("esatte")))==29){
 					   var bonus = 120;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==35){
+					   else if((Number(localStorage.getItem("esatte")))==34){
 					   var bonus = 140;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==40){
+					   else if((Number(localStorage.getItem("esatte")))==39){
 					   var bonus = 160;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==45){
+					   else if((Number(localStorage.getItem("esatte")))==44){
 					   var bonus = 180;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==50){
+					   else if((Number(localStorage.getItem("esatte")))==49){
 					   var bonus = 200;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==55){
+					   else if((Number(localStorage.getItem("esatte")))==54){
 					   var bonus = 220;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==60){
+					   else if((Number(localStorage.getItem("esatte")))==59){
 					   var bonus = 240;
 					   }
 					   else{
@@ -5433,40 +5433,40 @@ var app = {
 					   var numero4 = 5;
 					   var numero5 = 6;
 					   
-					   if((Number(localStorage.getItem("esatte")))==5){
+					   if((Number(localStorage.getItem("esatte")))==4){
 					   var bonus = 5;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==10){
+					   else if((Number(localStorage.getItem("esatte")))==9){
 					   var bonus = 10;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==15){
+					   else if((Number(localStorage.getItem("esatte")))==14){
 					   var bonus = 15;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==20){
+					   else if((Number(localStorage.getItem("esatte")))==19){
 					   var bonus = 20;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==25){
+					   else if((Number(localStorage.getItem("esatte")))==24){
 					   var bonus = 25;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==30){
+					   else if((Number(localStorage.getItem("esatte")))==29){
 					   var bonus = 30;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==35){
+					   else if((Number(localStorage.getItem("esatte")))==34){
 					   var bonus = 35;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==40){
+					   else if((Number(localStorage.getItem("esatte")))==39){
 					   var bonus = 40;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==45){
+					   else if((Number(localStorage.getItem("esatte")))==44){
 					   var bonus = 45;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==50){
+					   else if((Number(localStorage.getItem("esatte")))==49){
 					   var bonus = 50;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==55){
+					   else if((Number(localStorage.getItem("esatte")))==54){
 					   var bonus = 55;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==60){
+					   else if((Number(localStorage.getItem("esatte")))==59){
 					   var bonus = 60;
 					   }
 					   else{
@@ -5653,40 +5653,40 @@ var app = {
 					   var numero4 = 6;
 					   var numero5 = 7;
 					   
-					   if((Number(localStorage.getItem("esatte")))==5){
+					   if((Number(localStorage.getItem("esatte")))==4){
 					   var bonus = 10;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==10){
+					   else if((Number(localStorage.getItem("esatte")))==9){
 						  var bonus = 20;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==15){
+					   else if((Number(localStorage.getItem("esatte")))==14){
 					   var bonus = 30;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==20){
+					   else if((Number(localStorage.getItem("esatte")))==19){
 					   var bonus = 40;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==25){
+					   else if((Number(localStorage.getItem("esatte")))==24){
 					   var bonus = 50;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==30){
+					   else if((Number(localStorage.getItem("esatte")))==29){
 					   var bonus = 60;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==35){
+					   else if((Number(localStorage.getItem("esatte")))==34){
 					   var bonus = 70;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==40){
+					   else if((Number(localStorage.getItem("esatte")))==39){
 					   var bonus = 80;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==45){
+					   else if((Number(localStorage.getItem("esatte")))==44){
 					   var bonus = 90;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==50){
+					   else if((Number(localStorage.getItem("esatte")))==49){
 					   var bonus = 100;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==55){
+					   else if((Number(localStorage.getItem("esatte")))==54){
 					   var bonus = 110;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==60){
+					   else if((Number(localStorage.getItem("esatte")))==59){
 					   var bonus = 120;
 					   }
 					   else{
@@ -5703,40 +5703,40 @@ var app = {
 					   var numero4 = 7;
 					   var numero5 = 8;
 					   
-					   if((Number(localStorage.getItem("esatte")))==5){
+					   if((Number(localStorage.getItem("esatte")))==4){
 					   var bonus = 20;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==10){
+					   else if((Number(localStorage.getItem("esatte")))==9){
 						  var bonus = 40;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==15){
+					   else if((Number(localStorage.getItem("esatte")))==14){
 					   var bonus = 60;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==20){
+					   else if((Number(localStorage.getItem("esatte")))==19){
 					   var bonus = 80;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==25){
+					   else if((Number(localStorage.getItem("esatte")))==24){
 					   var bonus = 100;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==30){
+					   else if((Number(localStorage.getItem("esatte")))==29){
 					   var bonus = 120;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==35){
+					   else if((Number(localStorage.getItem("esatte")))==34){
 					   var bonus = 140;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==40){
+					   else if((Number(localStorage.getItem("esatte")))==39){
 					   var bonus = 160;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==45){
+					   else if((Number(localStorage.getItem("esatte")))==44){
 					   var bonus = 180;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==50){
+					   else if((Number(localStorage.getItem("esatte")))==49){
 					   var bonus = 200;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==55){
+					   else if((Number(localStorage.getItem("esatte")))==54){
 					   var bonus = 220;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==60){
+					   else if((Number(localStorage.getItem("esatte")))==59){
 					   var bonus = 240;
 					   }
 					   else{
@@ -5754,40 +5754,40 @@ var app = {
 					   var numero4 = 5;
 					   var numero5 = 6;
 					   
-					   if((Number(localStorage.getItem("esatte")))==5){
+					   if((Number(localStorage.getItem("esatte")))==4){
 					   var bonus = 5;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==10){
+					   else if((Number(localStorage.getItem("esatte")))==9){
 					   var bonus = 10;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==15){
+					   else if((Number(localStorage.getItem("esatte")))==14){
 					   var bonus = 15;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==20){
+					   else if((Number(localStorage.getItem("esatte")))==19){
 					   var bonus = 20;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==25){
+					   else if((Number(localStorage.getItem("esatte")))==24){
 					   var bonus = 25;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==30){
+					   else if((Number(localStorage.getItem("esatte")))==29){
 					   var bonus = 30;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==35){
+					   else if((Number(localStorage.getItem("esatte")))==34){
 					   var bonus = 35;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==40){
+					   else if((Number(localStorage.getItem("esatte")))==39){
 					   var bonus = 40;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==45){
+					   else if((Number(localStorage.getItem("esatte")))==44){
 					   var bonus = 45;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==50){
+					   else if((Number(localStorage.getItem("esatte")))==49){
 					   var bonus = 50;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==55){
+					   else if((Number(localStorage.getItem("esatte")))==54){
 					   var bonus = 55;
 					   }
-					   else if((Number(localStorage.getItem("esatte")))==60){
+					   else if((Number(localStorage.getItem("esatte")))==59){
 					   var bonus = 60;
 					   }
 					   else{
