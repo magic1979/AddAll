@@ -59,8 +59,18 @@
 		<feature name="http://api.phonegap.com/1.0/notification"/>
 		
 		<plugin name="cordova-plugin-battery-status"      source="npm" />
-		<plugin name="cordova-plugin-camera"              source="npm" />
-		<plugin name="cordova-plugin-media-capture"       source="npm" />
+		
+		<!--<plugin name="cordova-plugin-camera"              source="npm" />
+		<plugin name="cordova-plugin-media-capture"       source="npm" />-->
+		
+		<plugin name="cordova-plugin-camera"              source="npm" >
+      		<variable name="CAMERA_USAGE_DESCRIPTION" value="Allow the app to use your camera" />
+      		<variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow the app to access your photos" />
+    	</plugin>
+    	<plugin name="cordova-plugin-media-capture"       source="npm"  >
+     	 <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow the app to access your photos" />
+    	</plugin>
+	
 		<plugin name="cordova-plugin-console"             source="npm" />
 		<plugin name="cordova-plugin-contacts"            source="npm" />
 		<plugin name="cordova-plugin-device"              source="npm" />
@@ -148,6 +158,10 @@
         <splash src="res/screen/ios/640x960.png"          			platform="ios" width="640"  height="960" />
         <splash src="res/screen/ios/320x480.png"             		platform="ios" width="320"  height="480" />
     </platform>
+	
+	<!--<gap:config-file platform="ios" parent="NSPhotoLibraryUsageDescription">
+      <string>For uploading receipt images</string>
+    </gap:config-file>-->
 		
 		
 	<!--<platform name="android">
@@ -164,6 +178,9 @@
 		<gap:splash src="XHDPI.png" gap:platform="android" gap:density="xhdpi" />
 		<gap:splash src="XXHDPI.png" gap:platform="android" gap:density="xxhdpi" />
 		<gap:splash src="XXXHDPI.png" gap:platform="android" gap:density="xxxhdpi" />
+		
+		<allow-intent href="market:*" />
+		
 	</platform>-->
 		
 		<!--<icon src="res/icon/windows-phone/icon-48.png" gap:platform="winphone" />
@@ -197,11 +214,8 @@
 		<allow-intent href="sms:*" />
 		<allow-intent href="mailto:*" />
 		<allow-intent href="geo:*" />
-		<platform name="android">
-			<allow-intent href="market:*" />
-		</platform>
 		
-		<gap:config-file platform="android" parent="/manifest" mode="add" xmlns:android="http://schemas.android.com/apk/res/android">
+		<!--<gap:config-file platform="android" parent="/manifest" mode="add" xmlns:android="http://schemas.android.com/apk/res/android">
 			android:windowSoftInputMode="adjustResize"
 			<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -213,6 +227,6 @@
 			<uses-permission android:name="android.permission.GET_ACCOUNTS" />
 			<uses-feature android:name="android.hardware.camera" />  
 			<uses-feature android:name="android.hardware.camera.autofocus" />
-		</gap:config-file>
+		</gap:config-file>-->
 		
 	</widget>
