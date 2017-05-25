@@ -150,7 +150,7 @@
     </platform>
 		
 		
-	<platform name="android">
+	<!--<platform name="android">
 		<icon src="36x36.png" gap:platform="android" gap:density="ldpi" />
 		<icon src="48x48.png" gap:platform="android" gap:density="mdpi" />
 		<icon src="72x72.png" gap:platform="android" gap:density="hdpi" />
@@ -164,7 +164,7 @@
 		<gap:splash src="XHDPI.png" gap:platform="android" gap:density="xhdpi" />
 		<gap:splash src="XXHDPI.png" gap:platform="android" gap:density="xxhdpi" />
 		<gap:splash src="XXXHDPI.png" gap:platform="android" gap:density="xxxhdpi" />
-	</platform>
+	</platform>-->
 		
 		<!--<icon src="res/icon/windows-phone/icon-48.png" gap:platform="winphone" />
 		<icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone" gap:role="background" />
