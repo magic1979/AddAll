@@ -2,8 +2,8 @@
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
 		id        = "com.addall"  
-		versionCode="1.1"
-		version   = "1.1">
+		versionCode="1.2"
+		version   = "1.2">
 		<name>AddAll</name>
 		<description>AddAll, Gioco di abilita</description>
 		<author href="http://msop.it" email="info@msop.it">
@@ -69,6 +69,8 @@
     	</plugin>
     	<plugin name="cordova-plugin-media-capture"       source="npm"  >
      	 <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow the app to access your photos" />
+		 <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
+		 <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow the app to use your camera" />
     	</plugin>
 	
 		<plugin name="cordova-plugin-console"             source="npm" />
