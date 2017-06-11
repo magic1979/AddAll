@@ -1373,13 +1373,13 @@ var app = {
 		
 		$(document).on("touchstart", "#banner", function(e){
 					   
-			var ref = window.open('https://wllottomatica.adsrv.eacdn.com/C.ashx?btag=a_162b_204c_&affid=137&siteid=162&adid=204&c=', '_system', 'location=no');
+			var ref = window.open('https://www.facebook.com/AddAll-1668688740106992/', '_system', 'location=no');
 					   
 		});
 		
 		$(document).on("touchstart", "#banner2", function(e){
 					   
-			var ref = window.open('https://wllottomatica.adsrv.eacdn.com/C.ashx?btag=a_162b_204c_&affid=137&siteid=162&adid=204&c=', '_system', 'location=no');
+			var ref = window.open('https://www.facebook.com/AddAll-1668688740106992/', '_system', 'location=no');
 					   
 		});
 		
