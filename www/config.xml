@@ -5,13 +5,13 @@
 		versionCode="4"
 		version   = "4">
 		<name>AddAll</name>
-		<description>AddAll, Gioco di Abilita</description>
+		<description>AddAll,Gioco di Abilita</description>
 		<author href="http://msop.it" email="info@msop.it">
 			Associazione Game Answer
 		</author>
-		
 		<preference name="phonegap-version" value="cli-6.5.0" />
 		<preference name="orientation" value="portrait" />
+		<preference name="android-windowSoftInputMode" value="adjustResize" />
 		<preference name="fullscreen" value="false" />
 		<preference name="target-device" value="universal" />
 		<preference name="webviewbounce" value="true" />
@@ -30,39 +30,32 @@
 		<preference name="KeyboardDisplayRequiresUserAction" value="true" />
 		<preference name="HideKeyboardFormAccessoryBar" value="true" />
 		<preference name="SuppressesIncrementalRendering" value="true" />
-		<preference name="android-minSdkVersion" value="11" />
-		<preference name="android-targetSdkVersion" value="11" />
+		<preference name="android-minSdkVersion" value="15" />
+		<preference name="android-targetSdkVersion" value="15" />
 		<preference name="android-installLocation" value="auto" />
 		<preference name="SplashScreen" value="splash" />
 		<preference name="SplashScreenDelay" value="10000" />
 		<preference name="SplashMaintainAspectRatio" value="false" />
-		<preference name="ErrorUrl" value="http://www.purplemiles.com"/>
+		<preference name="ErrorUrl" value="http://www.aermes.it"/>
 		<preference name="BackgroundColor" value="#edebe7"/>
 		<preference name="KeepRunning" value="true"/>
 		<preference name="DisallowOverscroll" value="true"/> 
 		<preference name="LoadUrlTimeoutValue" value="20000" />
 		<preference name="disable-cursor" value="true" />
 		<preference name="StatusBarOverlaysWebView" value="true" />
-		
+		<preference name="GapBetweenPages" value="0" />
+		<preference name="android-build-tool" value="gradle" />
+		<preference name="CrosswalkAnimatable" value="true" />
 		<gap:platform name="android" />
-		
 		<feature name="http://api.phonegap.com/1.0/battery"/>
 		<feature name="http://api.phonegap.com/1.0/geolocation"/>
 		<feature name="http://api.phonegap.com/1.0/media"/>
 		<feature name="http://api.phonegap.com/1.0/network"/>
 		<feature name="http://api.phonegap.com/1.0/notification"/>
 		
-		<plugin name="cordova-plugin-camera"              source="npm" >
-      		<variable name="CAMERA_USAGE_DESCRIPTION" value="Allow the app to use your camera" />
-      		<variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow the app to access your photos" />
-    	</plugin>
-    	<plugin name="cordova-plugin-media-capture"       source="npm"  >
-     	 <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Allow the app to access your photos" />
-		 <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
-		 <variable name="CAMERA_USAGE_DESCRIPTION" value="Allow the app to use your camera" />
-    	</plugin>
-	
 		<plugin name="cordova-plugin-battery-status"      source="npm" />
+		<plugin name="cordova-plugin-camera"              source="npm" />
+		<plugin name="cordova-plugin-media-capture"       source="npm" />
 		<plugin name="cordova-plugin-console"             source="npm" />
 		<plugin name="cordova-plugin-contacts"            source="npm" />
 		<plugin name="cordova-plugin-device"              source="npm" />
@@ -80,6 +73,35 @@
 		<plugin name="cordova-plugin-statusbar"           source="npm" />
 		<plugin name="cordova-plugin-vibration"           source="npm" />
 		<plugin name="cordova-plugin-whitelist"           source="npm" />
+		
+		
+		<!--<plugin name="cordova.plugins.diagnostic" source="npm" />
+		
+		<plugin name="cordova-plugin-cache" source="npm" />
+		
+		<plugin name="cordova-plugin-mauron85-background-geolocation" source="npm"/>
+		
+		cordova-plugin-ionic-keyboard
+
+		-->
+		
+		
+		<plugin name="cordova-plugin-cache" source="npm" />
+		<plugin name="cordova-plugin-pushplugin" source="npm" />
+		<plugin name="cordova-plugin-datepicker" source="npm" />
+		<plugin name="cordova-plugin-insomnia" source="npm" />
+		<plugin name="cordova-plugin-email-composer" source="npm" />
+		<plugin name="ionic-plugin-keyboard"  source="npm" />
+		<plugin name="cordova-plugin-request-location-accuracy" source="npm" />
+		<!--<plugin name="cordova-plugin-mauron85-background-geolocation" version="2.2.0"/>-->
+		
+		<plugin name="com.darktalker.cordova.screenshot" source="npm" />
+		<gap:plugin name="cordova-plugin-admobpro" source="npm" />
+		
+		<!--<gap:plugin name="cordova-plugin-admobpro" source="npm" />
+		<plugin name="com-admob-plugin" source="npm"/>
+		<plugin name="phonegap-admob" source="npm"/>-->
+		
 		
 		<icon src="res/icon/ios/icon-57.png" gap:platform="ios" width="57" height="57" />
 		<icon src="res/icon/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
@@ -110,9 +132,8 @@
 		<gap:splash src="res/screen/blackberry/screen-225.png" gap:platform="blackberry" />
 		<gap:splash src="res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />
 		<gap:splash src="splash.png" />
-		
-		
 		<access origin="*" />
+		<access origin="content:///*" />
 		<access origin="http://google.com" subdomains="true"  />
 		<access origin="http://google.com" subdomains="true"  />
 		<access origin="https://googleapis.com" subdomains="true"  />
@@ -126,28 +147,15 @@
 		<access origin="https://gstatic.com" subdomains="true"  />
 		<access origin="http://googleapis.com" subdomains="true"  />
 		
-		
-		<plugin name="cordova-plugin-pushplugin" source="npm" />
-		<plugin name="cordova-plugin-datepicker" source="npm" />
-		<plugin name="cordova-plugin-insomnia" source="npm" />
-		<!--<plugin name="cordova-plugin-email-composer" source="npm" />
-		
-		<!--IOS EMAIL 
-		<gap:plugin name="cordova-plugin-email-composer" version="0.8.3" source="npm" /> -->
-		
-		<!-- ANDROID EMAIL -->
-		 <plugin spec="https://github.com/katzer/cordova-plugin-email-composer.git#0.8.2" source="git" /> 
-		
-		<plugin name="ionic-plugin-keyboard"  source="npm" />
-		<plugin name="cordova-plugin-request-location-accuracy" source="npm" />
-		<!--<plugin name="cordova-plugin-mauron85-background-geolocation" version="2.2.0"/>-->
-		
-		<plugin name="com.darktalker.cordova.screenshot" source="npm" />
-		<gap:plugin name="cordova-plugin-admobpro" source="npm" />
-		<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
-		<gap:plugin name="cordova-plugin-nativeaudio" source="npm" />
-		
-		
+		<allow-intent href="http://*/*" />
+		<allow-intent href="https://*/*" />
+		<allow-intent href="tel:*" />
+		<allow-intent href="sms:*" />
+		<allow-intent href="mailto:*" />
+		<allow-intent href="geo:*" />
+		<platform name="android">
+			<allow-intent href="market:*" />
+		</platform>
 		
 		<gap:config-file platform="android" parent="/manifest" mode="add" xmlns:android="http://schemas.android.com/apk/res/android">
 			android:windowSoftInputMode="adjustResize"
@@ -158,7 +166,6 @@
 			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 			<uses-permission android:name="android.permission.CAMERA" />
 			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-			<uses-permission android:name="android.permission.GET_ACCOUNTS" />
 			<uses-feature android:name="android.hardware.camera" />  
 			<uses-feature android:name="android.hardware.camera.autofocus" />
 		</gap:config-file>
