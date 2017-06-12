@@ -2,10 +2,10 @@
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
 		id        = "it.addall"  
-		versionCode="3"
-		version   = "3"
+		versionCode="4"
+		version   = "4">
 		<name>AddAll</name>
-		<description>AddAll, Gioco di abilita, somma numeri, skillgame</description>
+		<description>AddAll, Gioco di abilita, somma numeri</description>
 		<author href="http://msop.it" email="info@msop.it">
 			Associazione Game Answer
 		</author>
