@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
-		id        = "com.addall"  
-		versionCode="1.3"
-		version   = "1.3">
+		id        = "it.addall"  
+		versionCode="3"
+		version   = "3">
 		<name>AddAll</name>
 		<description>AddAll, Gioco di abilita, somma numeri, skillgame</description>
 		<author href="http://msop.it" email="info@msop.it">
@@ -108,11 +108,11 @@
 		<plugin name="cordova-plugin-insomnia" source="npm" />
 		<!--<plugin name="cordova-plugin-email-composer" source="npm" />
 		
-		<!--IOS EMAIL -->
-		<gap:plugin name="cordova-plugin-email-composer" version="0.8.3" source="npm" />
+		<!--IOS EMAIL 
+		<gap:plugin name="cordova-plugin-email-composer" version="0.8.3" source="npm" /> -->
 		
-		<!-- ANDROID EMAIL 
-		 <plugin spec="https://github.com/katzer/cordova-plugin-email-composer.git#0.8.2" source="git" /> -->
+		<!-- ANDROID EMAIL -->
+		 <plugin spec="https://github.com/katzer/cordova-plugin-email-composer.git#0.8.2" source="git" /> 
 		
 		<plugin name="ionic-plugin-keyboard"  source="npm" />
 		<plugin name="cordova-plugin-request-location-accuracy" source="npm" />
@@ -130,7 +130,7 @@
 		<plugin name="phonegap-admob" source="npm"/>
 		<plugin name="cordova-plugin-cache" source="npm" />-->
 		
-	  <platform name="ios">
+	  <!--<platform name="ios">
         <icon   src="res/icon/ios/icon.png"                         platform="ios" width="57"   height="57" />
         <icon   src="res/icon/ios/icon@2x.png"                      platform="ios" width="114"  height="114" />
         <icon   src="res/icon/ios/icon-40.png"                      platform="ios" width="40"   height="40" />
@@ -159,14 +159,14 @@
         <splash src="res/screen/ios/768x1024.png"      				platform="ios" width="768"  height="1024" />
         <splash src="res/screen/ios/640x960.png"          			platform="ios" width="640"  height="960" />
         <splash src="res/screen/ios/320x480.png"             		platform="ios" width="320"  height="480" />
-       </platform>
+       </platform>-->
 	
 	<!--<gap:config-file platform="ios" parent="NSPhotoLibraryUsageDescription">
       <string>For uploading receipt images</string>
     </gap:config-file>-->
 		
 		
-	<!--<platform name="android">
+	<platform name="android">
 		<icon src="36x36.png" gap:platform="android" gap:density="ldpi" />
 		<icon src="48x48.png" gap:platform="android" gap:density="mdpi" />
 		<icon src="72x72.png" gap:platform="android" gap:density="hdpi" />
@@ -183,7 +183,7 @@
 		
 		<allow-intent href="market:*" />
 		
-	</platform>-->
+	</platform>
 		
 		<!--<icon src="res/icon/windows-phone/icon-48.png" gap:platform="winphone" />
 		<icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone" gap:role="background" />
@@ -217,7 +217,7 @@
 		<allow-intent href="mailto:*" />
 		<allow-intent href="geo:*" />
 		
-		<!--<gap:config-file platform="android" parent="/manifest" mode="add" xmlns:android="http://schemas.android.com/apk/res/android">
+		<gap:config-file platform="android" parent="/manifest" mode="add" xmlns:android="http://schemas.android.com/apk/res/android">
 			android:windowSoftInputMode="adjustResize"
 			<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -229,6 +229,6 @@
 			<uses-permission android:name="android.permission.GET_ACCOUNTS" />
 			<uses-feature android:name="android.hardware.camera" />  
 			<uses-feature android:name="android.hardware.camera.autofocus" />
-		</gap:config-file>-->
+		</gap:config-file>
 		
 	</widget>
