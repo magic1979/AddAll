@@ -1028,6 +1028,7 @@ var app = {
 									 $("#btnsfida").hide()
 									 $("#btnlancia").hide()
 									 $("#bliard").hide()
+									 $("#bannermio").hide()
 									 $("#risultati").hide()
 									 $("#risultatisfida").hide()
 									 
@@ -1216,6 +1217,7 @@ var app = {
 							  $("#btnallenati").hide()
 							  $("#btnsfida").hide()
 							  $("#bliard").hide()
+							  $("#bannermio").hide()
 							  $("#btnlancia").hide()
 							  $("#risultati").hide()
 							  $("#risultatisfida").hide()
@@ -1303,6 +1305,7 @@ var app = {
 										 $("#btnallenati").hide()
 										 $("#btnsfida").hide()
 										 $("#bliard").hide()
+										 $("#bannermio").hide()
 										 $("#btnlancia").hide()
 										 $("#risultati").hide()
 										 $("#risultatisfida").hide()
@@ -1428,6 +1431,7 @@ var app = {
 					   $("#btnsfida").hide()
 					   $("#btnlancia").hide()
 					   $("#bliard").hide()
+					   $("#bannermio").hide()
 					   
 					   $("#load").show()
 					   
@@ -1566,6 +1570,7 @@ var app = {
 			$("#btnallenati").hide()
 			$("#btnsfida").hide()
 			$("#bliard").hide()
+			$("#bannermio").hide()
 			$("#btnlancia").hide()
 			$("#risultati").hide()
 			$("#risultatisfida").hide()
@@ -1582,6 +1587,7 @@ var app = {
 			$("#btnallenati").show()
 			$("#btnsfida").show()
 			$("#bliard").show()
+			$("#bannermio").show()
 			$("#btnlancia").show()
 			$("#risultati").show()
 			$("#risultatisfida").show()
