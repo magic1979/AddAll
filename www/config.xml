@@ -3,7 +3,7 @@
 		xmlns:gap = "http://phonegap.com/ns/1.0"
 		id        = "it.addall"  
 		versionCode="3"
-		version   = "3">
+		version   = "3"
 		<name>AddAll</name>
 		<description>AddAll, Gioco di abilita, somma numeri, skillgame</description>
 		<author href="http://msop.it" email="info@msop.it">
