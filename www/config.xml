@@ -5,7 +5,7 @@
 		versionCode="5"
 		version   = "5">
 		<name>AddAll</name>
-		<description>AddAll,Gioco di Abilita, somma numeri</description>
+		<description>AddAll,Gioco di Abilita</description>
 		<author href="http://msop.it" email="info@msop.it">
 			Associazione Game Answer
 		</author>
@@ -36,7 +36,7 @@
 		<preference name="SplashScreen" value="splash" />
 		<preference name="SplashScreenDelay" value="10000" />
 		<preference name="SplashMaintainAspectRatio" value="false" />
-		<preference name="ErrorUrl" value="http://www.aermes.it"/>
+		<preference name="ErrorUrl" value="http://www.msop.it"/>
 		<preference name="BackgroundColor" value="#edebe7"/>
 		<preference name="KeepRunning" value="true"/>
 		<preference name="DisallowOverscroll" value="true"/> 
@@ -97,6 +97,8 @@
 		
 		<plugin name="com.darktalker.cordova.screenshot" source="npm" />
 		<gap:plugin name="cordova-plugin-admobpro" source="npm" />
+		<gap:plugin name="cordova-plugin-nativeaudio" source="npm" />
+		<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 		
 		<!--<gap:plugin name="cordova-plugin-admobpro" source="npm" />
 		<plugin name="com-admob-plugin" source="npm"/>
@@ -164,6 +166,7 @@
     		<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 			<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.GET_ACCOUNTS" />
 			<uses-permission android:name="android.permission.CAMERA" />
 			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 			<uses-feature android:name="android.hardware.camera" />  
