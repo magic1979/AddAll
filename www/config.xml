@@ -90,7 +90,9 @@
 		<plugin name="cordova-plugin-pushplugin" source="npm" />
 		<plugin name="cordova-plugin-datepicker" source="npm" />
 		<plugin name="cordova-plugin-insomnia" source="npm" />
-		<plugin name="cordova-plugin-email-composer" source="npm" />
+		
+		<plugin spec="https://github.com/katzer/cordova-plugin-email-composer.git#0.8.2" source="git" />
+		
 		<plugin name="ionic-plugin-keyboard"  source="npm" />
 		<plugin name="cordova-plugin-request-location-accuracy" source="npm" />
 		<!--<plugin name="cordova-plugin-mauron85-background-geolocation" version="2.2.0"/>-->
@@ -99,10 +101,6 @@
 		<gap:plugin name="cordova-plugin-admobpro" source="npm" />
 		<gap:plugin name="cordova-plugin-nativeaudio" source="npm" />
 		<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
-		
-		<!--<gap:plugin name="cordova-plugin-admobpro" source="npm" />
-		<plugin name="com-admob-plugin" source="npm"/>
-		<plugin name="phonegap-admob" source="npm"/>-->
 		
 		
 		<icon src="res/icon/ios/icon-57.png" gap:platform="ios" width="57" height="57" />
