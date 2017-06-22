@@ -85,7 +85,7 @@ function onDeviceReady() {
 		if(localStorage.getItem("pagina")=="log"){
 							   
 	        navigator.notification.confirm(
-	       'Vuoi chiudere purple miles?',  // message
+	       'Vuoi chiudere AddAll?',  // message
 	        onConfirm2,              // callback to invoke with index of button pressed
 	       'Spegni',            // title
 	       'Spegni,Annulla'      // buttonLabels
@@ -398,9 +398,9 @@ function onDeviceReady() {
 				   
 				   
 				   
-				   prendimezzi()
+				   //prendimezzi()
 				   
-				   prendinazione()
+				   //prendinazione()
 				   
 				   //$("#fuso").html(nazione);
 				   
@@ -429,7 +429,7 @@ function onDeviceReady() {
 				   if(localStorage.getItem("pagina")=="log"){
 				   
 				   navigator.notification.confirm(
-												  'Vuoi chiudere purple miles?',  // message
+												  'Vuoi chiudere AddAll?',  // message
 												  onConfirm2,              // callback to invoke with index of button pressed
 												  'Spegni',            // title
 												  'Spegni,Annulla'      // buttonLabels
